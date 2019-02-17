@@ -10,15 +10,15 @@ import torch.onnx
 import data
 import model
 
-import numpy as np
+import admm
+
+model_names = ['wt2','ptb']
 
 parser = argparse.ArgumentParser(description='PyTorch Wikitext-2 RNN/LSTM Language Model')
 parser.add_argument('--data', type=str, default='./data/wikitext-2',
                     help='location of the data corpus')
 parser.add_argument('--model', type=str, default='LSTM',
                     help='type of recurrent net (RNN_TANH, RNN_RELU, LSTM, GRU)')
-parser.add_argument('--pretrained', type=str, default=None,
-                    help='finetune from the pretrained model')
 parser.add_argument('--emsize', type=int, default=200,
                     help='size of word embeddings')
 parser.add_argument('--nhid', type=int, default=200,
@@ -43,18 +43,30 @@ parser.add_argument('--seed', type=int, default=1111,
                     help='random seed')
 parser.add_argument('--cuda', action='store_true',
                     help='use CUDA')
-parser.add_argument('--prune', action='store_true',
-                    help='do pruning')
-parser.add_argument('--retrain', action='store_true',
-                    help='do retraining')
-parser.add_argument('--sparsity', type=float, default=0.9,
-                    help='target sparsity')
 parser.add_argument('--log-interval', type=int, default=200, metavar='N',
                     help='report interval')
 parser.add_argument('--save', type=str, default='model.pt',
                     help='path to save the final model')
 parser.add_argument('--onnx-export', type=str, default='',
                     help='path to export the final model in onnx format')
+
+parser.add_argument('-a', '--arch', metavar='ARCH', default='',
+                    choices=model_names,
+                    help='model architecture: ' +
+                        ' | '.join(model_names))
+parser.add_argument('--config_file', type = str, default = '', help = "config file")    
+parser.add_argument('--load_model', type=str,default = "" , help = 'For loading the model')
+parser.add_argument('--masked_retrain', action = 'store_true', default = False, help = 'for masked retrain')
+parser.add_argument('--masked_progressive', action='store_true', default = False, help = 'for masked progressive')
+parser.add_argument('--verify', action = 'store_true', default = False, help = 'verify sparsity')
+parser.add_argument('--verbose', action='store_true', default = False, help = 'whether to report admm convergence condition')
+parser.add_argument('--admm', action='store_true', default=False,  help = "for admm training")
+parser.add_argument('--admm_epoch', type = int, default = 1, help = "how often we do admm update")
+parser.add_argument('--rho', type = float, default = 0.001, help = "define rho for ADMM")
+parser.add_argument('--sparsity_type', type=str, default='', help = "define sparsity_type: [irregular,column,filter]")
+# parser.add_argument('--optimizer', type = str, default = 'SGD', help = 'define optimizer')
+# parser.add_argument('--lr_scheduler', type = str, default = 'default', help = 'define lr scheduler')
+
 args = parser.parse_args()
 
 # Set the random seed manually for reproducibility.
@@ -64,6 +76,14 @@ if torch.cuda.is_available():
         print("WARNING: You have a CUDA device, so you should probably run with --cuda")
 
 device = torch.device("cuda" if args.cuda else "cpu")
+
+ADMM = None
+config = None
+if args.admm or args.masked_retrain:                
+    config = admm.Config(args, model)
+if args.admm:
+    ADMM = admm.ADMM(model, config)
+    admm.admm_initialization(args, ADMM, model)  # intialize Z, U variable   
 
 ###############################################################################
 # Load data
@@ -103,18 +123,8 @@ test_data = batchify(corpus.test, eval_batch_size)
 
 ntokens = len(corpus.dictionary)
 model = model.RNNModel(args.model, ntokens, args.emsize, args.nhid, args.nlayers, args.dropout, args.tied).to(device)
-if args.pretrained:
-    model = torch.load(args.pretrained, map_location=device)
 
 criterion = nn.CrossEntropyLoss()
-
-for p in model.parameters():
-    print(type(p.data), p.size())
-for m in model.modules():
-    print(m)
-
-for name, W in model.named_parameters():
-    print("named parameter name {}".format(name))
 
 ###############################################################################
 # Training code
@@ -158,11 +168,10 @@ def evaluate(data_source):
             output_flat = output.view(-1, ntokens)
             total_loss += len(data) * criterion(output_flat, targets).item()
             hidden = repackage_hidden(hidden)
-    
     return total_loss / (len(data_source) - 1)
 
 
-def train():
+def train(stage = "train"):
     # Turn on training mode which enables dropout.
     model.train()
     total_loss = 0.
@@ -177,99 +186,34 @@ def train():
         model.zero_grad()
         output, hidden = model(data, hidden)
         loss = criterion(output.view(-1, ntokens), targets)
+        # if args.admm:
+        if stage == 'admm':
+            ce_loss = loss
+            admm.admm_update(args,ADMM,model,None,None,None,epoch,None,batch)   # update Z and U        
+            ce_loss,admm_loss,mixed_loss = admm.append_admm_loss(args,ADMM,model,ce_loss) # append admm losss
+            loss = mixed_loss
         loss.backward()
 
         # `clip_grad_norm` helps prevent the exploding gradient problem in RNNs / LSTMs.
         torch.nn.utils.clip_grad_norm_(model.parameters(), args.clip)
+        if stage == 'masked_retrain':
+            for name,W in model.named_parameters():
+                if name in config.masks:
+                    W.grad *= config.masks[name]
         for p in model.parameters():
             p.data.add_(-lr, p.grad.data)
-            # to add mask, might use p.data.addcmul_(-lr, mask, grad.data)
-            # to compute mask, might 
-            ## use kthvalue() api to get the threshold, 
-            ## use ge() or gt() to get the mask bytetensor, and 
-            ## use where() to mask out the values within threshold(if the threshold is abs value, use abs() first)
 
         total_loss += loss.item()
 
         if batch % args.log_interval == 0 and batch > 0:
             cur_loss = total_loss / args.log_interval
             elapsed = time.time() - start_time
-            print('| train-epoch {:3d} | {:5d}/{:5d} batches | lr {:02.2f} | ms/batch {:5.2f} | '
+            print('| epoch {:3d} | {:5d}/{:5d} batches | lr {:02.2f} | ms/batch {:5.2f} | '
                     'loss {:5.2f} | ppl {:8.2f}'.format(
                 epoch, batch, len(train_data) // args.bptt, lr,
                 elapsed * 1000 / args.log_interval, cur_loss, math.exp(cur_loss)))
             total_loss = 0
             start_time = time.time()
-
-def prune_train(sparsity = 0.6, dim = 1):
-    # Turn on training mode which enables dropout.
-    print("begin prun train")
-    model.train()
-    total_loss = 0.
-    start_time = time.time()
-    ntokens = len(corpus.dictionary)
-    hidden = model.init_hidden(args.batch_size)
-
-    mask = {}
-    for w in np.reshape(model.rnn._all_weights, -1):
-        if w.find("weight") == -1:
-            continue
-        weight = eval("model.rnn." + w)
-        rank = int(sparsity * weight.data.shape[dim])
-        weight_abs = weight.data.abs().clone().cpu()
-        threshold, position = weight_abs.kthvalue(rank, dim, True)
-        threshold = threshold.expand(weight.data.shape)
-        mask[w] = weight_abs.lt(threshold).cuda()   # values smaller than threshold will be tagged
-        weight.data.masked_fill_(mask[w], 0.0)      # mask tagged data to zero
-
-    for batch, i in enumerate(range(0, train_data.size(0) - 1, args.bptt)):
-        data, targets = get_batch(train_data, i)
-        # Starting each batch, we detach the hidden state from how it was previously produced.
-        # If we didn't, the model would try backpropagating all the way to start of the dataset.
-        hidden = repackage_hidden(hidden)
-        model.zero_grad()
-        output, hidden = model(data, hidden)
-        loss = criterion(output.view(-1, ntokens), targets)
-        loss.backward()
-
-        # `clip_grad_norm` helps prevent the exploding gradient problem in RNNs / LSTMs.
-        torch.nn.utils.clip_grad_norm_(model.parameters(), args.clip)
-        # mask out the gradient
-        for w in np.reshape(model.rnn._all_weights, -1):
-            if w.find("weight") == -1:
-                continue
-            weight = eval("model.rnn." + w)
-            weight.grad.data.masked_fill_(mask[w], 0.0)
-        
-        for p in model.parameters():
-            p.data.add_(-lr, p.grad.data)
-            # to add mask, might use p.data.addcmul_(-lr, mask, grad.data)
-            # to compute mask, might 
-            ## use kthvalue() api to get the threshold, 
-            ## use ge() or gt() to get the mask bytetensor, and 
-            ## use where() to mask out the values within threshold(if the threshold is abs value, use abs() first)
-
-        total_loss += loss.item()
-
-        if batch % args.log_interval == 0 and batch > 0:
-            cur_loss = total_loss / args.log_interval
-            elapsed = time.time() - start_time
-            print('| prune-epoch {:3d} | {:5d}/{:5d} batches | lr {:02.2f} | ms/batch {:5.2f} | '
-                    'loss {:5.2f} | ppl {:8.2f}'.format(
-                epoch, batch, len(train_data) // args.bptt, lr,
-                elapsed * 1000 / args.log_interval, cur_loss, math.exp(cur_loss)))
-            total_loss = 0
-            start_time = time.time()
-    print("end prun train")
-    for w in np.reshape(model.rnn._all_weights, -1):
-        if w.find("weight") == -1:
-            continue
-        weight = eval("model.rnn." + w)
-        print(w.ljust(20), end="")
-        print("shape", weight.data.shape)
-        nnz = weight.data.nonzero().size(0)
-        size = weight.data.view(-1).size(0)
-        print("expected sp: ".rjust(20), sparsity, " actual sp: ", 1 - nnz / size)
 
 
 def export_onnx(path, batch_size, seq_len):
@@ -285,125 +229,31 @@ def export_onnx(path, batch_size, seq_len):
 lr = args.lr
 best_val_loss = None
 
-setting = args.data.split('/')[-1] + '-' + args.model + str(args.nlayers) + '-' + str(args.emsize) + '-' + str(args.nhid) + 'dropout{:.2f}'.format(args.dropout)
-if args.tied:
-    setting += '-tied'
-
 # At any point you can hit Ctrl + C to break out of training early.
 try:
-    save = args.save + "-pretrain-" + setting
-    pretrain_epochs = 0
-    prune_epochs = 0
-    retrain_epochs = 0
-    # pre train stage
     for epoch in range(1, args.epochs+1):
-        if args.pretrained and (args.prune or args.retrain):
-            break
         epoch_start_time = time.time()
         train()
-        pretrain_epochs += 1
         val_loss = evaluate(val_data)
         print('-' * 89)
-        print('| end of train epoch {:3d} | time: {:5.2f}s | valid loss {:5.2f} | '
+        print('| end of epoch {:3d} | time: {:5.2f}s | valid loss {:5.2f} | '
                 'valid ppl {:8.2f}'.format(epoch, (time.time() - epoch_start_time),
                                            val_loss, math.exp(val_loss)))
         print('-' * 89)
         # Save the model if the validation loss is the best we've seen so far.
         if not best_val_loss or val_loss < best_val_loss:
-            with open(save, 'wb') as f:
+            with open(args.save, 'wb') as f:
                 torch.save(model, f)
             best_val_loss = val_loss
         else:
-            # if prune is needed, end the pretrain without decaying lr rate
-            if args.prune:
-                break
             # Anneal the learning rate if no improvement has been seen in the validation dataset.
             lr /= 4.0
-    # prune stage
-    lr = args.lr
-    start_sp = 0.4
-    end_sp = args.sparsity
-    current_sp = start_sp
-    if args.prune:
-        save = args.save + "-prune{:.1f}-".format(args.sparsity * 100) + setting
-    best_val_loss = None
-    epoch = 1
-    while True:
-        if not args.prune:
-            break
-        epoch_start_time = time.time()
-        # train()
-        prune_train(current_sp)
-        val_loss = evaluate(val_data)
-        print('-' * 89)
-        print('| end of prune epoch {:3d} | time: {:5.2f}s | valid loss {:5.2f} | '
-                'valid ppl {:8.2f}'.format(epoch, (time.time() - epoch_start_time),
-                                           val_loss, math.exp(val_loss)))
-        print('-' * 89)
-        prune_epochs += 1
-        epoch += 1
-        if current_sp >= end_sp: 
-            break
-        if not best_val_loss or val_loss < best_val_loss:
-            best_val_loss = val_loss
-        else:
-            best_val_loss = None
-            if end_sp - current_sp > 0.2:
-                current_sp += 0.1
-            else:
-                current_sp += 0.05
-            if current_sp >= end_sp:
-                current_sp = end_sp
-    if args.prune: 
-        with open(save, 'wb') as f:
-            torch.save(model, f)
-    # retrain stage
-    # save = setting + "-retrain{%.1f}-".format(args.sparsity * 100) + args.save
-    retrain_epochs = 0
-    if args.retrain:
-        save = args.save + "-retrain{:.1f}-".format(args.sparsity * 100) + setting
-        current_sp = end_sp
-        protect_epoch = 1
-        remain_pepoch = protect_epoch
-        retrain_epochs = args.epochs - pretrain_epochs // 2
-    lr = args.lr
-    best_val_loss = None
-    for epoch in range(1, retrain_epochs+1):
-        epoch_start_time = time.time()
-        # train()
-        prune_train(current_sp)
-        val_loss = evaluate(val_data)
-        print('-' * 89)
-        print('| end of retrain epoch {:3d} | time: {:5.2f}s | valid loss {:5.2f} | '
-                'valid ppl {:8.2f}'.format(epoch, (time.time() - epoch_start_time),
-                                           val_loss, math.exp(val_loss)))
-        print('-' * 89)
-        # Save the model if the validation loss is the best we've seen so far.
-        if not best_val_loss or val_loss < best_val_loss:
-            with open(save, 'wb') as f:
-                torch.save(model, f)
-            best_val_loss = val_loss
-        else:
-            if remain_pepoch > 0:
-                remain_pepoch -= 1
-                best_val_loss = val_loss
-            else:
-                remain_pepoch = protect_epoch
-                # lr /= 2.0
-                lr /= 4.0
-    print('required epochs {:3d} | actual epochs {:3d}'.format(
-        args.epochs, pretrain_epochs + prune_epochs + retrain_epochs))
-    print('pretrain epochs {:3d} | prune epochs {:3d} | retrain epochs {:3d}'.format(
-        pretrain_epochs, prune_epochs, retrain_epochs))
-
-    
 except KeyboardInterrupt:
     print('-' * 89)
     print('Exiting from training early')
 
 # Load the best saved model.
-# with open(args.save, 'rb') as f:
-with open(save, 'rb') as f:
+with open(args.save, 'rb') as f:
     model = torch.load(f)
     # after load the rnn params are not a continuous chunk of memory
     # this makes them a continuous chunk, and will speed up forward pass
@@ -419,3 +269,4 @@ print('=' * 89)
 if len(args.onnx_export) > 0:
     # Export the model in ONNX format.
     export_onnx(args.onnx_export, batch_size=1, seq_len=args.bptt)
+

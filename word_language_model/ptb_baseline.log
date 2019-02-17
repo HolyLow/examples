@@ -1,0 +1,2093 @@
+python main.py --cuda --epochs 6 --save model/baseline/model.pt --data ./data/ptb
+<class 'torch.Tensor'> torch.Size([10000, 200])
+<class 'torch.Tensor'> torch.Size([800, 200])
+<class 'torch.Tensor'> torch.Size([800, 200])
+<class 'torch.Tensor'> torch.Size([800])
+<class 'torch.Tensor'> torch.Size([800])
+<class 'torch.Tensor'> torch.Size([800, 200])
+<class 'torch.Tensor'> torch.Size([800, 200])
+<class 'torch.Tensor'> torch.Size([800])
+<class 'torch.Tensor'> torch.Size([800])
+<class 'torch.Tensor'> torch.Size([10000, 200])
+<class 'torch.Tensor'> torch.Size([10000])
+RNNModel(
+  (drop): Dropout(p=0.2)
+  (encoder): Embedding(10000, 200)
+  (rnn): LSTM(200, 200, num_layers=2, dropout=0.2)
+  (decoder): Linear(in_features=200, out_features=10000, bias=True)
+)
+Dropout(p=0.2)
+Embedding(10000, 200)
+LSTM(200, 200, num_layers=2, dropout=0.2)
+Linear(in_features=200, out_features=10000, bias=True)
+| train-epoch   1 |   200/ 1327 batches | lr 20.00 | ms/batch  8.25 | loss  6.93 | ppl  1026.28
+| train-epoch   1 |   400/ 1327 batches | lr 20.00 | ms/batch  7.70 | loss  6.31 | ppl   548.36
+| train-epoch   1 |   600/ 1327 batches | lr 20.00 | ms/batch  7.31 | loss  6.05 | ppl   423.46
+| train-epoch   1 |   800/ 1327 batches | lr 20.00 | ms/batch  7.27 | loss  5.77 | ppl   319.13
+| train-epoch   1 |  1000/ 1327 batches | lr 20.00 | ms/batch  7.32 | loss  5.62 | ppl   277.05
+| train-epoch   1 |  1200/ 1327 batches | lr 20.00 | ms/batch  7.31 | loss  5.47 | ppl   238.25
+-----------------------------------------------------------------------------------------
+| end of train epoch   1 | time: 10.40s | valid loss  5.38 | valid ppl   216.53
+-----------------------------------------------------------------------------------------
+| train-epoch   2 |   200/ 1327 batches | lr 20.00 | ms/batch  7.34 | loss  5.39 | ppl   219.00
+| train-epoch   2 |   400/ 1327 batches | lr 20.00 | ms/batch  7.33 | loss  5.32 | ppl   204.30
+| train-epoch   2 |   600/ 1327 batches | lr 20.00 | ms/batch  7.30 | loss  5.27 | ppl   194.95
+| train-epoch   2 |   800/ 1327 batches | lr 20.00 | ms/batch  7.40 | loss  5.16 | ppl   174.84
+| train-epoch   2 |  1000/ 1327 batches | lr 20.00 | ms/batch  7.33 | loss  5.16 | ppl   173.71
+| train-epoch   2 |  1200/ 1327 batches | lr 20.00 | ms/batch  7.26 | loss  5.05 | ppl   155.32
+-----------------------------------------------------------------------------------------
+| end of train epoch   2 | time: 10.16s | valid loss  5.08 | valid ppl   160.57
+-----------------------------------------------------------------------------------------
+| train-epoch   3 |   200/ 1327 batches | lr 20.00 | ms/batch  7.31 | loss  5.05 | ppl   155.55
+| train-epoch   3 |   400/ 1327 batches | lr 20.00 | ms/batch  7.30 | loss  5.02 | ppl   151.26
+| train-epoch   3 |   600/ 1327 batches | lr 20.00 | ms/batch  7.33 | loss  4.99 | ppl   147.43
+| train-epoch   3 |   800/ 1327 batches | lr 20.00 | ms/batch  7.27 | loss  4.91 | ppl   135.84
+| train-epoch   3 |  1000/ 1327 batches | lr 20.00 | ms/batch  7.29 | loss  4.94 | ppl   139.98
+| train-epoch   3 |  1200/ 1327 batches | lr 20.00 | ms/batch  7.27 | loss  4.83 | ppl   125.71
+-----------------------------------------------------------------------------------------
+| end of train epoch   3 | time: 10.13s | valid loss  4.94 | valid ppl   139.80
+-----------------------------------------------------------------------------------------
+| train-epoch   4 |   200/ 1327 batches | lr 20.00 | ms/batch  7.41 | loss  4.86 | ppl   128.92
+| train-epoch   4 |   400/ 1327 batches | lr 20.00 | ms/batch  7.25 | loss  4.85 | ppl   127.58
+| train-epoch   4 |   600/ 1327 batches | lr 20.00 | ms/batch  7.25 | loss  4.83 | ppl   124.96
+| train-epoch   4 |   800/ 1327 batches | lr 20.00 | ms/batch  7.28 | loss  4.76 | ppl   116.30
+| train-epoch   4 |  1000/ 1327 batches | lr 20.00 | ms/batch  7.29 | loss  4.80 | ppl   121.98
+| train-epoch   4 |  1200/ 1327 batches | lr 20.00 | ms/batch  7.35 | loss  4.69 | ppl   109.08
+-----------------------------------------------------------------------------------------
+| end of train epoch   4 | time: 10.13s | valid loss  4.85 | valid ppl   128.38
+-----------------------------------------------------------------------------------------
+| train-epoch   5 |   200/ 1327 batches | lr 20.00 | ms/batch  7.32 | loss  4.74 | ppl   114.03
+| train-epoch   5 |   400/ 1327 batches | lr 20.00 | ms/batch  7.24 | loss  4.73 | ppl   113.67
+| train-epoch   5 |   600/ 1327 batches | lr 20.00 | ms/batch  7.28 | loss  4.72 | ppl   111.69
+| train-epoch   5 |   800/ 1327 batches | lr 20.00 | ms/batch  7.30 | loss  4.65 | ppl   104.21
+| train-epoch   5 |  1000/ 1327 batches | lr 20.00 | ms/batch  7.32 | loss  4.71 | ppl   111.08
+| train-epoch   5 |  1200/ 1327 batches | lr 20.00 | ms/batch  7.61 | loss  4.59 | ppl    98.79
+-----------------------------------------------------------------------------------------
+| end of train epoch   5 | time: 10.33s | valid loss  4.81 | valid ppl   122.60
+-----------------------------------------------------------------------------------------
+| train-epoch   6 |   200/ 1327 batches | lr 20.00 | ms/batch  8.01 | loss  4.64 | ppl   104.01
+| train-epoch   6 |   400/ 1327 batches | lr 20.00 | ms/batch  7.91 | loss  4.64 | ppl   103.65
+| train-epoch   6 |   600/ 1327 batches | lr 20.00 | ms/batch  8.01 | loss  4.63 | ppl   102.61
+| train-epoch   6 |   800/ 1327 batches | lr 20.00 | ms/batch  8.07 | loss  4.57 | ppl    96.14
+| train-epoch   6 |  1000/ 1327 batches | lr 20.00 | ms/batch  8.01 | loss  4.64 | ppl   103.08
+| train-epoch   6 |  1200/ 1327 batches | lr 20.00 | ms/batch  8.04 | loss  4.52 | ppl    91.70
+-----------------------------------------------------------------------------------------
+| end of train epoch   6 | time: 11.12s | valid loss  4.77 | valid ppl   118.37
+-----------------------------------------------------------------------------------------
+required epochs   6 | actual epochs   6
+pretrain epochs   6 | prune epochs   0 | retrain epochs   0
+=========================================================================================
+| End of training | test loss  4.75 | test ppl   115.62
+=========================================================================================
+python main.py --cuda --epochs 6 --tied --save model/baseline/model.pt --data ./data/ptb
+<class 'torch.Tensor'> torch.Size([10000, 200])
+<class 'torch.Tensor'> torch.Size([800, 200])
+<class 'torch.Tensor'> torch.Size([800, 200])
+<class 'torch.Tensor'> torch.Size([800])
+<class 'torch.Tensor'> torch.Size([800])
+<class 'torch.Tensor'> torch.Size([800, 200])
+<class 'torch.Tensor'> torch.Size([800, 200])
+<class 'torch.Tensor'> torch.Size([800])
+<class 'torch.Tensor'> torch.Size([800])
+<class 'torch.Tensor'> torch.Size([10000])
+RNNModel(
+  (drop): Dropout(p=0.2)
+  (encoder): Embedding(10000, 200)
+  (rnn): LSTM(200, 200, num_layers=2, dropout=0.2)
+  (decoder): Linear(in_features=200, out_features=10000, bias=True)
+)
+Dropout(p=0.2)
+Embedding(10000, 200)
+LSTM(200, 200, num_layers=2, dropout=0.2)
+Linear(in_features=200, out_features=10000, bias=True)
+| train-epoch   1 |   200/ 1327 batches | lr 20.00 | ms/batch  7.73 | loss  6.90 | ppl   992.47
+| train-epoch   1 |   400/ 1327 batches | lr 20.00 | ms/batch  7.49 | loss  6.22 | ppl   501.02
+| train-epoch   1 |   600/ 1327 batches | lr 20.00 | ms/batch  7.35 | loss  5.89 | ppl   360.59
+| train-epoch   1 |   800/ 1327 batches | lr 20.00 | ms/batch  7.11 | loss  5.63 | ppl   277.83
+| train-epoch   1 |  1000/ 1327 batches | lr 20.00 | ms/batch  7.14 | loss  5.51 | ppl   246.22
+| train-epoch   1 |  1200/ 1327 batches | lr 20.00 | ms/batch  7.13 | loss  5.36 | ppl   212.65
+-----------------------------------------------------------------------------------------
+| end of train epoch   1 | time: 10.10s | valid loss  5.27 | valid ppl   193.93
+-----------------------------------------------------------------------------------------
+| train-epoch   2 |   200/ 1327 batches | lr 20.00 | ms/batch  7.06 | loss  5.29 | ppl   198.27
+| train-epoch   2 |   400/ 1327 batches | lr 20.00 | ms/batch  6.99 | loss  5.23 | ppl   186.17
+| train-epoch   2 |   600/ 1327 batches | lr 20.00 | ms/batch  7.05 | loss  5.18 | ppl   176.95
+| train-epoch   2 |   800/ 1327 batches | lr 20.00 | ms/batch  7.11 | loss  5.08 | ppl   160.04
+| train-epoch   2 |  1000/ 1327 batches | lr 20.00 | ms/batch  7.07 | loss  5.08 | ppl   160.12
+| train-epoch   2 |  1200/ 1327 batches | lr 20.00 | ms/batch  7.03 | loss  4.97 | ppl   143.96
+-----------------------------------------------------------------------------------------
+| end of train epoch   2 | time:  9.78s | valid loss  5.00 | valid ppl   148.05
+-----------------------------------------------------------------------------------------
+| train-epoch   3 |   200/ 1327 batches | lr 20.00 | ms/batch  6.87 | loss  4.98 | ppl   145.36
+| train-epoch   3 |   400/ 1327 batches | lr 20.00 | ms/batch  7.01 | loss  4.96 | ppl   142.07
+| train-epoch   3 |   600/ 1327 batches | lr 20.00 | ms/batch  7.03 | loss  4.92 | ppl   137.68
+| train-epoch   3 |   800/ 1327 batches | lr 20.00 | ms/batch  7.44 | loss  4.85 | ppl   128.16
+| train-epoch   3 |  1000/ 1327 batches | lr 20.00 | ms/batch  7.17 | loss  4.89 | ppl   132.55
+| train-epoch   3 |  1200/ 1327 batches | lr 20.00 | ms/batch  6.99 | loss  4.78 | ppl   118.98
+-----------------------------------------------------------------------------------------
+| end of train epoch   3 | time:  9.81s | valid loss  4.87 | valid ppl   130.24
+-----------------------------------------------------------------------------------------
+| train-epoch   4 |   200/ 1327 batches | lr 20.00 | ms/batch  7.14 | loss  4.81 | ppl   123.32
+| train-epoch   4 |   400/ 1327 batches | lr 20.00 | ms/batch  7.10 | loss  4.81 | ppl   122.45
+| train-epoch   4 |   600/ 1327 batches | lr 20.00 | ms/batch  7.07 | loss  4.79 | ppl   119.72
+| train-epoch   4 |   800/ 1327 batches | lr 20.00 | ms/batch  7.48 | loss  4.72 | ppl   112.31
+| train-epoch   4 |  1000/ 1327 batches | lr 20.00 | ms/batch  7.88 | loss  4.77 | ppl   118.32
+| train-epoch   4 |  1200/ 1327 batches | lr 20.00 | ms/batch  7.28 | loss  4.66 | ppl   105.65
+-----------------------------------------------------------------------------------------
+| end of train epoch   4 | time: 10.13s | valid loss  4.79 | valid ppl   120.34
+-----------------------------------------------------------------------------------------
+| train-epoch   5 |   200/ 1327 batches | lr 20.00 | ms/batch  7.19 | loss  4.71 | ppl   110.95
+| train-epoch   5 |   400/ 1327 batches | lr 20.00 | ms/batch  7.10 | loss  4.71 | ppl   111.07
+| train-epoch   5 |   600/ 1327 batches | lr 20.00 | ms/batch  7.12 | loss  4.70 | ppl   109.44
+| train-epoch   5 |   800/ 1327 batches | lr 20.00 | ms/batch  7.23 | loss  4.64 | ppl   103.20
+| train-epoch   5 |  1000/ 1327 batches | lr 20.00 | ms/batch  7.72 | loss  4.69 | ppl   109.12
+| train-epoch   5 |  1200/ 1327 batches | lr 20.00 | ms/batch  7.74 | loss  4.58 | ppl    97.43
+-----------------------------------------------------------------------------------------
+| end of train epoch   5 | time: 10.29s | valid loss  4.75 | valid ppl   116.08
+-----------------------------------------------------------------------------------------
+| train-epoch   6 |   200/ 1327 batches | lr 20.00 | ms/batch  7.90 | loss  4.64 | ppl   103.03
+| train-epoch   6 |   400/ 1327 batches | lr 20.00 | ms/batch  7.07 | loss  4.64 | ppl   103.59
+| train-epoch   6 |   600/ 1327 batches | lr 20.00 | ms/batch  7.13 | loss  4.63 | ppl   102.20
+| train-epoch   6 |   800/ 1327 batches | lr 20.00 | ms/batch  7.35 | loss  4.57 | ppl    96.70
+| train-epoch   6 |  1000/ 1327 batches | lr 20.00 | ms/batch  7.01 | loss  4.64 | ppl   103.81
+| train-epoch   6 |  1200/ 1327 batches | lr 20.00 | ms/batch  7.10 | loss  4.52 | ppl    91.96
+-----------------------------------------------------------------------------------------
+| end of train epoch   6 | time: 10.06s | valid loss  4.73 | valid ppl   113.31
+-----------------------------------------------------------------------------------------
+required epochs   6 | actual epochs   6
+pretrain epochs   6 | prune epochs   0 | retrain epochs   0
+=========================================================================================
+| End of training | test loss  4.71 | test ppl   110.72
+=========================================================================================
+python main.py --cuda --tied --save model/baseline/model.pt --data ./data/ptb
+<class 'torch.Tensor'> torch.Size([10000, 200])
+<class 'torch.Tensor'> torch.Size([800, 200])
+<class 'torch.Tensor'> torch.Size([800, 200])
+<class 'torch.Tensor'> torch.Size([800])
+<class 'torch.Tensor'> torch.Size([800])
+<class 'torch.Tensor'> torch.Size([800, 200])
+<class 'torch.Tensor'> torch.Size([800, 200])
+<class 'torch.Tensor'> torch.Size([800])
+<class 'torch.Tensor'> torch.Size([800])
+<class 'torch.Tensor'> torch.Size([10000])
+RNNModel(
+  (drop): Dropout(p=0.2)
+  (encoder): Embedding(10000, 200)
+  (rnn): LSTM(200, 200, num_layers=2, dropout=0.2)
+  (decoder): Linear(in_features=200, out_features=10000, bias=True)
+)
+Dropout(p=0.2)
+Embedding(10000, 200)
+LSTM(200, 200, num_layers=2, dropout=0.2)
+Linear(in_features=200, out_features=10000, bias=True)
+| train-epoch   1 |   200/ 1327 batches | lr 20.00 | ms/batch  7.53 | loss  6.90 | ppl   992.47
+| train-epoch   1 |   400/ 1327 batches | lr 20.00 | ms/batch  7.46 | loss  6.22 | ppl   501.02
+| train-epoch   1 |   600/ 1327 batches | lr 20.00 | ms/batch  7.56 | loss  5.89 | ppl   360.59
+| train-epoch   1 |   800/ 1327 batches | lr 20.00 | ms/batch  7.46 | loss  5.63 | ppl   277.83
+| train-epoch   1 |  1000/ 1327 batches | lr 20.00 | ms/batch  7.42 | loss  5.51 | ppl   246.22
+| train-epoch   1 |  1200/ 1327 batches | lr 20.00 | ms/batch  7.40 | loss  5.36 | ppl   212.65
+-----------------------------------------------------------------------------------------
+| end of train epoch   1 | time: 10.36s | valid loss  5.27 | valid ppl   193.93
+-----------------------------------------------------------------------------------------
+| train-epoch   2 |   200/ 1327 batches | lr 20.00 | ms/batch  7.46 | loss  5.29 | ppl   198.27
+| train-epoch   2 |   400/ 1327 batches | lr 20.00 | ms/batch  7.45 | loss  5.23 | ppl   186.17
+| train-epoch   2 |   600/ 1327 batches | lr 20.00 | ms/batch  7.31 | loss  5.18 | ppl   176.95
+| train-epoch   2 |   800/ 1327 batches | lr 20.00 | ms/batch  7.42 | loss  5.08 | ppl   160.04
+| train-epoch   2 |  1000/ 1327 batches | lr 20.00 | ms/batch  7.41 | loss  5.08 | ppl   160.12
+| train-epoch   2 |  1200/ 1327 batches | lr 20.00 | ms/batch  7.33 | loss  4.97 | ppl   143.96
+-----------------------------------------------------------------------------------------
+| end of train epoch   2 | time: 10.26s | valid loss  5.00 | valid ppl   148.05
+-----------------------------------------------------------------------------------------
+| train-epoch   3 |   200/ 1327 batches | lr 20.00 | ms/batch  7.53 | loss  4.98 | ppl   145.36
+| train-epoch   3 |   400/ 1327 batches | lr 20.00 | ms/batch  7.40 | loss  4.96 | ppl   142.07
+| train-epoch   3 |   600/ 1327 batches | lr 20.00 | ms/batch  7.37 | loss  4.92 | ppl   137.68
+| train-epoch   3 |   800/ 1327 batches | lr 20.00 | ms/batch  7.38 | loss  4.85 | ppl   128.16
+| train-epoch   3 |  1000/ 1327 batches | lr 20.00 | ms/batch  7.36 | loss  4.89 | ppl   132.55
+| train-epoch   3 |  1200/ 1327 batches | lr 20.00 | ms/batch  7.34 | loss  4.78 | ppl   118.98
+-----------------------------------------------------------------------------------------
+| end of train epoch   3 | time: 10.27s | valid loss  4.87 | valid ppl   130.24
+-----------------------------------------------------------------------------------------
+| train-epoch   4 |   200/ 1327 batches | lr 20.00 | ms/batch  7.41 | loss  4.81 | ppl   123.32
+| train-epoch   4 |   400/ 1327 batches | lr 20.00 | ms/batch  7.32 | loss  4.81 | ppl   122.45
+| train-epoch   4 |   600/ 1327 batches | lr 20.00 | ms/batch  7.35 | loss  4.79 | ppl   119.72
+| train-epoch   4 |   800/ 1327 batches | lr 20.00 | ms/batch  7.24 | loss  4.72 | ppl   112.31
+| train-epoch   4 |  1000/ 1327 batches | lr 20.00 | ms/batch  7.26 | loss  4.77 | ppl   118.32
+| train-epoch   4 |  1200/ 1327 batches | lr 20.00 | ms/batch  7.26 | loss  4.66 | ppl   105.65
+-----------------------------------------------------------------------------------------
+| end of train epoch   4 | time: 10.14s | valid loss  4.79 | valid ppl   120.34
+-----------------------------------------------------------------------------------------
+| train-epoch   5 |   200/ 1327 batches | lr 20.00 | ms/batch  7.40 | loss  4.71 | ppl   110.95
+| train-epoch   5 |   400/ 1327 batches | lr 20.00 | ms/batch  7.38 | loss  4.71 | ppl   111.07
+| train-epoch   5 |   600/ 1327 batches | lr 20.00 | ms/batch  7.42 | loss  4.70 | ppl   109.44
+| train-epoch   5 |   800/ 1327 batches | lr 20.00 | ms/batch  7.40 | loss  4.64 | ppl   103.20
+| train-epoch   5 |  1000/ 1327 batches | lr 20.00 | ms/batch  7.32 | loss  4.69 | ppl   109.12
+| train-epoch   5 |  1200/ 1327 batches | lr 20.00 | ms/batch  7.34 | loss  4.58 | ppl    97.43
+-----------------------------------------------------------------------------------------
+| end of train epoch   5 | time: 10.24s | valid loss  4.75 | valid ppl   116.08
+-----------------------------------------------------------------------------------------
+| train-epoch   6 |   200/ 1327 batches | lr 20.00 | ms/batch  7.37 | loss  4.64 | ppl   103.03
+| train-epoch   6 |   400/ 1327 batches | lr 20.00 | ms/batch  7.38 | loss  4.64 | ppl   103.59
+| train-epoch   6 |   600/ 1327 batches | lr 20.00 | ms/batch  7.42 | loss  4.63 | ppl   102.20
+| train-epoch   6 |   800/ 1327 batches | lr 20.00 | ms/batch  7.46 | loss  4.57 | ppl    96.70
+| train-epoch   6 |  1000/ 1327 batches | lr 20.00 | ms/batch  7.40 | loss  4.64 | ppl   103.81
+| train-epoch   6 |  1200/ 1327 batches | lr 20.00 | ms/batch  7.43 | loss  4.52 | ppl    91.96
+-----------------------------------------------------------------------------------------
+| end of train epoch   6 | time: 10.30s | valid loss  4.73 | valid ppl   113.31
+-----------------------------------------------------------------------------------------
+| train-epoch   7 |   200/ 1327 batches | lr 20.00 | ms/batch  7.53 | loss  4.59 | ppl    98.19
+| train-epoch   7 |   400/ 1327 batches | lr 20.00 | ms/batch  7.39 | loss  4.59 | ppl    98.47
+| train-epoch   7 |   600/ 1327 batches | lr 20.00 | ms/batch  7.34 | loss  4.58 | ppl    97.53
+| train-epoch   7 |   800/ 1327 batches | lr 20.00 | ms/batch  7.11 | loss  4.52 | ppl    92.01
+| train-epoch   7 |  1000/ 1327 batches | lr 20.00 | ms/batch  6.92 | loss  4.60 | ppl    99.12
+| train-epoch   7 |  1200/ 1327 batches | lr 20.00 | ms/batch  6.93 | loss  4.48 | ppl    88.29
+-----------------------------------------------------------------------------------------
+| end of train epoch   7 | time:  9.98s | valid loss  4.71 | valid ppl   111.36
+-----------------------------------------------------------------------------------------
+| train-epoch   8 |   200/ 1327 batches | lr 20.00 | ms/batch  7.02 | loss  4.55 | ppl    94.20
+| train-epoch   8 |   400/ 1327 batches | lr 20.00 | ms/batch  6.97 | loss  4.55 | ppl    94.99
+| train-epoch   8 |   600/ 1327 batches | lr 20.00 | ms/batch  6.98 | loss  4.55 | ppl    94.32
+| train-epoch   8 |   800/ 1327 batches | lr 20.00 | ms/batch  7.00 | loss  4.49 | ppl    88.75
+| train-epoch   8 |  1000/ 1327 batches | lr 20.00 | ms/batch  6.95 | loss  4.57 | ppl    96.11
+| train-epoch   8 |  1200/ 1327 batches | lr 20.00 | ms/batch  6.95 | loss  4.45 | ppl    85.35
+-----------------------------------------------------------------------------------------
+| end of train epoch   8 | time:  9.72s | valid loss  4.69 | valid ppl   109.23
+-----------------------------------------------------------------------------------------
+| train-epoch   9 |   200/ 1327 batches | lr 20.00 | ms/batch  7.00 | loss  4.51 | ppl    91.35
+| train-epoch   9 |   400/ 1327 batches | lr 20.00 | ms/batch  6.99 | loss  4.52 | ppl    91.74
+| train-epoch   9 |   600/ 1327 batches | lr 20.00 | ms/batch  7.02 | loss  4.51 | ppl    91.12
+| train-epoch   9 |   800/ 1327 batches | lr 20.00 | ms/batch  6.95 | loss  4.46 | ppl    86.22
+| train-epoch   9 |  1000/ 1327 batches | lr 20.00 | ms/batch  6.96 | loss  4.54 | ppl    93.50
+| train-epoch   9 |  1200/ 1327 batches | lr 20.00 | ms/batch  6.95 | loss  4.42 | ppl    82.93
+-----------------------------------------------------------------------------------------
+| end of train epoch   9 | time:  9.72s | valid loss  4.69 | valid ppl   108.58
+-----------------------------------------------------------------------------------------
+| train-epoch  10 |   200/ 1327 batches | lr 20.00 | ms/batch  6.98 | loss  4.49 | ppl    89.01
+| train-epoch  10 |   400/ 1327 batches | lr 20.00 | ms/batch  6.96 | loss  4.50 | ppl    89.67
+| train-epoch  10 |   600/ 1327 batches | lr 20.00 | ms/batch  7.04 | loss  4.49 | ppl    88.79
+| train-epoch  10 |   800/ 1327 batches | lr 20.00 | ms/batch  7.01 | loss  4.43 | ppl    84.24
+| train-epoch  10 |  1000/ 1327 batches | lr 20.00 | ms/batch  7.00 | loss  4.52 | ppl    91.48
+| train-epoch  10 |  1200/ 1327 batches | lr 20.00 | ms/batch  7.06 | loss  4.40 | ppl    81.13
+-----------------------------------------------------------------------------------------
+| end of train epoch  10 | time:  9.75s | valid loss  4.68 | valid ppl   108.23
+-----------------------------------------------------------------------------------------
+| train-epoch  11 |   200/ 1327 batches | lr 20.00 | ms/batch  7.02 | loss  4.46 | ppl    86.56
+| train-epoch  11 |   400/ 1327 batches | lr 20.00 | ms/batch  6.96 | loss  4.47 | ppl    87.65
+| train-epoch  11 |   600/ 1327 batches | lr 20.00 | ms/batch  6.99 | loss  4.47 | ppl    87.10
+| train-epoch  11 |   800/ 1327 batches | lr 20.00 | ms/batch  7.00 | loss  4.41 | ppl    82.42
+| train-epoch  11 |  1000/ 1327 batches | lr 20.00 | ms/batch  6.97 | loss  4.49 | ppl    89.35
+| train-epoch  11 |  1200/ 1327 batches | lr 20.00 | ms/batch  6.99 | loss  4.37 | ppl    79.27
+-----------------------------------------------------------------------------------------
+| end of train epoch  11 | time:  9.73s | valid loss  4.67 | valid ppl   106.80
+-----------------------------------------------------------------------------------------
+| train-epoch  12 |   200/ 1327 batches | lr 20.00 | ms/batch  7.11 | loss  4.44 | ppl    85.15
+| train-epoch  12 |   400/ 1327 batches | lr 20.00 | ms/batch  7.56 | loss  4.46 | ppl    86.11
+| train-epoch  12 |   600/ 1327 batches | lr 20.00 | ms/batch  7.53 | loss  4.44 | ppl    85.03
+| train-epoch  12 |   800/ 1327 batches | lr 20.00 | ms/batch  7.58 | loss  4.40 | ppl    81.07
+| train-epoch  12 |  1000/ 1327 batches | lr 20.00 | ms/batch  7.51 | loss  4.48 | ppl    88.39
+| train-epoch  12 |  1200/ 1327 batches | lr 20.00 | ms/batch  7.53 | loss  4.35 | ppl    77.72
+-----------------------------------------------------------------------------------------
+| end of train epoch  12 | time: 10.37s | valid loss  4.66 | valid ppl   105.89
+-----------------------------------------------------------------------------------------
+| train-epoch  13 |   200/ 1327 batches | lr 20.00 | ms/batch  7.60 | loss  4.43 | ppl    83.91
+| train-epoch  13 |   400/ 1327 batches | lr 20.00 | ms/batch  7.53 | loss  4.44 | ppl    84.58
+| train-epoch  13 |   600/ 1327 batches | lr 20.00 | ms/batch  7.59 | loss  4.43 | ppl    84.03
+| train-epoch  13 |   800/ 1327 batches | lr 20.00 | ms/batch  7.54 | loss  4.38 | ppl    80.23
+| train-epoch  13 |  1000/ 1327 batches | lr 20.00 | ms/batch  7.54 | loss  4.46 | ppl    86.71
+| train-epoch  13 |  1200/ 1327 batches | lr 20.00 | ms/batch  7.58 | loss  4.34 | ppl    76.76
+-----------------------------------------------------------------------------------------
+| end of train epoch  13 | time: 10.49s | valid loss  4.66 | valid ppl   105.48
+-----------------------------------------------------------------------------------------
+| train-epoch  14 |   200/ 1327 batches | lr 20.00 | ms/batch  7.63 | loss  4.42 | ppl    82.71
+| train-epoch  14 |   400/ 1327 batches | lr 20.00 | ms/batch  7.56 | loss  4.42 | ppl    83.45
+| train-epoch  14 |   600/ 1327 batches | lr 20.00 | ms/batch  7.53 | loss  4.41 | ppl    82.57
+| train-epoch  14 |   800/ 1327 batches | lr 20.00 | ms/batch  7.55 | loss  4.37 | ppl    78.94
+| train-epoch  14 |  1000/ 1327 batches | lr 20.00 | ms/batch  7.54 | loss  4.45 | ppl    85.54
+| train-epoch  14 |  1200/ 1327 batches | lr 20.00 | ms/batch  7.59 | loss  4.33 | ppl    75.81
+-----------------------------------------------------------------------------------------
+| end of train epoch  14 | time: 10.50s | valid loss  4.65 | valid ppl   104.81
+-----------------------------------------------------------------------------------------
+| train-epoch  15 |   200/ 1327 batches | lr 20.00 | ms/batch  7.55 | loss  4.40 | ppl    81.66
+| train-epoch  15 |   400/ 1327 batches | lr 20.00 | ms/batch  7.49 | loss  4.41 | ppl    82.05
+| train-epoch  15 |   600/ 1327 batches | lr 20.00 | ms/batch  7.51 | loss  4.40 | ppl    81.81
+| train-epoch  15 |   800/ 1327 batches | lr 20.00 | ms/batch  7.51 | loss  4.36 | ppl    78.09
+| train-epoch  15 |  1000/ 1327 batches | lr 20.00 | ms/batch  7.50 | loss  4.44 | ppl    84.38
+| train-epoch  15 |  1200/ 1327 batches | lr 20.00 | ms/batch  7.54 | loss  4.32 | ppl    75.05
+-----------------------------------------------------------------------------------------
+| end of train epoch  15 | time: 10.43s | valid loss  4.66 | valid ppl   105.38
+-----------------------------------------------------------------------------------------
+| train-epoch  16 |   200/ 1327 batches | lr 5.00 | ms/batch  7.54 | loss  4.37 | ppl    78.95
+| train-epoch  16 |   400/ 1327 batches | lr 5.00 | ms/batch  7.46 | loss  4.33 | ppl    76.29
+| train-epoch  16 |   600/ 1327 batches | lr 5.00 | ms/batch  7.48 | loss  4.30 | ppl    73.73
+| train-epoch  16 |   800/ 1327 batches | lr 5.00 | ms/batch  7.47 | loss  4.22 | ppl    67.78
+| train-epoch  16 |  1000/ 1327 batches | lr 5.00 | ms/batch  7.46 | loss  4.27 | ppl    71.86
+| train-epoch  16 |  1200/ 1327 batches | lr 5.00 | ms/batch  7.47 | loss  4.12 | ppl    61.60
+-----------------------------------------------------------------------------------------
+| end of train epoch  16 | time: 10.38s | valid loss  4.57 | valid ppl    96.52
+-----------------------------------------------------------------------------------------
+| train-epoch  17 |   200/ 1327 batches | lr 5.00 | ms/batch  7.50 | loss  4.27 | ppl    71.43
+| train-epoch  17 |   400/ 1327 batches | lr 5.00 | ms/batch  7.45 | loss  4.26 | ppl    70.83
+| train-epoch  17 |   600/ 1327 batches | lr 5.00 | ms/batch  7.51 | loss  4.24 | ppl    69.10
+| train-epoch  17 |   800/ 1327 batches | lr 5.00 | ms/batch  7.53 | loss  4.17 | ppl    64.71
+| train-epoch  17 |  1000/ 1327 batches | lr 5.00 | ms/batch  7.49 | loss  4.24 | ppl    69.23
+| train-epoch  17 |  1200/ 1327 batches | lr 5.00 | ms/batch  7.51 | loss  4.10 | ppl    60.18
+-----------------------------------------------------------------------------------------
+| end of train epoch  17 | time: 10.42s | valid loss  4.56 | valid ppl    95.24
+-----------------------------------------------------------------------------------------
+| train-epoch  18 |   200/ 1327 batches | lr 5.00 | ms/batch  7.56 | loss  4.23 | ppl    68.74
+| train-epoch  18 |   400/ 1327 batches | lr 5.00 | ms/batch  7.49 | loss  4.23 | ppl    68.45
+| train-epoch  18 |   600/ 1327 batches | lr 5.00 | ms/batch  7.51 | loss  4.21 | ppl    67.09
+| train-epoch  18 |   800/ 1327 batches | lr 5.00 | ms/batch  7.49 | loss  4.14 | ppl    62.90
+| train-epoch  18 |  1000/ 1327 batches | lr 5.00 | ms/batch  7.48 | loss  4.22 | ppl    67.97
+| train-epoch  18 |  1200/ 1327 batches | lr 5.00 | ms/batch  7.53 | loss  4.08 | ppl    59.24
+-----------------------------------------------------------------------------------------
+| end of train epoch  18 | time: 10.42s | valid loss  4.55 | valid ppl    94.50
+-----------------------------------------------------------------------------------------
+| train-epoch  19 |   200/ 1327 batches | lr 5.00 | ms/batch  7.57 | loss  4.20 | ppl    67.02
+| train-epoch  19 |   400/ 1327 batches | lr 5.00 | ms/batch  7.53 | loss  4.20 | ppl    66.91
+| train-epoch  19 |   600/ 1327 batches | lr 5.00 | ms/batch  7.59 | loss  4.19 | ppl    65.79
+| train-epoch  19 |   800/ 1327 batches | lr 5.00 | ms/batch  7.54 | loss  4.13 | ppl    61.96
+| train-epoch  19 |  1000/ 1327 batches | lr 5.00 | ms/batch  7.51 | loss  4.20 | ppl    66.96
+| train-epoch  19 |  1200/ 1327 batches | lr 5.00 | ms/batch  7.55 | loss  4.06 | ppl    58.21
+-----------------------------------------------------------------------------------------
+| end of train epoch  19 | time: 10.48s | valid loss  4.55 | valid ppl    94.42
+-----------------------------------------------------------------------------------------
+| train-epoch  20 |   200/ 1327 batches | lr 5.00 | ms/batch  7.59 | loss  4.18 | ppl    65.68
+| train-epoch  20 |   400/ 1327 batches | lr 5.00 | ms/batch  7.45 | loss  4.19 | ppl    65.77
+| train-epoch  20 |   600/ 1327 batches | lr 5.00 | ms/batch  7.57 | loss  4.17 | ppl    64.58
+| train-epoch  20 |   800/ 1327 batches | lr 5.00 | ms/batch  7.55 | loss  4.11 | ppl    61.12
+| train-epoch  20 |  1000/ 1327 batches | lr 5.00 | ms/batch  7.51 | loss  4.19 | ppl    66.02
+| train-epoch  20 |  1200/ 1327 batches | lr 5.00 | ms/batch  7.51 | loss  4.05 | ppl    57.57
+-----------------------------------------------------------------------------------------
+| end of train epoch  20 | time: 10.46s | valid loss  4.54 | valid ppl    93.83
+-----------------------------------------------------------------------------------------
+| train-epoch  21 |   200/ 1327 batches | lr 5.00 | ms/batch  7.56 | loss  4.17 | ppl    64.49
+| train-epoch  21 |   400/ 1327 batches | lr 5.00 | ms/batch  7.54 | loss  4.17 | ppl    64.98
+| train-epoch  21 |   600/ 1327 batches | lr 5.00 | ms/batch  7.53 | loss  4.16 | ppl    63.91
+| train-epoch  21 |   800/ 1327 batches | lr 5.00 | ms/batch  7.54 | loss  4.09 | ppl    60.00
+| train-epoch  21 |  1000/ 1327 batches | lr 5.00 | ms/batch  7.59 | loss  4.18 | ppl    65.10
+| train-epoch  21 |  1200/ 1327 batches | lr 5.00 | ms/batch  7.54 | loss  4.05 | ppl    57.16
+-----------------------------------------------------------------------------------------
+| end of train epoch  21 | time: 10.47s | valid loss  4.54 | valid ppl    93.76
+-----------------------------------------------------------------------------------------
+| train-epoch  22 |   200/ 1327 batches | lr 5.00 | ms/batch  7.56 | loss  4.15 | ppl    63.51
+| train-epoch  22 |   400/ 1327 batches | lr 5.00 | ms/batch  7.58 | loss  4.16 | ppl    63.82
+| train-epoch  22 |   600/ 1327 batches | lr 5.00 | ms/batch  7.55 | loss  4.14 | ppl    62.97
+| train-epoch  22 |   800/ 1327 batches | lr 5.00 | ms/batch  7.56 | loss  4.09 | ppl    59.60
+| train-epoch  22 |  1000/ 1327 batches | lr 5.00 | ms/batch  7.53 | loss  4.16 | ppl    64.26
+| train-epoch  22 |  1200/ 1327 batches | lr 5.00 | ms/batch  7.54 | loss  4.03 | ppl    56.48
+-----------------------------------------------------------------------------------------
+| end of train epoch  22 | time: 10.49s | valid loss  4.54 | valid ppl    93.56
+-----------------------------------------------------------------------------------------
+| train-epoch  23 |   200/ 1327 batches | lr 5.00 | ms/batch  7.59 | loss  4.15 | ppl    63.21
+| train-epoch  23 |   400/ 1327 batches | lr 5.00 | ms/batch  7.57 | loss  4.14 | ppl    62.88
+| train-epoch  23 |   600/ 1327 batches | lr 5.00 | ms/batch  7.57 | loss  4.13 | ppl    62.15
+| train-epoch  23 |   800/ 1327 batches | lr 5.00 | ms/batch  7.58 | loss  4.07 | ppl    58.80
+| train-epoch  23 |  1000/ 1327 batches | lr 5.00 | ms/batch  7.54 | loss  4.16 | ppl    63.79
+| train-epoch  23 |  1200/ 1327 batches | lr 5.00 | ms/batch  7.61 | loss  4.02 | ppl    55.97
+-----------------------------------------------------------------------------------------
+| end of train epoch  23 | time: 10.51s | valid loss  4.54 | valid ppl    93.26
+-----------------------------------------------------------------------------------------
+| train-epoch  24 |   200/ 1327 batches | lr 5.00 | ms/batch  7.66 | loss  4.13 | ppl    62.19
+| train-epoch  24 |   400/ 1327 batches | lr 5.00 | ms/batch  7.58 | loss  4.13 | ppl    62.35
+| train-epoch  24 |   600/ 1327 batches | lr 5.00 | ms/batch  7.61 | loss  4.12 | ppl    61.81
+| train-epoch  24 |   800/ 1327 batches | lr 5.00 | ms/batch  7.60 | loss  4.07 | ppl    58.35
+| train-epoch  24 |  1000/ 1327 batches | lr 5.00 | ms/batch  7.58 | loss  4.15 | ppl    63.31
+| train-epoch  24 |  1200/ 1327 batches | lr 5.00 | ms/batch  7.58 | loss  4.02 | ppl    55.80
+-----------------------------------------------------------------------------------------
+| end of train epoch  24 | time: 10.54s | valid loss  4.54 | valid ppl    93.33
+-----------------------------------------------------------------------------------------
+| train-epoch  25 |   200/ 1327 batches | lr 1.25 | ms/batch  7.55 | loss  4.12 | ppl    61.87
+| train-epoch  25 |   400/ 1327 batches | lr 1.25 | ms/batch  7.55 | loss  4.12 | ppl    61.55
+| train-epoch  25 |   600/ 1327 batches | lr 1.25 | ms/batch  7.58 | loss  4.10 | ppl    60.24
+| train-epoch  25 |   800/ 1327 batches | lr 1.25 | ms/batch  7.58 | loss  4.03 | ppl    56.42
+| train-epoch  25 |  1000/ 1327 batches | lr 1.25 | ms/batch  7.57 | loss  4.10 | ppl    60.61
+| train-epoch  25 |  1200/ 1327 batches | lr 1.25 | ms/batch  7.54 | loss  3.96 | ppl    52.49
+-----------------------------------------------------------------------------------------
+| end of train epoch  25 | time: 10.48s | valid loss  4.52 | valid ppl    92.07
+-----------------------------------------------------------------------------------------
+| train-epoch  26 |   200/ 1327 batches | lr 1.25 | ms/batch  7.57 | loss  4.11 | ppl    60.68
+| train-epoch  26 |   400/ 1327 batches | lr 1.25 | ms/batch  7.59 | loss  4.10 | ppl    60.35
+| train-epoch  26 |   600/ 1327 batches | lr 1.25 | ms/batch  7.55 | loss  4.08 | ppl    59.27
+| train-epoch  26 |   800/ 1327 batches | lr 1.25 | ms/batch  7.57 | loss  4.02 | ppl    55.68
+| train-epoch  26 |  1000/ 1327 batches | lr 1.25 | ms/batch  7.52 | loss  4.10 | ppl    60.15
+| train-epoch  26 |  1200/ 1327 batches | lr 1.25 | ms/batch  7.54 | loss  3.96 | ppl    52.32
+-----------------------------------------------------------------------------------------
+| end of train epoch  26 | time: 10.49s | valid loss  4.52 | valid ppl    91.87
+-----------------------------------------------------------------------------------------
+| train-epoch  27 |   200/ 1327 batches | lr 1.25 | ms/batch  7.66 | loss  4.10 | ppl    60.08
+| train-epoch  27 |   400/ 1327 batches | lr 1.25 | ms/batch  7.64 | loss  4.09 | ppl    59.81
+| train-epoch  27 |   600/ 1327 batches | lr 1.25 | ms/batch  7.64 | loss  4.07 | ppl    58.83
+| train-epoch  27 |   800/ 1327 batches | lr 1.25 | ms/batch  7.64 | loss  4.02 | ppl    55.51
+| train-epoch  27 |  1000/ 1327 batches | lr 1.25 | ms/batch  7.68 | loss  4.09 | ppl    59.99
+| train-epoch  27 |  1200/ 1327 batches | lr 1.25 | ms/batch  7.52 | loss  3.95 | ppl    52.18
+-----------------------------------------------------------------------------------------
+| end of train epoch  27 | time: 10.57s | valid loss  4.52 | valid ppl    91.71
+-----------------------------------------------------------------------------------------
+| train-epoch  28 |   200/ 1327 batches | lr 1.25 | ms/batch  7.68 | loss  4.09 | ppl    59.57
+| train-epoch  28 |   400/ 1327 batches | lr 1.25 | ms/batch  7.61 | loss  4.09 | ppl    59.48
+| train-epoch  28 |   600/ 1327 batches | lr 1.25 | ms/batch  7.60 | loss  4.07 | ppl    58.62
+| train-epoch  28 |   800/ 1327 batches | lr 1.25 | ms/batch  7.59 | loss  4.01 | ppl    55.01
+| train-epoch  28 |  1000/ 1327 batches | lr 1.25 | ms/batch  7.56 | loss  4.09 | ppl    59.57
+| train-epoch  28 |  1200/ 1327 batches | lr 1.25 | ms/batch  7.46 | loss  3.95 | ppl    52.10
+-----------------------------------------------------------------------------------------
+| end of train epoch  28 | time: 10.52s | valid loss  4.52 | valid ppl    91.64
+-----------------------------------------------------------------------------------------
+| train-epoch  29 |   200/ 1327 batches | lr 1.25 | ms/batch  7.63 | loss  4.08 | ppl    59.29
+| train-epoch  29 |   400/ 1327 batches | lr 1.25 | ms/batch  7.60 | loss  4.08 | ppl    59.18
+| train-epoch  29 |   600/ 1327 batches | lr 1.25 | ms/batch  7.46 | loss  4.06 | ppl    58.21
+| train-epoch  29 |   800/ 1327 batches | lr 1.25 | ms/batch  7.53 | loss  4.00 | ppl    54.75
+| train-epoch  29 |  1000/ 1327 batches | lr 1.25 | ms/batch  7.42 | loss  4.08 | ppl    59.39
+| train-epoch  29 |  1200/ 1327 batches | lr 1.25 | ms/batch  7.53 | loss  3.95 | ppl    51.88
+-----------------------------------------------------------------------------------------
+| end of train epoch  29 | time: 10.45s | valid loss  4.52 | valid ppl    91.51
+-----------------------------------------------------------------------------------------
+| train-epoch  30 |   200/ 1327 batches | lr 1.25 | ms/batch  8.32 | loss  4.08 | ppl    58.92
+| train-epoch  30 |   400/ 1327 batches | lr 1.25 | ms/batch  7.62 | loss  4.07 | ppl    58.70
+| train-epoch  30 |   600/ 1327 batches | lr 1.25 | ms/batch  7.57 | loss  4.06 | ppl    57.71
+| train-epoch  30 |   800/ 1327 batches | lr 1.25 | ms/batch  7.64 | loss  4.00 | ppl    54.57
+| train-epoch  30 |  1000/ 1327 batches | lr 1.25 | ms/batch  7.67 | loss  4.08 | ppl    59.32
+| train-epoch  30 |  1200/ 1327 batches | lr 1.25 | ms/batch  7.66 | loss  3.95 | ppl    51.91
+-----------------------------------------------------------------------------------------
+| end of train epoch  30 | time: 10.75s | valid loss  4.52 | valid ppl    91.53
+-----------------------------------------------------------------------------------------
+| train-epoch  31 |   200/ 1327 batches | lr 0.31 | ms/batch  7.70 | loss  4.08 | ppl    59.15
+| train-epoch  31 |   400/ 1327 batches | lr 0.31 | ms/batch  7.63 | loss  4.07 | ppl    58.73
+| train-epoch  31 |   600/ 1327 batches | lr 0.31 | ms/batch  7.64 | loss  4.06 | ppl    57.70
+| train-epoch  31 |   800/ 1327 batches | lr 0.31 | ms/batch  7.62 | loss  3.99 | ppl    54.26
+| train-epoch  31 |  1000/ 1327 batches | lr 0.31 | ms/batch  7.65 | loss  4.06 | ppl    58.23
+| train-epoch  31 |  1200/ 1327 batches | lr 0.31 | ms/batch  7.63 | loss  3.93 | ppl    50.86
+-----------------------------------------------------------------------------------------
+| end of train epoch  31 | time: 10.60s | valid loss  4.51 | valid ppl    91.18
+-----------------------------------------------------------------------------------------
+| train-epoch  32 |   200/ 1327 batches | lr 0.31 | ms/batch  7.66 | loss  4.07 | ppl    58.65
+| train-epoch  32 |   400/ 1327 batches | lr 0.31 | ms/batch  7.65 | loss  4.07 | ppl    58.38
+| train-epoch  32 |   600/ 1327 batches | lr 0.31 | ms/batch  7.56 | loss  4.05 | ppl    57.50
+| train-epoch  32 |   800/ 1327 batches | lr 0.31 | ms/batch  7.60 | loss  3.99 | ppl    54.03
+| train-epoch  32 |  1000/ 1327 batches | lr 0.31 | ms/batch  7.64 | loss  4.07 | ppl    58.29
+| train-epoch  32 |  1200/ 1327 batches | lr 0.31 | ms/batch  7.65 | loss  3.93 | ppl    50.84
+-----------------------------------------------------------------------------------------
+| end of train epoch  32 | time: 10.58s | valid loss  4.51 | valid ppl    91.10
+-----------------------------------------------------------------------------------------
+| train-epoch  33 |   200/ 1327 batches | lr 0.31 | ms/batch  7.57 | loss  4.07 | ppl    58.50
+| train-epoch  33 |   400/ 1327 batches | lr 0.31 | ms/batch  7.56 | loss  4.07 | ppl    58.36
+| train-epoch  33 |   600/ 1327 batches | lr 0.31 | ms/batch  7.55 | loss  4.05 | ppl    57.59
+| train-epoch  33 |   800/ 1327 batches | lr 0.31 | ms/batch  7.56 | loss  3.99 | ppl    53.98
+| train-epoch  33 |  1000/ 1327 batches | lr 0.31 | ms/batch  7.59 | loss  4.07 | ppl    58.31
+| train-epoch  33 |  1200/ 1327 batches | lr 0.31 | ms/batch  7.58 | loss  3.93 | ppl    51.14
+-----------------------------------------------------------------------------------------
+| end of train epoch  33 | time: 10.50s | valid loss  4.51 | valid ppl    91.07
+-----------------------------------------------------------------------------------------
+| train-epoch  34 |   200/ 1327 batches | lr 0.31 | ms/batch  7.60 | loss  4.07 | ppl    58.32
+| train-epoch  34 |   400/ 1327 batches | lr 0.31 | ms/batch  7.56 | loss  4.06 | ppl    58.19
+| train-epoch  34 |   600/ 1327 batches | lr 0.31 | ms/batch  7.64 | loss  4.05 | ppl    57.34
+| train-epoch  34 |   800/ 1327 batches | lr 0.31 | ms/batch  7.66 | loss  3.99 | ppl    53.92
+| train-epoch  34 |  1000/ 1327 batches | lr 0.31 | ms/batch  7.57 | loss  4.07 | ppl    58.35
+| train-epoch  34 |  1200/ 1327 batches | lr 0.31 | ms/batch  7.60 | loss  3.93 | ppl    51.02
+-----------------------------------------------------------------------------------------
+| end of train epoch  34 | time: 10.55s | valid loss  4.51 | valid ppl    91.01
+-----------------------------------------------------------------------------------------
+| train-epoch  35 |   200/ 1327 batches | lr 0.31 | ms/batch  7.66 | loss  4.06 | ppl    58.14
+| train-epoch  35 |   400/ 1327 batches | lr 0.31 | ms/batch  7.57 | loss  4.06 | ppl    57.92
+| train-epoch  35 |   600/ 1327 batches | lr 0.31 | ms/batch  7.58 | loss  4.05 | ppl    57.16
+| train-epoch  35 |   800/ 1327 batches | lr 0.31 | ms/batch  7.62 | loss  3.98 | ppl    53.71
+| train-epoch  35 |  1000/ 1327 batches | lr 0.31 | ms/batch  7.55 | loss  4.06 | ppl    58.24
+| train-epoch  35 |  1200/ 1327 batches | lr 0.31 | ms/batch  7.58 | loss  3.93 | ppl    50.83
+-----------------------------------------------------------------------------------------
+| end of train epoch  35 | time: 10.53s | valid loss  4.51 | valid ppl    91.04
+-----------------------------------------------------------------------------------------
+| train-epoch  36 |   200/ 1327 batches | lr 0.08 | ms/batch  7.69 | loss  4.07 | ppl    58.40
+| train-epoch  36 |   400/ 1327 batches | lr 0.08 | ms/batch  7.60 | loss  4.06 | ppl    57.94
+| train-epoch  36 |   600/ 1327 batches | lr 0.08 | ms/batch  7.64 | loss  4.04 | ppl    57.03
+| train-epoch  36 |   800/ 1327 batches | lr 0.08 | ms/batch  7.56 | loss  3.98 | ppl    53.54
+| train-epoch  36 |  1000/ 1327 batches | lr 0.08 | ms/batch  7.62 | loss  4.06 | ppl    58.17
+| train-epoch  36 |  1200/ 1327 batches | lr 0.08 | ms/batch  7.59 | loss  3.93 | ppl    50.68
+-----------------------------------------------------------------------------------------
+| end of train epoch  36 | time: 10.56s | valid loss  4.51 | valid ppl    90.93
+-----------------------------------------------------------------------------------------
+| train-epoch  37 |   200/ 1327 batches | lr 0.08 | ms/batch  7.63 | loss  4.06 | ppl    57.98
+| train-epoch  37 |   400/ 1327 batches | lr 0.08 | ms/batch  7.60 | loss  4.06 | ppl    58.07
+| train-epoch  37 |   600/ 1327 batches | lr 0.08 | ms/batch  7.59 | loss  4.04 | ppl    57.07
+| train-epoch  37 |   800/ 1327 batches | lr 0.08 | ms/batch  7.57 | loss  3.98 | ppl    53.66
+| train-epoch  37 |  1000/ 1327 batches | lr 0.08 | ms/batch  7.61 | loss  4.06 | ppl    57.83
+| train-epoch  37 |  1200/ 1327 batches | lr 0.08 | ms/batch  7.60 | loss  3.92 | ppl    50.55
+-----------------------------------------------------------------------------------------
+| end of train epoch  37 | time: 10.54s | valid loss  4.51 | valid ppl    90.91
+-----------------------------------------------------------------------------------------
+| train-epoch  38 |   200/ 1327 batches | lr 0.08 | ms/batch  7.66 | loss  4.06 | ppl    57.99
+| train-epoch  38 |   400/ 1327 batches | lr 0.08 | ms/batch  7.60 | loss  4.05 | ppl    57.65
+| train-epoch  38 |   600/ 1327 batches | lr 0.08 | ms/batch  7.59 | loss  4.04 | ppl    56.95
+| train-epoch  38 |   800/ 1327 batches | lr 0.08 | ms/batch  7.60 | loss  3.98 | ppl    53.57
+| train-epoch  38 |  1000/ 1327 batches | lr 0.08 | ms/batch  7.59 | loss  4.06 | ppl    57.85
+| train-epoch  38 |  1200/ 1327 batches | lr 0.08 | ms/batch  7.62 | loss  3.92 | ppl    50.60
+-----------------------------------------------------------------------------------------
+| end of train epoch  38 | time: 10.56s | valid loss  4.51 | valid ppl    90.90
+-----------------------------------------------------------------------------------------
+| train-epoch  39 |   200/ 1327 batches | lr 0.08 | ms/batch  7.70 | loss  4.06 | ppl    58.22
+| train-epoch  39 |   400/ 1327 batches | lr 0.08 | ms/batch  7.56 | loss  4.06 | ppl    57.86
+| train-epoch  39 |   600/ 1327 batches | lr 0.08 | ms/batch  7.66 | loss  4.04 | ppl    56.76
+| train-epoch  39 |   800/ 1327 batches | lr 0.08 | ms/batch  7.65 | loss  3.98 | ppl    53.44
+| train-epoch  39 |  1000/ 1327 batches | lr 0.08 | ms/batch  7.65 | loss  4.06 | ppl    57.83
+| train-epoch  39 |  1200/ 1327 batches | lr 0.08 | ms/batch  7.66 | loss  3.92 | ppl    50.51
+-----------------------------------------------------------------------------------------
+| end of train epoch  39 | time: 10.60s | valid loss  4.51 | valid ppl    90.89
+-----------------------------------------------------------------------------------------
+| train-epoch  40 |   200/ 1327 batches | lr 0.08 | ms/batch  7.72 | loss  4.06 | ppl    57.96
+| train-epoch  40 |   400/ 1327 batches | lr 0.08 | ms/batch  7.60 | loss  4.05 | ppl    57.67
+| train-epoch  40 |   600/ 1327 batches | lr 0.08 | ms/batch  7.63 | loss  4.05 | ppl    57.13
+| train-epoch  40 |   800/ 1327 batches | lr 0.08 | ms/batch  7.62 | loss  3.98 | ppl    53.74
+| train-epoch  40 |  1000/ 1327 batches | lr 0.08 | ms/batch  7.63 | loss  4.05 | ppl    57.65
+| train-epoch  40 |  1200/ 1327 batches | lr 0.08 | ms/batch  7.65 | loss  3.92 | ppl    50.57
+-----------------------------------------------------------------------------------------
+| end of train epoch  40 | time: 10.60s | valid loss  4.51 | valid ppl    90.88
+-----------------------------------------------------------------------------------------
+required epochs  40 | actual epochs  40
+pretrain epochs  40 | prune epochs   0 | retrain epochs   0
+=========================================================================================
+| End of training | test loss  4.47 | test ppl    87.28
+=========================================================================================
+python main.py --cuda --emsize 650 --nhid 650 --dropout 0.5 --epochs 40 --save model/baseline/model.pt --data ./data/ptb
+<class 'torch.Tensor'> torch.Size([10000, 650])
+<class 'torch.Tensor'> torch.Size([2600, 650])
+<class 'torch.Tensor'> torch.Size([2600, 650])
+<class 'torch.Tensor'> torch.Size([2600])
+<class 'torch.Tensor'> torch.Size([2600])
+<class 'torch.Tensor'> torch.Size([2600, 650])
+<class 'torch.Tensor'> torch.Size([2600, 650])
+<class 'torch.Tensor'> torch.Size([2600])
+<class 'torch.Tensor'> torch.Size([2600])
+<class 'torch.Tensor'> torch.Size([10000, 650])
+<class 'torch.Tensor'> torch.Size([10000])
+RNNModel(
+  (drop): Dropout(p=0.5)
+  (encoder): Embedding(10000, 650)
+  (rnn): LSTM(650, 650, num_layers=2, dropout=0.5)
+  (decoder): Linear(in_features=650, out_features=10000, bias=True)
+)
+Dropout(p=0.5)
+Embedding(10000, 650)
+LSTM(650, 650, num_layers=2, dropout=0.5)
+Linear(in_features=650, out_features=10000, bias=True)
+| train-epoch   1 |   200/ 1327 batches | lr 20.00 | ms/batch 14.55 | loss  6.99 | ppl  1087.71
+| train-epoch   1 |   400/ 1327 batches | lr 20.00 | ms/batch 14.32 | loss  6.26 | ppl   522.99
+| train-epoch   1 |   600/ 1327 batches | lr 20.00 | ms/batch 14.32 | loss  5.99 | ppl   400.97
+| train-epoch   1 |   800/ 1327 batches | lr 20.00 | ms/batch 14.33 | loss  5.75 | ppl   313.98
+| train-epoch   1 |  1000/ 1327 batches | lr 20.00 | ms/batch 14.29 | loss  5.62 | ppl   277.12
+| train-epoch   1 |  1200/ 1327 batches | lr 20.00 | ms/batch 14.31 | loss  5.48 | ppl   240.58
+-----------------------------------------------------------------------------------------
+| end of train epoch   1 | time: 19.66s | valid loss  5.39 | valid ppl   218.96
+-----------------------------------------------------------------------------------------
+| train-epoch   2 |   200/ 1327 batches | lr 20.00 | ms/batch 14.27 | loss  5.41 | ppl   224.21
+| train-epoch   2 |   400/ 1327 batches | lr 20.00 | ms/batch 14.23 | loss  5.35 | ppl   209.64
+| train-epoch   2 |   600/ 1327 batches | lr 20.00 | ms/batch 14.34 | loss  5.30 | ppl   199.46
+| train-epoch   2 |   800/ 1327 batches | lr 20.00 | ms/batch 14.37 | loss  5.19 | ppl   179.57
+| train-epoch   2 |  1000/ 1327 batches | lr 20.00 | ms/batch 14.38 | loss  5.18 | ppl   178.17
+| train-epoch   2 |  1200/ 1327 batches | lr 20.00 | ms/batch 14.43 | loss  5.07 | ppl   159.89
+-----------------------------------------------------------------------------------------
+| end of train epoch   2 | time: 19.65s | valid loss  5.06 | valid ppl   157.59
+-----------------------------------------------------------------------------------------
+| train-epoch   3 |   200/ 1327 batches | lr 20.00 | ms/batch 14.63 | loss  5.08 | ppl   160.49
+| train-epoch   3 |   400/ 1327 batches | lr 20.00 | ms/batch 14.57 | loss  5.05 | ppl   156.10
+| train-epoch   3 |   600/ 1327 batches | lr 20.00 | ms/batch 14.52 | loss  5.01 | ppl   150.59
+| train-epoch   3 |   800/ 1327 batches | lr 20.00 | ms/batch 14.53 | loss  4.94 | ppl   139.31
+| train-epoch   3 |  1000/ 1327 batches | lr 20.00 | ms/batch 14.52 | loss  4.97 | ppl   143.33
+| train-epoch   3 |  1200/ 1327 batches | lr 20.00 | ms/batch 14.54 | loss  4.85 | ppl   128.03
+-----------------------------------------------------------------------------------------
+| end of train epoch   3 | time: 19.92s | valid loss  4.89 | valid ppl   132.69
+-----------------------------------------------------------------------------------------
+| train-epoch   4 |   200/ 1327 batches | lr 20.00 | ms/batch 14.77 | loss  4.88 | ppl   131.35
+| train-epoch   4 |   400/ 1327 batches | lr 20.00 | ms/batch 14.73 | loss  4.87 | ppl   129.85
+| train-epoch   4 |   600/ 1327 batches | lr 20.00 | ms/batch 14.73 | loss  4.84 | ppl   126.19
+| train-epoch   4 |   800/ 1327 batches | lr 20.00 | ms/batch 14.74 | loss  4.77 | ppl   117.51
+| train-epoch   4 |  1000/ 1327 batches | lr 20.00 | ms/batch 14.60 | loss  4.81 | ppl   123.14
+| train-epoch   4 |  1200/ 1327 batches | lr 20.00 | ms/batch 14.62 | loss  4.70 | ppl   109.45
+-----------------------------------------------------------------------------------------
+| end of train epoch   4 | time: 20.11s | valid loss  4.77 | valid ppl   118.45
+-----------------------------------------------------------------------------------------
+| train-epoch   5 |   200/ 1327 batches | lr 20.00 | ms/batch 14.72 | loss  4.74 | ppl   113.92
+| train-epoch   5 |   400/ 1327 batches | lr 20.00 | ms/batch 14.59 | loss  4.73 | ppl   113.35
+| train-epoch   5 |   600/ 1327 batches | lr 20.00 | ms/batch 14.56 | loss  4.70 | ppl   110.21
+| train-epoch   5 |   800/ 1327 batches | lr 20.00 | ms/batch 14.57 | loss  4.64 | ppl   103.82
+| train-epoch   5 |  1000/ 1327 batches | lr 20.00 | ms/batch 14.56 | loss  4.70 | ppl   109.68
+| train-epoch   5 |  1200/ 1327 batches | lr 20.00 | ms/batch 14.57 | loss  4.58 | ppl    97.10
+-----------------------------------------------------------------------------------------
+| end of train epoch   5 | time: 19.98s | valid loss  4.70 | valid ppl   110.05
+-----------------------------------------------------------------------------------------
+| train-epoch   6 |   200/ 1327 batches | lr 20.00 | ms/batch 14.84 | loss  4.62 | ppl   101.75
+| train-epoch   6 |   400/ 1327 batches | lr 20.00 | ms/batch 14.77 | loss  4.62 | ppl   101.83
+| train-epoch   6 |   600/ 1327 batches | lr 20.00 | ms/batch 14.74 | loss  4.60 | ppl    99.79
+| train-epoch   6 |   800/ 1327 batches | lr 20.00 | ms/batch 14.76 | loss  4.54 | ppl    94.08
+| train-epoch   6 |  1000/ 1327 batches | lr 20.00 | ms/batch 14.77 | loss  4.60 | ppl    99.80
+| train-epoch   6 |  1200/ 1327 batches | lr 20.00 | ms/batch 14.74 | loss  4.48 | ppl    88.22
+-----------------------------------------------------------------------------------------
+| end of train epoch   6 | time: 20.21s | valid loss  4.65 | valid ppl   104.39
+-----------------------------------------------------------------------------------------
+| train-epoch   7 |   200/ 1327 batches | lr 20.00 | ms/batch 14.45 | loss  4.54 | ppl    93.38
+| train-epoch   7 |   400/ 1327 batches | lr 20.00 | ms/batch 14.37 | loss  4.54 | ppl    93.27
+| train-epoch   7 |   600/ 1327 batches | lr 20.00 | ms/batch 14.35 | loss  4.52 | ppl    91.68
+| train-epoch   7 |   800/ 1327 batches | lr 20.00 | ms/batch 14.37 | loss  4.45 | ppl    85.86
+| train-epoch   7 |  1000/ 1327 batches | lr 20.00 | ms/batch 14.37 | loss  4.53 | ppl    92.30
+| train-epoch   7 |  1200/ 1327 batches | lr 20.00 | ms/batch 14.36 | loss  4.40 | ppl    81.80
+-----------------------------------------------------------------------------------------
+| end of train epoch   7 | time: 19.69s | valid loss  4.60 | valid ppl    99.82
+-----------------------------------------------------------------------------------------
+| train-epoch   8 |   200/ 1327 batches | lr 20.00 | ms/batch 14.47 | loss  4.46 | ppl    86.20
+| train-epoch   8 |   400/ 1327 batches | lr 20.00 | ms/batch 14.40 | loss  4.46 | ppl    86.46
+| train-epoch   8 |   600/ 1327 batches | lr 20.00 | ms/batch 14.40 | loss  4.44 | ppl    85.19
+| train-epoch   8 |   800/ 1327 batches | lr 20.00 | ms/batch 14.39 | loss  4.38 | ppl    80.16
+| train-epoch   8 |  1000/ 1327 batches | lr 20.00 | ms/batch 14.41 | loss  4.46 | ppl    86.11
+| train-epoch   8 |  1200/ 1327 batches | lr 20.00 | ms/batch 14.40 | loss  4.33 | ppl    76.28
+-----------------------------------------------------------------------------------------
+| end of train epoch   8 | time: 19.74s | valid loss  4.58 | valid ppl    97.58
+-----------------------------------------------------------------------------------------
+| train-epoch   9 |   200/ 1327 batches | lr 20.00 | ms/batch 14.41 | loss  4.40 | ppl    81.18
+| train-epoch   9 |   400/ 1327 batches | lr 20.00 | ms/batch 14.34 | loss  4.40 | ppl    81.44
+| train-epoch   9 |   600/ 1327 batches | lr 20.00 | ms/batch 14.33 | loss  4.38 | ppl    79.97
+| train-epoch   9 |   800/ 1327 batches | lr 20.00 | ms/batch 14.35 | loss  4.33 | ppl    75.59
+| train-epoch   9 |  1000/ 1327 batches | lr 20.00 | ms/batch 14.33 | loss  4.40 | ppl    81.44
+| train-epoch   9 |  1200/ 1327 batches | lr 20.00 | ms/batch 14.35 | loss  4.28 | ppl    72.06
+-----------------------------------------------------------------------------------------
+| end of train epoch   9 | time: 19.66s | valid loss  4.56 | valid ppl    95.74
+-----------------------------------------------------------------------------------------
+| train-epoch  10 |   200/ 1327 batches | lr 20.00 | ms/batch 14.47 | loss  4.34 | ppl    76.77
+| train-epoch  10 |   400/ 1327 batches | lr 20.00 | ms/batch 14.39 | loss  4.35 | ppl    77.31
+| train-epoch  10 |   600/ 1327 batches | lr 20.00 | ms/batch 14.38 | loss  4.33 | ppl    75.87
+| train-epoch  10 |   800/ 1327 batches | lr 20.00 | ms/batch 14.44 | loss  4.27 | ppl    71.78
+| train-epoch  10 |  1000/ 1327 batches | lr 20.00 | ms/batch 14.47 | loss  4.35 | ppl    77.32
+| train-epoch  10 |  1200/ 1327 batches | lr 20.00 | ms/batch 14.43 | loss  4.23 | ppl    68.53
+-----------------------------------------------------------------------------------------
+| end of train epoch  10 | time: 19.78s | valid loss  4.54 | valid ppl    93.96
+-----------------------------------------------------------------------------------------
+| train-epoch  11 |   200/ 1327 batches | lr 20.00 | ms/batch 14.67 | loss  4.29 | ppl    73.27
+| train-epoch  11 |   400/ 1327 batches | lr 20.00 | ms/batch 14.56 | loss  4.29 | ppl    73.05
+| train-epoch  11 |   600/ 1327 batches | lr 20.00 | ms/batch 14.59 | loss  4.28 | ppl    72.20
+| train-epoch  11 |   800/ 1327 batches | lr 20.00 | ms/batch 14.58 | loss  4.23 | ppl    68.66
+| train-epoch  11 |  1000/ 1327 batches | lr 20.00 | ms/batch 14.58 | loss  4.31 | ppl    74.34
+| train-epoch  11 |  1200/ 1327 batches | lr 20.00 | ms/batch 14.56 | loss  4.18 | ppl    65.41
+-----------------------------------------------------------------------------------------
+| end of train epoch  11 | time: 19.98s | valid loss  4.54 | valid ppl    93.30
+-----------------------------------------------------------------------------------------
+| train-epoch  12 |   200/ 1327 batches | lr 20.00 | ms/batch 14.79 | loss  4.25 | ppl    70.03
+| train-epoch  12 |   400/ 1327 batches | lr 20.00 | ms/batch 14.68 | loss  4.25 | ppl    69.98
+| train-epoch  12 |   600/ 1327 batches | lr 20.00 | ms/batch 14.65 | loss  4.24 | ppl    69.27
+| train-epoch  12 |   800/ 1327 batches | lr 20.00 | ms/batch 14.59 | loss  4.19 | ppl    65.87
+| train-epoch  12 |  1000/ 1327 batches | lr 20.00 | ms/batch 14.50 | loss  4.27 | ppl    71.28
+| train-epoch  12 |  1200/ 1327 batches | lr 20.00 | ms/batch 14.46 | loss  4.14 | ppl    63.11
+-----------------------------------------------------------------------------------------
+| end of train epoch  12 | time: 19.97s | valid loss  4.52 | valid ppl    91.97
+-----------------------------------------------------------------------------------------
+| train-epoch  13 |   200/ 1327 batches | lr 20.00 | ms/batch 14.38 | loss  4.21 | ppl    67.48
+| train-epoch  13 |   400/ 1327 batches | lr 20.00 | ms/batch 14.34 | loss  4.21 | ppl    67.36
+| train-epoch  13 |   600/ 1327 batches | lr 20.00 | ms/batch 14.65 | loss  4.20 | ppl    66.77
+| train-epoch  13 |   800/ 1327 batches | lr 20.00 | ms/batch 14.63 | loss  4.15 | ppl    63.55
+| train-epoch  13 |  1000/ 1327 batches | lr 20.00 | ms/batch 14.65 | loss  4.23 | ppl    68.90
+| train-epoch  13 |  1200/ 1327 batches | lr 20.00 | ms/batch 14.64 | loss  4.10 | ppl    60.64
+-----------------------------------------------------------------------------------------
+| end of train epoch  13 | time: 19.93s | valid loss  4.52 | valid ppl    91.68
+-----------------------------------------------------------------------------------------
+| train-epoch  14 |   200/ 1327 batches | lr 20.00 | ms/batch 14.60 | loss  4.17 | ppl    64.98
+| train-epoch  14 |   400/ 1327 batches | lr 20.00 | ms/batch 14.41 | loss  4.18 | ppl    65.34
+| train-epoch  14 |   600/ 1327 batches | lr 20.00 | ms/batch 14.44 | loss  4.17 | ppl    64.72
+| train-epoch  14 |   800/ 1327 batches | lr 20.00 | ms/batch 14.40 | loss  4.12 | ppl    61.53
+| train-epoch  14 |  1000/ 1327 batches | lr 20.00 | ms/batch 14.43 | loss  4.20 | ppl    66.47
+| train-epoch  14 |  1200/ 1327 batches | lr 20.00 | ms/batch 14.42 | loss  4.07 | ppl    58.68
+-----------------------------------------------------------------------------------------
+| end of train epoch  14 | time: 19.79s | valid loss  4.51 | valid ppl    91.18
+-----------------------------------------------------------------------------------------
+| train-epoch  15 |   200/ 1327 batches | lr 20.00 | ms/batch 14.60 | loss  4.14 | ppl    63.05
+| train-epoch  15 |   400/ 1327 batches | lr 20.00 | ms/batch 14.49 | loss  4.15 | ppl    63.28
+| train-epoch  15 |   600/ 1327 batches | lr 20.00 | ms/batch 14.64 | loss  4.13 | ppl    62.48
+| train-epoch  15 |   800/ 1327 batches | lr 20.00 | ms/batch 14.63 | loss  4.09 | ppl    59.65
+| train-epoch  15 |  1000/ 1327 batches | lr 20.00 | ms/batch 14.58 | loss  4.17 | ppl    64.58
+| train-epoch  15 |  1200/ 1327 batches | lr 20.00 | ms/batch 14.46 | loss  4.04 | ppl    56.82
+-----------------------------------------------------------------------------------------
+| end of train epoch  15 | time: 19.92s | valid loss  4.51 | valid ppl    91.19
+-----------------------------------------------------------------------------------------
+| train-epoch  16 |   200/ 1327 batches | lr 5.00 | ms/batch 14.53 | loss  4.10 | ppl    60.49
+| train-epoch  16 |   400/ 1327 batches | lr 5.00 | ms/batch 14.47 | loss  4.06 | ppl    57.92
+| train-epoch  16 |   600/ 1327 batches | lr 5.00 | ms/batch 14.42 | loss  4.02 | ppl    55.63
+| train-epoch  16 |   800/ 1327 batches | lr 5.00 | ms/batch 14.40 | loss  3.94 | ppl    51.38
+| train-epoch  16 |  1000/ 1327 batches | lr 5.00 | ms/batch 14.47 | loss  3.99 | ppl    54.13
+| train-epoch  16 |  1200/ 1327 batches | lr 5.00 | ms/batch 14.50 | loss  3.83 | ppl    45.98
+-----------------------------------------------------------------------------------------
+| end of train epoch  16 | time: 19.81s | valid loss  4.47 | valid ppl    86.93
+-----------------------------------------------------------------------------------------
+| train-epoch  17 |   200/ 1327 batches | lr 5.00 | ms/batch 14.59 | loss  4.00 | ppl    54.35
+| train-epoch  17 |   400/ 1327 batches | lr 5.00 | ms/batch 14.46 | loss  3.98 | ppl    53.50
+| train-epoch  17 |   600/ 1327 batches | lr 5.00 | ms/batch 14.48 | loss  3.95 | ppl    52.13
+| train-epoch  17 |   800/ 1327 batches | lr 5.00 | ms/batch 14.42 | loss  3.88 | ppl    48.47
+| train-epoch  17 |  1000/ 1327 batches | lr 5.00 | ms/batch 14.41 | loss  3.95 | ppl    52.03
+| train-epoch  17 |  1200/ 1327 batches | lr 5.00 | ms/batch 14.40 | loss  3.79 | ppl    44.30
+-----------------------------------------------------------------------------------------
+| end of train epoch  17 | time: 19.80s | valid loss  4.46 | valid ppl    86.55
+-----------------------------------------------------------------------------------------
+| train-epoch  18 |   200/ 1327 batches | lr 5.00 | ms/batch 14.42 | loss  3.94 | ppl    51.55
+| train-epoch  18 |   400/ 1327 batches | lr 5.00 | ms/batch 14.40 | loss  3.94 | ppl    51.20
+| train-epoch  18 |   600/ 1327 batches | lr 5.00 | ms/batch 14.49 | loss  3.91 | ppl    49.99
+| train-epoch  18 |   800/ 1327 batches | lr 5.00 | ms/batch 14.47 | loss  3.85 | ppl    46.78
+| train-epoch  18 |  1000/ 1327 batches | lr 5.00 | ms/batch 14.41 | loss  3.92 | ppl    50.31
+| train-epoch  18 |  1200/ 1327 batches | lr 5.00 | ms/batch 14.48 | loss  3.77 | ppl    43.54
+-----------------------------------------------------------------------------------------
+| end of train epoch  18 | time: 19.79s | valid loss  4.46 | valid ppl    86.53
+-----------------------------------------------------------------------------------------
+| train-epoch  19 |   200/ 1327 batches | lr 5.00 | ms/batch 14.58 | loss  3.92 | ppl    50.55
+| train-epoch  19 |   400/ 1327 batches | lr 5.00 | ms/batch 14.52 | loss  3.90 | ppl    49.40
+| train-epoch  19 |   600/ 1327 batches | lr 5.00 | ms/batch 14.44 | loss  3.88 | ppl    48.47
+| train-epoch  19 |   800/ 1327 batches | lr 5.00 | ms/batch 14.41 | loss  3.82 | ppl    45.65
+| train-epoch  19 |  1000/ 1327 batches | lr 5.00 | ms/batch 14.47 | loss  3.89 | ppl    49.05
+| train-epoch  19 |  1200/ 1327 batches | lr 5.00 | ms/batch 14.60 | loss  3.75 | ppl    42.54
+-----------------------------------------------------------------------------------------
+| end of train epoch  19 | time: 19.87s | valid loss  4.46 | valid ppl    86.55
+-----------------------------------------------------------------------------------------
+| train-epoch  20 |   200/ 1327 batches | lr 1.25 | ms/batch 14.64 | loss  3.90 | ppl    49.39
+| train-epoch  20 |   400/ 1327 batches | lr 1.25 | ms/batch 14.48 | loss  3.89 | ppl    48.70
+| train-epoch  20 |   600/ 1327 batches | lr 1.25 | ms/batch 14.48 | loss  3.86 | ppl    47.35
+| train-epoch  20 |   800/ 1327 batches | lr 1.25 | ms/batch 14.50 | loss  3.78 | ppl    43.76
+| train-epoch  20 |  1000/ 1327 batches | lr 1.25 | ms/batch 14.44 | loss  3.85 | ppl    46.91
+| train-epoch  20 |  1200/ 1327 batches | lr 1.25 | ms/batch 14.48 | loss  3.69 | ppl    39.96
+-----------------------------------------------------------------------------------------
+| end of train epoch  20 | time: 19.87s | valid loss  4.45 | valid ppl    85.74
+-----------------------------------------------------------------------------------------
+| train-epoch  21 |   200/ 1327 batches | lr 1.25 | ms/batch 14.50 | loss  3.88 | ppl    48.26
+| train-epoch  21 |   400/ 1327 batches | lr 1.25 | ms/batch 14.42 | loss  3.86 | ppl    47.33
+| train-epoch  21 |   600/ 1327 batches | lr 1.25 | ms/batch 14.43 | loss  3.84 | ppl    46.46
+| train-epoch  21 |   800/ 1327 batches | lr 1.25 | ms/batch 14.43 | loss  3.77 | ppl    43.38
+| train-epoch  21 |  1000/ 1327 batches | lr 1.25 | ms/batch 14.42 | loss  3.83 | ppl    46.18
+| train-epoch  21 |  1200/ 1327 batches | lr 1.25 | ms/batch 14.40 | loss  3.68 | ppl    39.73
+-----------------------------------------------------------------------------------------
+| end of train epoch  21 | time: 19.77s | valid loss  4.45 | valid ppl    85.90
+-----------------------------------------------------------------------------------------
+| train-epoch  22 |   200/ 1327 batches | lr 0.31 | ms/batch 14.53 | loss  3.87 | ppl    47.97
+| train-epoch  22 |   400/ 1327 batches | lr 0.31 | ms/batch 14.40 | loss  3.85 | ppl    46.96
+| train-epoch  22 |   600/ 1327 batches | lr 0.31 | ms/batch 14.55 | loss  3.83 | ppl    46.07
+| train-epoch  22 |   800/ 1327 batches | lr 0.31 | ms/batch 14.50 | loss  3.75 | ppl    42.68
+| train-epoch  22 |  1000/ 1327 batches | lr 0.31 | ms/batch 14.44 | loss  3.82 | ppl    45.49
+| train-epoch  22 |  1200/ 1327 batches | lr 0.31 | ms/batch 14.42 | loss  3.66 | ppl    38.94
+-----------------------------------------------------------------------------------------
+| end of train epoch  22 | time: 19.81s | valid loss  4.45 | valid ppl    85.45
+-----------------------------------------------------------------------------------------
+| train-epoch  23 |   200/ 1327 batches | lr 0.31 | ms/batch 14.48 | loss  3.87 | ppl    47.79
+| train-epoch  23 |   400/ 1327 batches | lr 0.31 | ms/batch 14.47 | loss  3.85 | ppl    46.79
+| train-epoch  23 |   600/ 1327 batches | lr 0.31 | ms/batch 14.41 | loss  3.82 | ppl    45.63
+| train-epoch  23 |   800/ 1327 batches | lr 0.31 | ms/batch 14.41 | loss  3.75 | ppl    42.53
+| train-epoch  23 |  1000/ 1327 batches | lr 0.31 | ms/batch 14.42 | loss  3.82 | ppl    45.49
+| train-epoch  23 |  1200/ 1327 batches | lr 0.31 | ms/batch 14.42 | loss  3.67 | ppl    39.20
+-----------------------------------------------------------------------------------------
+| end of train epoch  23 | time: 19.77s | valid loss  4.45 | valid ppl    85.31
+-----------------------------------------------------------------------------------------
+| train-epoch  24 |   200/ 1327 batches | lr 0.31 | ms/batch 14.54 | loss  3.86 | ppl    47.37
+| train-epoch  24 |   400/ 1327 batches | lr 0.31 | ms/batch 14.46 | loss  3.84 | ppl    46.41
+| train-epoch  24 |   600/ 1327 batches | lr 0.31 | ms/batch 14.48 | loss  3.82 | ppl    45.63
+| train-epoch  24 |   800/ 1327 batches | lr 0.31 | ms/batch 14.44 | loss  3.74 | ppl    42.23
+| train-epoch  24 |  1000/ 1327 batches | lr 0.31 | ms/batch 14.44 | loss  3.81 | ppl    45.33
+| train-epoch  24 |  1200/ 1327 batches | lr 0.31 | ms/batch 14.45 | loss  3.66 | ppl    38.87
+-----------------------------------------------------------------------------------------
+| end of train epoch  24 | time: 19.81s | valid loss  4.45 | valid ppl    85.28
+-----------------------------------------------------------------------------------------
+| train-epoch  25 |   200/ 1327 batches | lr 0.31 | ms/batch 14.50 | loss  3.85 | ppl    47.13
+| train-epoch  25 |   400/ 1327 batches | lr 0.31 | ms/batch 14.44 | loss  3.83 | ppl    46.25
+| train-epoch  25 |   600/ 1327 batches | lr 0.31 | ms/batch 14.43 | loss  3.81 | ppl    45.34
+| train-epoch  25 |   800/ 1327 batches | lr 0.31 | ms/batch 14.41 | loss  3.74 | ppl    42.23
+| train-epoch  25 |  1000/ 1327 batches | lr 0.31 | ms/batch 14.42 | loss  3.81 | ppl    45.35
+| train-epoch  25 |  1200/ 1327 batches | lr 0.31 | ms/batch 14.43 | loss  3.66 | ppl    39.00
+-----------------------------------------------------------------------------------------
+| end of train epoch  25 | time: 19.77s | valid loss  4.45 | valid ppl    85.27
+-----------------------------------------------------------------------------------------
+| train-epoch  26 |   200/ 1327 batches | lr 0.31 | ms/batch 14.53 | loss  3.85 | ppl    46.89
+| train-epoch  26 |   400/ 1327 batches | lr 0.31 | ms/batch 14.44 | loss  3.83 | ppl    46.25
+| train-epoch  26 |   600/ 1327 batches | lr 0.31 | ms/batch 14.40 | loss  3.81 | ppl    45.07
+| train-epoch  26 |   800/ 1327 batches | lr 0.31 | ms/batch 14.42 | loss  3.74 | ppl    42.07
+| train-epoch  26 |  1000/ 1327 batches | lr 0.31 | ms/batch 14.40 | loss  3.81 | ppl    45.27
+| train-epoch  26 |  1200/ 1327 batches | lr 0.31 | ms/batch 14.42 | loss  3.66 | ppl    38.81
+-----------------------------------------------------------------------------------------
+| end of train epoch  26 | time: 19.77s | valid loss  4.45 | valid ppl    85.28
+-----------------------------------------------------------------------------------------
+| train-epoch  27 |   200/ 1327 batches | lr 0.08 | ms/batch 14.49 | loss  3.85 | ppl    46.93
+| train-epoch  27 |   400/ 1327 batches | lr 0.08 | ms/batch 14.42 | loss  3.83 | ppl    45.97
+| train-epoch  27 |   600/ 1327 batches | lr 0.08 | ms/batch 14.54 | loss  3.81 | ppl    45.35
+| train-epoch  27 |   800/ 1327 batches | lr 0.08 | ms/batch 14.70 | loss  3.73 | ppl    41.84
+| train-epoch  27 |  1000/ 1327 batches | lr 0.08 | ms/batch 14.68 | loss  3.80 | ppl    44.88
+| train-epoch  27 |  1200/ 1327 batches | lr 0.08 | ms/batch 14.70 | loss  3.65 | ppl    38.40
+-----------------------------------------------------------------------------------------
+| end of train epoch  27 | time: 19.99s | valid loss  4.45 | valid ppl    85.20
+-----------------------------------------------------------------------------------------
+| train-epoch  28 |   200/ 1327 batches | lr 0.08 | ms/batch 14.72 | loss  3.85 | ppl    46.80
+| train-epoch  28 |   400/ 1327 batches | lr 0.08 | ms/batch 14.64 | loss  3.83 | ppl    46.05
+| train-epoch  28 |   600/ 1327 batches | lr 0.08 | ms/batch 14.66 | loss  3.81 | ppl    45.25
+| train-epoch  28 |   800/ 1327 batches | lr 0.08 | ms/batch 14.65 | loss  3.74 | ppl    41.95
+| train-epoch  28 |  1000/ 1327 batches | lr 0.08 | ms/batch 14.65 | loss  3.81 | ppl    45.03
+| train-epoch  28 |  1200/ 1327 batches | lr 0.08 | ms/batch 14.62 | loss  3.65 | ppl    38.59
+-----------------------------------------------------------------------------------------
+| end of train epoch  28 | time: 20.06s | valid loss  4.44 | valid ppl    85.16
+-----------------------------------------------------------------------------------------
+| train-epoch  29 |   200/ 1327 batches | lr 0.08 | ms/batch 14.79 | loss  3.84 | ppl    46.72
+| train-epoch  29 |   400/ 1327 batches | lr 0.08 | ms/batch 14.72 | loss  3.83 | ppl    46.04
+| train-epoch  29 |   600/ 1327 batches | lr 0.08 | ms/batch 14.61 | loss  3.81 | ppl    45.18
+| train-epoch  29 |   800/ 1327 batches | lr 0.08 | ms/batch 14.50 | loss  3.73 | ppl    41.80
+| train-epoch  29 |  1000/ 1327 batches | lr 0.08 | ms/batch 14.51 | loss  3.80 | ppl    44.90
+| train-epoch  29 |  1200/ 1327 batches | lr 0.08 | ms/batch 14.51 | loss  3.65 | ppl    38.50
+-----------------------------------------------------------------------------------------
+| end of train epoch  29 | time: 19.99s | valid loss  4.44 | valid ppl    85.15
+-----------------------------------------------------------------------------------------
+| train-epoch  30 |   200/ 1327 batches | lr 0.08 | ms/batch 14.51 | loss  3.84 | ppl    46.72
+| train-epoch  30 |   400/ 1327 batches | lr 0.08 | ms/batch 14.44 | loss  3.83 | ppl    45.87
+| train-epoch  30 |   600/ 1327 batches | lr 0.08 | ms/batch 14.40 | loss  3.81 | ppl    44.93
+| train-epoch  30 |   800/ 1327 batches | lr 0.08 | ms/batch 14.43 | loss  3.74 | ppl    41.94
+| train-epoch  30 |  1000/ 1327 batches | lr 0.08 | ms/batch 14.44 | loss  3.80 | ppl    44.86
+| train-epoch  30 |  1200/ 1327 batches | lr 0.08 | ms/batch 14.45 | loss  3.65 | ppl    38.40
+-----------------------------------------------------------------------------------------
+| end of train epoch  30 | time: 19.78s | valid loss  4.44 | valid ppl    85.15
+-----------------------------------------------------------------------------------------
+| train-epoch  31 |   200/ 1327 batches | lr 0.08 | ms/batch 14.54 | loss  3.85 | ppl    46.79
+| train-epoch  31 |   400/ 1327 batches | lr 0.08 | ms/batch 14.39 | loss  3.83 | ppl    45.85
+| train-epoch  31 |   600/ 1327 batches | lr 0.08 | ms/batch 14.48 | loss  3.81 | ppl    45.02
+| train-epoch  31 |   800/ 1327 batches | lr 0.08 | ms/batch 14.49 | loss  3.74 | ppl    42.04
+| train-epoch  31 |  1000/ 1327 batches | lr 0.08 | ms/batch 14.49 | loss  3.80 | ppl    44.91
+| train-epoch  31 |  1200/ 1327 batches | lr 0.08 | ms/batch 14.49 | loss  3.65 | ppl    38.62
+-----------------------------------------------------------------------------------------
+| end of train epoch  31 | time: 19.83s | valid loss  4.44 | valid ppl    85.13
+-----------------------------------------------------------------------------------------
+| train-epoch  32 |   200/ 1327 batches | lr 0.08 | ms/batch 14.43 | loss  3.84 | ppl    46.65
+| train-epoch  32 |   400/ 1327 batches | lr 0.08 | ms/batch 14.43 | loss  3.82 | ppl    45.83
+| train-epoch  32 |   600/ 1327 batches | lr 0.08 | ms/batch 14.53 | loss  3.80 | ppl    44.64
+| train-epoch  32 |   800/ 1327 batches | lr 0.08 | ms/batch 14.45 | loss  3.74 | ppl    41.89
+| train-epoch  32 |  1000/ 1327 batches | lr 0.08 | ms/batch 14.44 | loss  3.80 | ppl    44.88
+| train-epoch  32 |  1200/ 1327 batches | lr 0.08 | ms/batch 14.43 | loss  3.65 | ppl    38.46
+-----------------------------------------------------------------------------------------
+| end of train epoch  32 | time: 19.80s | valid loss  4.44 | valid ppl    85.13
+-----------------------------------------------------------------------------------------
+| train-epoch  33 |   200/ 1327 batches | lr 0.08 | ms/batch 14.56 | loss  3.85 | ppl    46.79
+| train-epoch  33 |   400/ 1327 batches | lr 0.08 | ms/batch 14.51 | loss  3.82 | ppl    45.76
+| train-epoch  33 |   600/ 1327 batches | lr 0.08 | ms/batch 14.50 | loss  3.80 | ppl    44.59
+| train-epoch  33 |   800/ 1327 batches | lr 0.08 | ms/batch 14.50 | loss  3.73 | ppl    41.68
+| train-epoch  33 |  1000/ 1327 batches | lr 0.08 | ms/batch 14.48 | loss  3.80 | ppl    44.64
+| train-epoch  33 |  1200/ 1327 batches | lr 0.08 | ms/batch 14.49 | loss  3.65 | ppl    38.43
+-----------------------------------------------------------------------------------------
+| end of train epoch  33 | time: 19.87s | valid loss  4.44 | valid ppl    85.13
+-----------------------------------------------------------------------------------------
+| train-epoch  34 |   200/ 1327 batches | lr 0.08 | ms/batch 14.59 | loss  3.84 | ppl    46.50
+| train-epoch  34 |   400/ 1327 batches | lr 0.08 | ms/batch 14.48 | loss  3.82 | ppl    45.70
+| train-epoch  34 |   600/ 1327 batches | lr 0.08 | ms/batch 14.49 | loss  3.81 | ppl    44.94
+| train-epoch  34 |   800/ 1327 batches | lr 0.08 | ms/batch 14.49 | loss  3.73 | ppl    41.71
+| train-epoch  34 |  1000/ 1327 batches | lr 0.08 | ms/batch 14.47 | loss  3.80 | ppl    44.69
+| train-epoch  34 |  1200/ 1327 batches | lr 0.08 | ms/batch 14.50 | loss  3.65 | ppl    38.49
+-----------------------------------------------------------------------------------------
+| end of train epoch  34 | time: 19.86s | valid loss  4.44 | valid ppl    85.11
+-----------------------------------------------------------------------------------------
+| train-epoch  35 |   200/ 1327 batches | lr 0.08 | ms/batch 14.49 | loss  3.84 | ppl    46.67
+| train-epoch  35 |   400/ 1327 batches | lr 0.08 | ms/batch 14.38 | loss  3.82 | ppl    45.53
+| train-epoch  35 |   600/ 1327 batches | lr 0.08 | ms/batch 14.40 | loss  3.80 | ppl    44.62
+| train-epoch  35 |   800/ 1327 batches | lr 0.08 | ms/batch 14.42 | loss  3.73 | ppl    41.64
+| train-epoch  35 |  1000/ 1327 batches | lr 0.08 | ms/batch 14.44 | loss  3.80 | ppl    44.58
+| train-epoch  35 |  1200/ 1327 batches | lr 0.08 | ms/batch 14.43 | loss  3.65 | ppl    38.63
+-----------------------------------------------------------------------------------------
+| end of train epoch  35 | time: 19.76s | valid loss  4.44 | valid ppl    85.14
+-----------------------------------------------------------------------------------------
+| train-epoch  36 |   200/ 1327 batches | lr 0.02 | ms/batch 14.62 | loss  3.84 | ppl    46.49
+| train-epoch  36 |   400/ 1327 batches | lr 0.02 | ms/batch 14.56 | loss  3.82 | ppl    45.52
+| train-epoch  36 |   600/ 1327 batches | lr 0.02 | ms/batch 14.49 | loss  3.80 | ppl    44.66
+| train-epoch  36 |   800/ 1327 batches | lr 0.02 | ms/batch 14.50 | loss  3.73 | ppl    41.65
+| train-epoch  36 |  1000/ 1327 batches | lr 0.02 | ms/batch 14.47 | loss  3.80 | ppl    44.84
+| train-epoch  36 |  1200/ 1327 batches | lr 0.02 | ms/batch 14.47 | loss  3.65 | ppl    38.43
+-----------------------------------------------------------------------------------------
+| end of train epoch  36 | time: 19.87s | valid loss  4.44 | valid ppl    85.12
+-----------------------------------------------------------------------------------------
+| train-epoch  37 |   200/ 1327 batches | lr 0.00 | ms/batch 14.46 | loss  3.84 | ppl    46.61
+| train-epoch  37 |   400/ 1327 batches | lr 0.00 | ms/batch 14.39 | loss  3.82 | ppl    45.83
+| train-epoch  37 |   600/ 1327 batches | lr 0.00 | ms/batch 14.39 | loss  3.80 | ppl    44.78
+| train-epoch  37 |   800/ 1327 batches | lr 0.00 | ms/batch 14.37 | loss  3.74 | ppl    41.97
+| train-epoch  37 |  1000/ 1327 batches | lr 0.00 | ms/batch 14.38 | loss  3.80 | ppl    44.51
+| train-epoch  37 |  1200/ 1327 batches | lr 0.00 | ms/batch 14.39 | loss  3.65 | ppl    38.50
+-----------------------------------------------------------------------------------------
+| end of train epoch  37 | time: 19.72s | valid loss  4.44 | valid ppl    85.11
+-----------------------------------------------------------------------------------------
+| train-epoch  38 |   200/ 1327 batches | lr 0.00 | ms/batch 14.48 | loss  3.85 | ppl    46.78
+| train-epoch  38 |   400/ 1327 batches | lr 0.00 | ms/batch 14.55 | loss  3.82 | ppl    45.79
+| train-epoch  38 |   600/ 1327 batches | lr 0.00 | ms/batch 14.66 | loss  3.80 | ppl    44.75
+| train-epoch  38 |   800/ 1327 batches | lr 0.00 | ms/batch 14.67 | loss  3.73 | ppl    41.62
+| train-epoch  38 |  1000/ 1327 batches | lr 0.00 | ms/batch 14.65 | loss  3.80 | ppl    44.86
+| train-epoch  38 |  1200/ 1327 batches | lr 0.00 | ms/batch 14.63 | loss  3.64 | ppl    38.27
+-----------------------------------------------------------------------------------------
+| end of train epoch  38 | time: 19.97s | valid loss  4.44 | valid ppl    85.11
+-----------------------------------------------------------------------------------------
+| train-epoch  39 |   200/ 1327 batches | lr 0.00 | ms/batch 14.43 | loss  3.84 | ppl    46.55
+| train-epoch  39 |   400/ 1327 batches | lr 0.00 | ms/batch 14.35 | loss  3.82 | ppl    45.61
+| train-epoch  39 |   600/ 1327 batches | lr 0.00 | ms/batch 14.36 | loss  3.80 | ppl    44.70
+| train-epoch  39 |   800/ 1327 batches | lr 0.00 | ms/batch 14.36 | loss  3.73 | ppl    41.60
+| train-epoch  39 |  1000/ 1327 batches | lr 0.00 | ms/batch 14.34 | loss  3.80 | ppl    44.55
+| train-epoch  39 |  1200/ 1327 batches | lr 0.00 | ms/batch 14.56 | loss  3.64 | ppl    38.27
+-----------------------------------------------------------------------------------------
+| end of train epoch  39 | time: 19.77s | valid loss  4.44 | valid ppl    85.10
+-----------------------------------------------------------------------------------------
+| train-epoch  40 |   200/ 1327 batches | lr 0.00 | ms/batch 15.00 | loss  3.83 | ppl    46.15
+| train-epoch  40 |   400/ 1327 batches | lr 0.00 | ms/batch 14.88 | loss  3.82 | ppl    45.68
+| train-epoch  40 |   600/ 1327 batches | lr 0.00 | ms/batch 14.93 | loss  3.80 | ppl    44.72
+| train-epoch  40 |   800/ 1327 batches | lr 0.00 | ms/batch 14.93 | loss  3.73 | ppl    41.57
+| train-epoch  40 |  1000/ 1327 batches | lr 0.00 | ms/batch 14.93 | loss  3.80 | ppl    44.75
+| train-epoch  40 |  1200/ 1327 batches | lr 0.00 | ms/batch 14.78 | loss  3.64 | ppl    38.26
+-----------------------------------------------------------------------------------------
+| end of train epoch  40 | time: 20.39s | valid loss  4.44 | valid ppl    85.10
+-----------------------------------------------------------------------------------------
+required epochs  40 | actual epochs  40
+pretrain epochs  40 | prune epochs   0 | retrain epochs   0
+=========================================================================================
+| End of training | test loss  4.40 | test ppl    81.29
+=========================================================================================
+python main.py --cuda --emsize 650 --nhid 650 --dropout 0.5 --epochs 40 --tied --save model/baseline/model.pt --data ./data/ptb
+<class 'torch.Tensor'> torch.Size([10000, 650])
+<class 'torch.Tensor'> torch.Size([2600, 650])
+<class 'torch.Tensor'> torch.Size([2600, 650])
+<class 'torch.Tensor'> torch.Size([2600])
+<class 'torch.Tensor'> torch.Size([2600])
+<class 'torch.Tensor'> torch.Size([2600, 650])
+<class 'torch.Tensor'> torch.Size([2600, 650])
+<class 'torch.Tensor'> torch.Size([2600])
+<class 'torch.Tensor'> torch.Size([2600])
+<class 'torch.Tensor'> torch.Size([10000])
+RNNModel(
+  (drop): Dropout(p=0.5)
+  (encoder): Embedding(10000, 650)
+  (rnn): LSTM(650, 650, num_layers=2, dropout=0.5)
+  (decoder): Linear(in_features=650, out_features=10000, bias=True)
+)
+Dropout(p=0.5)
+Embedding(10000, 650)
+LSTM(650, 650, num_layers=2, dropout=0.5)
+Linear(in_features=650, out_features=10000, bias=True)
+| train-epoch   1 |   200/ 1327 batches | lr 20.00 | ms/batch 14.69 | loss  7.00 | ppl  1093.67
+| train-epoch   1 |   400/ 1327 batches | lr 20.00 | ms/batch 14.39 | loss  6.23 | ppl   506.48
+| train-epoch   1 |   600/ 1327 batches | lr 20.00 | ms/batch 14.35 | loss  5.92 | ppl   373.25
+| train-epoch   1 |   800/ 1327 batches | lr 20.00 | ms/batch 14.32 | loss  5.68 | ppl   292.55
+| train-epoch   1 |  1000/ 1327 batches | lr 20.00 | ms/batch 14.30 | loss  5.57 | ppl   262.34
+| train-epoch   1 |  1200/ 1327 batches | lr 20.00 | ms/batch 14.25 | loss  5.43 | ppl   228.61
+-----------------------------------------------------------------------------------------
+| end of train epoch   1 | time: 19.69s | valid loss  5.31 | valid ppl   202.55
+-----------------------------------------------------------------------------------------
+| train-epoch   2 |   200/ 1327 batches | lr 20.00 | ms/batch 14.34 | loss  5.37 | ppl   213.88
+| train-epoch   2 |   400/ 1327 batches | lr 20.00 | ms/batch 14.28 | loss  5.30 | ppl   200.46
+| train-epoch   2 |   600/ 1327 batches | lr 20.00 | ms/batch 14.31 | loss  5.25 | ppl   190.26
+| train-epoch   2 |   800/ 1327 batches | lr 20.00 | ms/batch 14.31 | loss  5.14 | ppl   171.55
+| train-epoch   2 |  1000/ 1327 batches | lr 20.00 | ms/batch 14.31 | loss  5.14 | ppl   171.21
+| train-epoch   2 |  1200/ 1327 batches | lr 20.00 | ms/batch 14.32 | loss  5.04 | ppl   154.00
+-----------------------------------------------------------------------------------------
+| end of train epoch   2 | time: 19.61s | valid loss  5.00 | valid ppl   147.69
+-----------------------------------------------------------------------------------------
+| train-epoch   3 |   200/ 1327 batches | lr 20.00 | ms/batch 14.40 | loss  5.04 | ppl   154.33
+| train-epoch   3 |   400/ 1327 batches | lr 20.00 | ms/batch 14.34 | loss  5.02 | ppl   151.05
+| train-epoch   3 |   600/ 1327 batches | lr 20.00 | ms/batch 14.35 | loss  4.99 | ppl   146.32
+| train-epoch   3 |   800/ 1327 batches | lr 20.00 | ms/batch 14.31 | loss  4.91 | ppl   135.20
+| train-epoch   3 |  1000/ 1327 batches | lr 20.00 | ms/batch 14.29 | loss  4.93 | ppl   138.57
+| train-epoch   3 |  1200/ 1327 batches | lr 20.00 | ms/batch 14.31 | loss  4.82 | ppl   123.94
+-----------------------------------------------------------------------------------------
+| end of train epoch   3 | time: 19.65s | valid loss  4.83 | valid ppl   125.75
+-----------------------------------------------------------------------------------------
+| train-epoch   4 |   200/ 1327 batches | lr 20.00 | ms/batch 14.43 | loss  4.85 | ppl   127.69
+| train-epoch   4 |   400/ 1327 batches | lr 20.00 | ms/batch 14.34 | loss  4.84 | ppl   126.48
+| train-epoch   4 |   600/ 1327 batches | lr 20.00 | ms/batch 14.33 | loss  4.82 | ppl   124.29
+| train-epoch   4 |   800/ 1327 batches | lr 20.00 | ms/batch 14.35 | loss  4.75 | ppl   116.00
+| train-epoch   4 |  1000/ 1327 batches | lr 20.00 | ms/batch 14.37 | loss  4.79 | ppl   120.88
+| train-epoch   4 |  1200/ 1327 batches | lr 20.00 | ms/batch 14.33 | loss  4.68 | ppl   108.06
+-----------------------------------------------------------------------------------------
+| end of train epoch   4 | time: 19.67s | valid loss  4.73 | valid ppl   113.02
+-----------------------------------------------------------------------------------------
+| train-epoch   5 |   200/ 1327 batches | lr 20.00 | ms/batch 14.40 | loss  4.73 | ppl   112.91
+| train-epoch   5 |   400/ 1327 batches | lr 20.00 | ms/batch 14.40 | loss  4.72 | ppl   112.11
+| train-epoch   5 |   600/ 1327 batches | lr 20.00 | ms/batch 14.37 | loss  4.71 | ppl   110.52
+| train-epoch   5 |   800/ 1327 batches | lr 20.00 | ms/batch 14.39 | loss  4.64 | ppl   103.81
+| train-epoch   5 |  1000/ 1327 batches | lr 20.00 | ms/batch 14.41 | loss  4.70 | ppl   109.52
+| train-epoch   5 |  1200/ 1327 batches | lr 20.00 | ms/batch 14.45 | loss  4.58 | ppl    97.77
+-----------------------------------------------------------------------------------------
+| end of train epoch   5 | time: 19.74s | valid loss  4.66 | valid ppl   105.44
+-----------------------------------------------------------------------------------------
+| train-epoch   6 |   200/ 1327 batches | lr 20.00 | ms/batch 14.56 | loss  4.63 | ppl   102.72
+| train-epoch   6 |   400/ 1327 batches | lr 20.00 | ms/batch 14.51 | loss  4.63 | ppl   102.52
+| train-epoch   6 |   600/ 1327 batches | lr 20.00 | ms/batch 14.46 | loss  4.62 | ppl   101.22
+| train-epoch   6 |   800/ 1327 batches | lr 20.00 | ms/batch 14.39 | loss  4.56 | ppl    95.19
+| train-epoch   6 |  1000/ 1327 batches | lr 20.00 | ms/batch 14.39 | loss  4.62 | ppl   101.33
+| train-epoch   6 |  1200/ 1327 batches | lr 20.00 | ms/batch 14.39 | loss  4.50 | ppl    89.88
+-----------------------------------------------------------------------------------------
+| end of train epoch   6 | time: 19.78s | valid loss  4.61 | valid ppl   100.07
+-----------------------------------------------------------------------------------------
+| train-epoch   7 |   200/ 1327 batches | lr 20.00 | ms/batch 14.48 | loss  4.56 | ppl    95.67
+| train-epoch   7 |   400/ 1327 batches | lr 20.00 | ms/batch 14.38 | loss  4.56 | ppl    95.76
+| train-epoch   7 |   600/ 1327 batches | lr 20.00 | ms/batch 14.26 | loss  4.55 | ppl    94.53
+| train-epoch   7 |   800/ 1327 batches | lr 20.00 | ms/batch 14.26 | loss  4.49 | ppl    88.90
+| train-epoch   7 |  1000/ 1327 batches | lr 20.00 | ms/batch 14.28 | loss  4.55 | ppl    95.08
+| train-epoch   7 |  1200/ 1327 batches | lr 20.00 | ms/batch 14.26 | loss  4.44 | ppl    84.44
+-----------------------------------------------------------------------------------------
+| end of train epoch   7 | time: 19.61s | valid loss  4.58 | valid ppl    97.10
+-----------------------------------------------------------------------------------------
+| train-epoch   8 |   200/ 1327 batches | lr 20.00 | ms/batch 14.37 | loss  4.50 | ppl    90.00
+| train-epoch   8 |   400/ 1327 batches | lr 20.00 | ms/batch 14.33 | loss  4.50 | ppl    89.93
+| train-epoch   8 |   600/ 1327 batches | lr 20.00 | ms/batch 14.36 | loss  4.49 | ppl    89.02
+| train-epoch   8 |   800/ 1327 batches | lr 20.00 | ms/batch 14.37 | loss  4.43 | ppl    84.28
+| train-epoch   8 |  1000/ 1327 batches | lr 20.00 | ms/batch 14.32 | loss  4.50 | ppl    90.28
+| train-epoch   8 |  1200/ 1327 batches | lr 20.00 | ms/batch 14.33 | loss  4.39 | ppl    80.29
+-----------------------------------------------------------------------------------------
+| end of train epoch   8 | time: 19.65s | valid loss  4.54 | valid ppl    94.12
+-----------------------------------------------------------------------------------------
+| train-epoch   9 |   200/ 1327 batches | lr 20.00 | ms/batch 14.36 | loss  4.45 | ppl    85.40
+| train-epoch   9 |   400/ 1327 batches | lr 20.00 | ms/batch 14.26 | loss  4.46 | ppl    86.38
+| train-epoch   9 |   600/ 1327 batches | lr 20.00 | ms/batch 14.27 | loss  4.44 | ppl    85.12
+| train-epoch   9 |   800/ 1327 batches | lr 20.00 | ms/batch 14.28 | loss  4.39 | ppl    80.62
+| train-epoch   9 |  1000/ 1327 batches | lr 20.00 | ms/batch 14.28 | loss  4.46 | ppl    86.61
+| train-epoch   9 |  1200/ 1327 batches | lr 20.00 | ms/batch 14.28 | loss  4.34 | ppl    76.72
+-----------------------------------------------------------------------------------------
+| end of train epoch   9 | time: 19.58s | valid loss  4.53 | valid ppl    92.73
+-----------------------------------------------------------------------------------------
+| train-epoch  10 |   200/ 1327 batches | lr 20.00 | ms/batch 14.37 | loss  4.41 | ppl    81.94
+| train-epoch  10 |   400/ 1327 batches | lr 20.00 | ms/batch 14.30 | loss  4.41 | ppl    82.25
+| train-epoch  10 |   600/ 1327 batches | lr 20.00 | ms/batch 14.28 | loss  4.40 | ppl    81.60
+| train-epoch  10 |   800/ 1327 batches | lr 20.00 | ms/batch 14.29 | loss  4.35 | ppl    77.29
+| train-epoch  10 |  1000/ 1327 batches | lr 20.00 | ms/batch 14.30 | loss  4.42 | ppl    83.40
+| train-epoch  10 |  1200/ 1327 batches | lr 20.00 | ms/batch 14.29 | loss  4.30 | ppl    73.99
+-----------------------------------------------------------------------------------------
+| end of train epoch  10 | time: 19.60s | valid loss  4.51 | valid ppl    91.33
+-----------------------------------------------------------------------------------------
+| train-epoch  11 |   200/ 1327 batches | lr 20.00 | ms/batch 14.39 | loss  4.37 | ppl    79.16
+| train-epoch  11 |   400/ 1327 batches | lr 20.00 | ms/batch 14.32 | loss  4.37 | ppl    79.25
+| train-epoch  11 |   600/ 1327 batches | lr 20.00 | ms/batch 14.31 | loss  4.37 | ppl    78.71
+| train-epoch  11 |   800/ 1327 batches | lr 20.00 | ms/batch 14.28 | loss  4.31 | ppl    74.51
+| train-epoch  11 |  1000/ 1327 batches | lr 20.00 | ms/batch 14.20 | loss  4.39 | ppl    80.74
+| train-epoch  11 |  1200/ 1327 batches | lr 20.00 | ms/batch 14.23 | loss  4.27 | ppl    71.21
+-----------------------------------------------------------------------------------------
+| end of train epoch  11 | time: 19.56s | valid loss  4.50 | valid ppl    89.86
+-----------------------------------------------------------------------------------------
+| train-epoch  12 |   200/ 1327 batches | lr 20.00 | ms/batch 14.52 | loss  4.34 | ppl    76.72
+| train-epoch  12 |   400/ 1327 batches | lr 20.00 | ms/batch 14.50 | loss  4.34 | ppl    76.59
+| train-epoch  12 |   600/ 1327 batches | lr 20.00 | ms/batch 14.85 | loss  4.33 | ppl    76.14
+| train-epoch  12 |   800/ 1327 batches | lr 20.00 | ms/batch 14.84 | loss  4.28 | ppl    72.23
+| train-epoch  12 |  1000/ 1327 batches | lr 20.00 | ms/batch 14.83 | loss  4.36 | ppl    78.31
+| train-epoch  12 |  1200/ 1327 batches | lr 20.00 | ms/batch 14.84 | loss  4.24 | ppl    69.13
+-----------------------------------------------------------------------------------------
+| end of train epoch  12 | time: 20.21s | valid loss  4.49 | valid ppl    88.94
+-----------------------------------------------------------------------------------------
+| train-epoch  13 |   200/ 1327 batches | lr 20.00 | ms/batch 14.97 | loss  4.31 | ppl    74.22
+| train-epoch  13 |   400/ 1327 batches | lr 20.00 | ms/batch 14.85 | loss  4.31 | ppl    74.75
+| train-epoch  13 |   600/ 1327 batches | lr 20.00 | ms/batch 14.92 | loss  4.30 | ppl    73.87
+| train-epoch  13 |   800/ 1327 batches | lr 20.00 | ms/batch 14.91 | loss  4.25 | ppl    70.23
+| train-epoch  13 |  1000/ 1327 batches | lr 20.00 | ms/batch 14.90 | loss  4.33 | ppl    75.98
+| train-epoch  13 |  1200/ 1327 batches | lr 20.00 | ms/batch 14.91 | loss  4.21 | ppl    67.25
+-----------------------------------------------------------------------------------------
+| end of train epoch  13 | time: 20.43s | valid loss  4.48 | valid ppl    88.04
+-----------------------------------------------------------------------------------------
+| train-epoch  14 |   200/ 1327 batches | lr 20.00 | ms/batch 15.09 | loss  4.28 | ppl    72.18
+| train-epoch  14 |   400/ 1327 batches | lr 20.00 | ms/batch 14.86 | loss  4.28 | ppl    72.48
+| train-epoch  14 |   600/ 1327 batches | lr 20.00 | ms/batch 14.88 | loss  4.28 | ppl    71.99
+| train-epoch  14 |   800/ 1327 batches | lr 20.00 | ms/batch 14.99 | loss  4.23 | ppl    68.46
+| train-epoch  14 |  1000/ 1327 batches | lr 20.00 | ms/batch 15.19 | loss  4.31 | ppl    74.22
+| train-epoch  14 |  1200/ 1327 batches | lr 20.00 | ms/batch 15.15 | loss  4.18 | ppl    65.67
+-----------------------------------------------------------------------------------------
+| end of train epoch  14 | time: 20.60s | valid loss  4.47 | valid ppl    87.45
+-----------------------------------------------------------------------------------------
+| train-epoch  15 |   200/ 1327 batches | lr 20.00 | ms/batch 15.13 | loss  4.26 | ppl    70.54
+| train-epoch  15 |   400/ 1327 batches | lr 20.00 | ms/batch 15.01 | loss  4.26 | ppl    71.01
+| train-epoch  15 |   600/ 1327 batches | lr 20.00 | ms/batch 15.03 | loss  4.25 | ppl    70.22
+| train-epoch  15 |   800/ 1327 batches | lr 20.00 | ms/batch 15.04 | loss  4.20 | ppl    66.91
+| train-epoch  15 |  1000/ 1327 batches | lr 20.00 | ms/batch 15.05 | loss  4.29 | ppl    72.81
+| train-epoch  15 |  1200/ 1327 batches | lr 20.00 | ms/batch 15.03 | loss  4.17 | ppl    64.40
+-----------------------------------------------------------------------------------------
+| end of train epoch  15 | time: 20.61s | valid loss  4.46 | valid ppl    86.85
+-----------------------------------------------------------------------------------------
+| train-epoch  16 |   200/ 1327 batches | lr 20.00 | ms/batch 15.03 | loss  4.24 | ppl    69.15
+| train-epoch  16 |   400/ 1327 batches | lr 20.00 | ms/batch 14.94 | loss  4.24 | ppl    69.64
+| train-epoch  16 |   600/ 1327 batches | lr 20.00 | ms/batch 14.90 | loss  4.23 | ppl    68.78
+| train-epoch  16 |   800/ 1327 batches | lr 20.00 | ms/batch 14.96 | loss  4.18 | ppl    65.51
+| train-epoch  16 |  1000/ 1327 batches | lr 20.00 | ms/batch 14.96 | loss  4.27 | ppl    71.35
+| train-epoch  16 |  1200/ 1327 batches | lr 20.00 | ms/batch 14.95 | loss  4.14 | ppl    62.99
+-----------------------------------------------------------------------------------------
+| end of train epoch  16 | time: 20.49s | valid loss  4.46 | valid ppl    86.88
+-----------------------------------------------------------------------------------------
+| train-epoch  17 |   200/ 1327 batches | lr 5.00 | ms/batch 15.07 | loss  4.20 | ppl    66.59
+| train-epoch  17 |   400/ 1327 batches | lr 5.00 | ms/batch 14.99 | loss  4.16 | ppl    64.04
+| train-epoch  17 |   600/ 1327 batches | lr 5.00 | ms/batch 14.94 | loss  4.13 | ppl    62.02
+| train-epoch  17 |   800/ 1327 batches | lr 5.00 | ms/batch 14.97 | loss  4.05 | ppl    57.31
+| train-epoch  17 |  1000/ 1327 batches | lr 5.00 | ms/batch 14.98 | loss  4.10 | ppl    60.64
+| train-epoch  17 |  1200/ 1327 batches | lr 5.00 | ms/batch 14.98 | loss  3.95 | ppl    51.69
+-----------------------------------------------------------------------------------------
+| end of train epoch  17 | time: 20.53s | valid loss  4.41 | valid ppl    82.30
+-----------------------------------------------------------------------------------------
+| train-epoch  18 |   200/ 1327 batches | lr 5.00 | ms/batch 15.00 | loss  4.10 | ppl    60.42
+| train-epoch  18 |   400/ 1327 batches | lr 5.00 | ms/batch 14.94 | loss  4.08 | ppl    59.07
+| train-epoch  18 |   600/ 1327 batches | lr 5.00 | ms/batch 14.87 | loss  4.06 | ppl    58.01
+| train-epoch  18 |   800/ 1327 batches | lr 5.00 | ms/batch 14.76 | loss  3.99 | ppl    54.18
+| train-epoch  18 |  1000/ 1327 batches | lr 5.00 | ms/batch 14.76 | loss  4.06 | ppl    58.11
+| train-epoch  18 |  1200/ 1327 batches | lr 5.00 | ms/batch 14.76 | loss  3.92 | ppl    50.56
+-----------------------------------------------------------------------------------------
+| end of train epoch  18 | time: 20.34s | valid loss  4.40 | valid ppl    81.59
+-----------------------------------------------------------------------------------------
+| train-epoch  19 |   200/ 1327 batches | lr 5.00 | ms/batch 14.90 | loss  4.06 | ppl    58.02
+| train-epoch  19 |   400/ 1327 batches | lr 5.00 | ms/batch 14.82 | loss  4.05 | ppl    57.41
+| train-epoch  19 |   600/ 1327 batches | lr 5.00 | ms/batch 14.77 | loss  4.03 | ppl    56.00
+| train-epoch  19 |   800/ 1327 batches | lr 5.00 | ms/batch 14.82 | loss  3.96 | ppl    52.62
+| train-epoch  19 |  1000/ 1327 batches | lr 5.00 | ms/batch 14.81 | loss  4.04 | ppl    56.60
+| train-epoch  19 |  1200/ 1327 batches | lr 5.00 | ms/batch 14.79 | loss  3.89 | ppl    49.06
+-----------------------------------------------------------------------------------------
+| end of train epoch  19 | time: 20.31s | valid loss  4.40 | valid ppl    81.16
+-----------------------------------------------------------------------------------------
+| train-epoch  20 |   200/ 1327 batches | lr 5.00 | ms/batch 14.94 | loss  4.03 | ppl    55.99
+| train-epoch  20 |   400/ 1327 batches | lr 5.00 | ms/batch 14.85 | loss  4.02 | ppl    55.56
+| train-epoch  20 |   600/ 1327 batches | lr 5.00 | ms/batch 14.86 | loss  4.00 | ppl    54.52
+| train-epoch  20 |   800/ 1327 batches | lr 5.00 | ms/batch 14.78 | loss  3.93 | ppl    51.14
+| train-epoch  20 |  1000/ 1327 batches | lr 5.00 | ms/batch 14.85 | loss  4.02 | ppl    55.76
+| train-epoch  20 |  1200/ 1327 batches | lr 5.00 | ms/batch 14.84 | loss  3.87 | ppl    48.10
+-----------------------------------------------------------------------------------------
+| end of train epoch  20 | time: 20.35s | valid loss  4.39 | valid ppl    80.79
+-----------------------------------------------------------------------------------------
+| train-epoch  21 |   200/ 1327 batches | lr 5.00 | ms/batch 14.88 | loss  4.00 | ppl    54.64
+| train-epoch  21 |   400/ 1327 batches | lr 5.00 | ms/batch 14.79 | loss  3.99 | ppl    54.21
+| train-epoch  21 |   600/ 1327 batches | lr 5.00 | ms/batch 14.76 | loss  3.98 | ppl    53.62
+| train-epoch  21 |   800/ 1327 batches | lr 5.00 | ms/batch 14.73 | loss  3.92 | ppl    50.28
+| train-epoch  21 |  1000/ 1327 batches | lr 5.00 | ms/batch 14.77 | loss  4.00 | ppl    54.84
+| train-epoch  21 |  1200/ 1327 batches | lr 5.00 | ms/batch 14.81 | loss  3.86 | ppl    47.23
+-----------------------------------------------------------------------------------------
+| end of train epoch  21 | time: 20.29s | valid loss  4.39 | valid ppl    80.55
+-----------------------------------------------------------------------------------------
+| train-epoch  22 |   200/ 1327 batches | lr 5.00 | ms/batch 15.09 | loss  3.98 | ppl    53.73
+| train-epoch  22 |   400/ 1327 batches | lr 5.00 | ms/batch 15.04 | loss  3.97 | ppl    53.18
+| train-epoch  22 |   600/ 1327 batches | lr 5.00 | ms/batch 15.01 | loss  3.96 | ppl    52.65
+| train-epoch  22 |   800/ 1327 batches | lr 5.00 | ms/batch 14.97 | loss  3.90 | ppl    49.59
+| train-epoch  22 |  1000/ 1327 batches | lr 5.00 | ms/batch 14.94 | loss  3.98 | ppl    53.65
+| train-epoch  22 |  1200/ 1327 batches | lr 5.00 | ms/batch 14.93 | loss  3.84 | ppl    46.74
+-----------------------------------------------------------------------------------------
+| end of train epoch  22 | time: 20.52s | valid loss  4.39 | valid ppl    80.63
+-----------------------------------------------------------------------------------------
+| train-epoch  23 |   200/ 1327 batches | lr 1.25 | ms/batch 14.90 | loss  3.97 | ppl    53.12
+| train-epoch  23 |   400/ 1327 batches | lr 1.25 | ms/batch 14.79 | loss  3.95 | ppl    52.08
+| train-epoch  23 |   600/ 1327 batches | lr 1.25 | ms/batch 14.78 | loss  3.93 | ppl    50.97
+| train-epoch  23 |   800/ 1327 batches | lr 1.25 | ms/batch 14.72 | loss  3.87 | ppl    47.74
+| train-epoch  23 |  1000/ 1327 batches | lr 1.25 | ms/batch 14.80 | loss  3.93 | ppl    51.08
+| train-epoch  23 |  1200/ 1327 batches | lr 1.25 | ms/batch 14.78 | loss  3.79 | ppl    44.08
+-----------------------------------------------------------------------------------------
+| end of train epoch  23 | time: 20.28s | valid loss  4.38 | valid ppl    79.83
+-----------------------------------------------------------------------------------------
+| train-epoch  24 |   200/ 1327 batches | lr 1.25 | ms/batch 14.92 | loss  3.95 | ppl    51.73
+| train-epoch  24 |   400/ 1327 batches | lr 1.25 | ms/batch 14.81 | loss  3.93 | ppl    51.06
+| train-epoch  24 |   600/ 1327 batches | lr 1.25 | ms/batch 14.82 | loss  3.91 | ppl    50.13
+| train-epoch  24 |   800/ 1327 batches | lr 1.25 | ms/batch 14.76 | loss  3.85 | ppl    46.94
+| train-epoch  24 |  1000/ 1327 batches | lr 1.25 | ms/batch 14.80 | loss  3.92 | ppl    50.46
+| train-epoch  24 |  1200/ 1327 batches | lr 1.25 | ms/batch 14.81 | loss  3.78 | ppl    43.72
+-----------------------------------------------------------------------------------------
+| end of train epoch  24 | time: 20.31s | valid loss  4.38 | valid ppl    79.66
+-----------------------------------------------------------------------------------------
+| train-epoch  25 |   200/ 1327 batches | lr 1.25 | ms/batch 14.83 | loss  3.93 | ppl    51.06
+| train-epoch  25 |   400/ 1327 batches | lr 1.25 | ms/batch 14.74 | loss  3.92 | ppl    50.25
+| train-epoch  25 |   600/ 1327 batches | lr 1.25 | ms/batch 14.78 | loss  3.90 | ppl    49.56
+| train-epoch  25 |   800/ 1327 batches | lr 1.25 | ms/batch 14.75 | loss  3.84 | ppl    46.58
+| train-epoch  25 |  1000/ 1327 batches | lr 1.25 | ms/batch 14.76 | loss  3.92 | ppl    50.51
+| train-epoch  25 |  1200/ 1327 batches | lr 1.25 | ms/batch 14.78 | loss  3.78 | ppl    43.66
+-----------------------------------------------------------------------------------------
+| end of train epoch  25 | time: 20.25s | valid loss  4.38 | valid ppl    79.63
+-----------------------------------------------------------------------------------------
+| train-epoch  26 |   200/ 1327 batches | lr 1.25 | ms/batch 14.91 | loss  3.92 | ppl    50.61
+| train-epoch  26 |   400/ 1327 batches | lr 1.25 | ms/batch 14.85 | loss  3.91 | ppl    50.07
+| train-epoch  26 |   600/ 1327 batches | lr 1.25 | ms/batch 14.85 | loss  3.90 | ppl    49.26
+| train-epoch  26 |   800/ 1327 batches | lr 1.25 | ms/batch 14.85 | loss  3.83 | ppl    46.18
+| train-epoch  26 |  1000/ 1327 batches | lr 1.25 | ms/batch 14.79 | loss  3.92 | ppl    50.27
+| train-epoch  26 |  1200/ 1327 batches | lr 1.25 | ms/batch 14.84 | loss  3.77 | ppl    43.36
+-----------------------------------------------------------------------------------------
+| end of train epoch  26 | time: 20.34s | valid loss  4.38 | valid ppl    79.55
+-----------------------------------------------------------------------------------------
+| train-epoch  27 |   200/ 1327 batches | lr 1.25 | ms/batch 14.96 | loss  3.91 | ppl    50.10
+| train-epoch  27 |   400/ 1327 batches | lr 1.25 | ms/batch 14.84 | loss  3.91 | ppl    49.71
+| train-epoch  27 |   600/ 1327 batches | lr 1.25 | ms/batch 14.91 | loss  3.89 | ppl    48.83
+| train-epoch  27 |   800/ 1327 batches | lr 1.25 | ms/batch 14.90 | loss  3.82 | ppl    45.81
+| train-epoch  27 |  1000/ 1327 batches | lr 1.25 | ms/batch 14.81 | loss  3.91 | ppl    49.66
+| train-epoch  27 |  1200/ 1327 batches | lr 1.25 | ms/batch 14.86 | loss  3.76 | ppl    43.05
+-----------------------------------------------------------------------------------------
+| end of train epoch  27 | time: 20.38s | valid loss  4.38 | valid ppl    79.62
+-----------------------------------------------------------------------------------------
+| train-epoch  28 |   200/ 1327 batches | lr 0.31 | ms/batch 14.97 | loss  3.92 | ppl    50.38
+| train-epoch  28 |   400/ 1327 batches | lr 0.31 | ms/batch 14.87 | loss  3.90 | ppl    49.35
+| train-epoch  28 |   600/ 1327 batches | lr 0.31 | ms/batch 14.89 | loss  3.89 | ppl    48.77
+| train-epoch  28 |   800/ 1327 batches | lr 0.31 | ms/batch 14.91 | loss  3.82 | ppl    45.63
+| train-epoch  28 |  1000/ 1327 batches | lr 0.31 | ms/batch 14.67 | loss  3.89 | ppl    49.04
+| train-epoch  28 |  1200/ 1327 batches | lr 0.31 | ms/batch 14.75 | loss  3.75 | ppl    42.52
+-----------------------------------------------------------------------------------------
+| end of train epoch  28 | time: 20.33s | valid loss  4.37 | valid ppl    79.28
+-----------------------------------------------------------------------------------------
+| train-epoch  29 |   200/ 1327 batches | lr 0.31 | ms/batch 14.92 | loss  3.91 | ppl    49.85
+| train-epoch  29 |   400/ 1327 batches | lr 0.31 | ms/batch 14.81 | loss  3.89 | ppl    49.08
+| train-epoch  29 |   600/ 1327 batches | lr 0.31 | ms/batch 14.82 | loss  3.88 | ppl    48.47
+| train-epoch  29 |   800/ 1327 batches | lr 0.31 | ms/batch 14.81 | loss  3.82 | ppl    45.49
+| train-epoch  29 |  1000/ 1327 batches | lr 0.31 | ms/batch 14.73 | loss  3.89 | ppl    49.00
+| train-epoch  29 |  1200/ 1327 batches | lr 0.31 | ms/batch 14.82 | loss  3.74 | ppl    42.11
+-----------------------------------------------------------------------------------------
+| end of train epoch  29 | time: 20.30s | valid loss  4.37 | valid ppl    79.21
+-----------------------------------------------------------------------------------------
+| train-epoch  30 |   200/ 1327 batches | lr 0.31 | ms/batch 14.80 | loss  3.91 | ppl    49.84
+| train-epoch  30 |   400/ 1327 batches | lr 0.31 | ms/batch 14.74 | loss  3.89 | ppl    48.86
+| train-epoch  30 |   600/ 1327 batches | lr 0.31 | ms/batch 14.73 | loss  3.88 | ppl    48.28
+| train-epoch  30 |   800/ 1327 batches | lr 0.31 | ms/batch 14.74 | loss  3.81 | ppl    45.09
+| train-epoch  30 |  1000/ 1327 batches | lr 0.31 | ms/batch 14.72 | loss  3.89 | ppl    49.13
+| train-epoch  30 |  1200/ 1327 batches | lr 0.31 | ms/batch 14.69 | loss  3.75 | ppl    42.37
+-----------------------------------------------------------------------------------------
+| end of train epoch  30 | time: 20.20s | valid loss  4.37 | valid ppl    79.18
+-----------------------------------------------------------------------------------------
+| train-epoch  31 |   200/ 1327 batches | lr 0.31 | ms/batch 14.90 | loss  3.91 | ppl    49.70
+| train-epoch  31 |   400/ 1327 batches | lr 0.31 | ms/batch 14.80 | loss  3.89 | ppl    48.79
+| train-epoch  31 |   600/ 1327 batches | lr 0.31 | ms/batch 14.81 | loss  3.88 | ppl    48.20
+| train-epoch  31 |   800/ 1327 batches | lr 0.31 | ms/batch 14.82 | loss  3.82 | ppl    45.39
+| train-epoch  31 |  1000/ 1327 batches | lr 0.31 | ms/batch 14.80 | loss  3.89 | ppl    48.98
+| train-epoch  31 |  1200/ 1327 batches | lr 0.31 | ms/batch 14.71 | loss  3.75 | ppl    42.46
+-----------------------------------------------------------------------------------------
+| end of train epoch  31 | time: 20.29s | valid loss  4.37 | valid ppl    79.18
+-----------------------------------------------------------------------------------------
+| train-epoch  32 |   200/ 1327 batches | lr 0.31 | ms/batch 14.81 | loss  3.90 | ppl    49.42
+| train-epoch  32 |   400/ 1327 batches | lr 0.31 | ms/batch 14.72 | loss  3.89 | ppl    48.67
+| train-epoch  32 |   600/ 1327 batches | lr 0.31 | ms/batch 14.71 | loss  3.87 | ppl    48.12
+| train-epoch  32 |   800/ 1327 batches | lr 0.31 | ms/batch 14.74 | loss  3.81 | ppl    45.18
+| train-epoch  32 |  1000/ 1327 batches | lr 0.31 | ms/batch 14.73 | loss  3.89 | ppl    49.01
+| train-epoch  32 |  1200/ 1327 batches | lr 0.31 | ms/batch 14.64 | loss  3.74 | ppl    42.14
+-----------------------------------------------------------------------------------------
+| end of train epoch  32 | time: 20.19s | valid loss  4.37 | valid ppl    79.21
+-----------------------------------------------------------------------------------------
+| train-epoch  33 |   200/ 1327 batches | lr 0.08 | ms/batch 14.89 | loss  3.90 | ppl    49.46
+| train-epoch  33 |   400/ 1327 batches | lr 0.08 | ms/batch 14.81 | loss  3.89 | ppl    48.69
+| train-epoch  33 |   600/ 1327 batches | lr 0.08 | ms/batch 14.78 | loss  3.87 | ppl    48.08
+| train-epoch  33 |   800/ 1327 batches | lr 0.08 | ms/batch 14.81 | loss  3.81 | ppl    45.16
+| train-epoch  33 |  1000/ 1327 batches | lr 0.08 | ms/batch 14.80 | loss  3.88 | ppl    48.62
+| train-epoch  33 |  1200/ 1327 batches | lr 0.08 | ms/batch 14.71 | loss  3.74 | ppl    41.95
+-----------------------------------------------------------------------------------------
+| end of train epoch  33 | time: 20.28s | valid loss  4.37 | valid ppl    79.12
+-----------------------------------------------------------------------------------------
+| train-epoch  34 |   200/ 1327 batches | lr 0.08 | ms/batch 14.91 | loss  3.89 | ppl    49.07
+| train-epoch  34 |   400/ 1327 batches | lr 0.08 | ms/batch 14.83 | loss  3.88 | ppl    48.48
+| train-epoch  34 |   600/ 1327 batches | lr 0.08 | ms/batch 14.83 | loss  3.87 | ppl    47.72
+| train-epoch  34 |   800/ 1327 batches | lr 0.08 | ms/batch 14.83 | loss  3.81 | ppl    44.93
+| train-epoch  34 |  1000/ 1327 batches | lr 0.08 | ms/batch 14.82 | loss  3.88 | ppl    48.67
+| train-epoch  34 |  1200/ 1327 batches | lr 0.08 | ms/batch 14.80 | loss  3.73 | ppl    41.79
+-----------------------------------------------------------------------------------------
+| end of train epoch  34 | time: 20.32s | valid loss  4.37 | valid ppl    79.08
+-----------------------------------------------------------------------------------------
+| train-epoch  35 |   200/ 1327 batches | lr 0.08 | ms/batch 14.82 | loss  3.90 | ppl    49.24
+| train-epoch  35 |   400/ 1327 batches | lr 0.08 | ms/batch 14.75 | loss  3.88 | ppl    48.63
+| train-epoch  35 |   600/ 1327 batches | lr 0.08 | ms/batch 14.74 | loss  3.87 | ppl    47.74
+| train-epoch  35 |   800/ 1327 batches | lr 0.08 | ms/batch 14.74 | loss  3.80 | ppl    44.87
+| train-epoch  35 |  1000/ 1327 batches | lr 0.08 | ms/batch 14.75 | loss  3.88 | ppl    48.53
+| train-epoch  35 |  1200/ 1327 batches | lr 0.08 | ms/batch 14.74 | loss  3.74 | ppl    42.01
+-----------------------------------------------------------------------------------------
+| end of train epoch  35 | time: 20.21s | valid loss  4.37 | valid ppl    79.07
+-----------------------------------------------------------------------------------------
+| train-epoch  36 |   200/ 1327 batches | lr 0.08 | ms/batch 14.92 | loss  3.90 | ppl    49.33
+| train-epoch  36 |   400/ 1327 batches | lr 0.08 | ms/batch 14.82 | loss  3.88 | ppl    48.52
+| train-epoch  36 |   600/ 1327 batches | lr 0.08 | ms/batch 14.83 | loss  3.87 | ppl    47.84
+| train-epoch  36 |   800/ 1327 batches | lr 0.08 | ms/batch 14.83 | loss  3.80 | ppl    44.65
+| train-epoch  36 |  1000/ 1327 batches | lr 0.08 | ms/batch 14.82 | loss  3.88 | ppl    48.40
+| train-epoch  36 |  1200/ 1327 batches | lr 0.08 | ms/batch 14.82 | loss  3.74 | ppl    41.90
+-----------------------------------------------------------------------------------------
+| end of train epoch  36 | time: 20.31s | valid loss  4.37 | valid ppl    79.06
+-----------------------------------------------------------------------------------------
+| train-epoch  37 |   200/ 1327 batches | lr 0.08 | ms/batch 14.83 | loss  3.90 | ppl    49.18
+| train-epoch  37 |   400/ 1327 batches | lr 0.08 | ms/batch 14.74 | loss  3.88 | ppl    48.51
+| train-epoch  37 |   600/ 1327 batches | lr 0.08 | ms/batch 14.73 | loss  3.86 | ppl    47.59
+| train-epoch  37 |   800/ 1327 batches | lr 0.08 | ms/batch 14.74 | loss  3.80 | ppl    44.90
+| train-epoch  37 |  1000/ 1327 batches | lr 0.08 | ms/batch 14.72 | loss  3.88 | ppl    48.56
+| train-epoch  37 |  1200/ 1327 batches | lr 0.08 | ms/batch 14.73 | loss  3.73 | ppl    41.75
+-----------------------------------------------------------------------------------------
+| end of train epoch  37 | time: 20.20s | valid loss  4.37 | valid ppl    79.05
+-----------------------------------------------------------------------------------------
+| train-epoch  38 |   200/ 1327 batches | lr 0.08 | ms/batch 14.89 | loss  3.90 | ppl    49.20
+| train-epoch  38 |   400/ 1327 batches | lr 0.08 | ms/batch 14.83 | loss  3.88 | ppl    48.53
+| train-epoch  38 |   600/ 1327 batches | lr 0.08 | ms/batch 14.80 | loss  3.87 | ppl    47.83
+| train-epoch  38 |   800/ 1327 batches | lr 0.08 | ms/batch 14.81 | loss  3.80 | ppl    44.80
+| train-epoch  38 |  1000/ 1327 batches | lr 0.08 | ms/batch 14.80 | loss  3.88 | ppl    48.64
+| train-epoch  38 |  1200/ 1327 batches | lr 0.08 | ms/batch 14.81 | loss  3.74 | ppl    41.92
+-----------------------------------------------------------------------------------------
+| end of train epoch  38 | time: 20.31s | valid loss  4.37 | valid ppl    79.06
+-----------------------------------------------------------------------------------------
+| train-epoch  39 |   200/ 1327 batches | lr 0.02 | ms/batch 14.74 | loss  3.90 | ppl    49.34
+| train-epoch  39 |   400/ 1327 batches | lr 0.02 | ms/batch 14.74 | loss  3.88 | ppl    48.40
+| train-epoch  39 |   600/ 1327 batches | lr 0.02 | ms/batch 14.72 | loss  3.87 | ppl    47.82
+| train-epoch  39 |   800/ 1327 batches | lr 0.02 | ms/batch 14.73 | loss  3.80 | ppl    44.84
+| train-epoch  39 |  1000/ 1327 batches | lr 0.02 | ms/batch 14.74 | loss  3.88 | ppl    48.58
+| train-epoch  39 |  1200/ 1327 batches | lr 0.02 | ms/batch 14.74 | loss  3.74 | ppl    41.93
+-----------------------------------------------------------------------------------------
+| end of train epoch  39 | time: 20.19s | valid loss  4.37 | valid ppl    79.04
+-----------------------------------------------------------------------------------------
+| train-epoch  40 |   200/ 1327 batches | lr 0.02 | ms/batch 14.78 | loss  3.90 | ppl    49.29
+| train-epoch  40 |   400/ 1327 batches | lr 0.02 | ms/batch 14.77 | loss  3.88 | ppl    48.33
+| train-epoch  40 |   600/ 1327 batches | lr 0.02 | ms/batch 14.77 | loss  3.86 | ppl    47.69
+| train-epoch  40 |   800/ 1327 batches | lr 0.02 | ms/batch 14.77 | loss  3.80 | ppl    44.69
+| train-epoch  40 |  1000/ 1327 batches | lr 0.02 | ms/batch 14.77 | loss  3.88 | ppl    48.49
+| train-epoch  40 |  1200/ 1327 batches | lr 0.02 | ms/batch 14.76 | loss  3.73 | ppl    41.80
+-----------------------------------------------------------------------------------------
+| end of train epoch  40 | time: 20.24s | valid loss  4.37 | valid ppl    79.03
+-----------------------------------------------------------------------------------------
+required epochs  40 | actual epochs  40
+pretrain epochs  40 | prune epochs   0 | retrain epochs   0
+=========================================================================================
+| End of training | test loss  4.33 | test ppl    75.60
+=========================================================================================
+python main.py --cuda --emsize 1500 --nhid 1500 --dropout 0.65 --epochs 40 --save model/baseline/model.pt --data ./data/ptb
+<class 'torch.Tensor'> torch.Size([10000, 1500])
+<class 'torch.Tensor'> torch.Size([6000, 1500])
+<class 'torch.Tensor'> torch.Size([6000, 1500])
+<class 'torch.Tensor'> torch.Size([6000])
+<class 'torch.Tensor'> torch.Size([6000])
+<class 'torch.Tensor'> torch.Size([6000, 1500])
+<class 'torch.Tensor'> torch.Size([6000, 1500])
+<class 'torch.Tensor'> torch.Size([6000])
+<class 'torch.Tensor'> torch.Size([6000])
+<class 'torch.Tensor'> torch.Size([10000, 1500])
+<class 'torch.Tensor'> torch.Size([10000])
+RNNModel(
+  (drop): Dropout(p=0.65)
+  (encoder): Embedding(10000, 1500)
+  (rnn): LSTM(1500, 1500, num_layers=2, dropout=0.65)
+  (decoder): Linear(in_features=1500, out_features=10000, bias=True)
+)
+Dropout(p=0.65)
+Embedding(10000, 1500)
+LSTM(1500, 1500, num_layers=2, dropout=0.65)
+Linear(in_features=1500, out_features=10000, bias=True)
+| train-epoch   1 |   200/ 1327 batches | lr 20.00 | ms/batch 43.42 | loss  7.19 | ppl  1321.94
+| train-epoch   1 |   400/ 1327 batches | lr 20.00 | ms/batch 43.19 | loss  6.23 | ppl   507.30
+| train-epoch   1 |   600/ 1327 batches | lr 20.00 | ms/batch 43.18 | loss  5.98 | ppl   394.55
+| train-epoch   1 |   800/ 1327 batches | lr 20.00 | ms/batch 43.19 | loss  5.75 | ppl   314.82
+| train-epoch   1 |  1000/ 1327 batches | lr 20.00 | ms/batch 43.20 | loss  5.64 | ppl   281.80
+| train-epoch   1 |  1200/ 1327 batches | lr 20.00 | ms/batch 43.19 | loss  5.51 | ppl   248.03
+-----------------------------------------------------------------------------------------
+| end of train epoch   1 | time: 59.00s | valid loss  5.39 | valid ppl   220.20
+-----------------------------------------------------------------------------------------
+| train-epoch   2 |   200/ 1327 batches | lr 20.00 | ms/batch 43.47 | loss  5.44 | ppl   231.43
+| train-epoch   2 |   400/ 1327 batches | lr 20.00 | ms/batch 43.21 | loss  5.38 | ppl   217.56
+| train-epoch   2 |   600/ 1327 batches | lr 20.00 | ms/batch 43.24 | loss  5.34 | ppl   208.84
+| train-epoch   2 |   800/ 1327 batches | lr 20.00 | ms/batch 43.22 | loss  5.24 | ppl   188.20
+| train-epoch   2 |  1000/ 1327 batches | lr 20.00 | ms/batch 43.24 | loss  5.23 | ppl   187.13
+| train-epoch   2 |  1200/ 1327 batches | lr 20.00 | ms/batch 43.24 | loss  5.13 | ppl   169.05
+-----------------------------------------------------------------------------------------
+| end of train epoch   2 | time: 59.06s | valid loss  5.08 | valid ppl   160.79
+-----------------------------------------------------------------------------------------
+| train-epoch   3 |   200/ 1327 batches | lr 20.00 | ms/batch 43.42 | loss  5.13 | ppl   169.83
+| train-epoch   3 |   400/ 1327 batches | lr 20.00 | ms/batch 43.16 | loss  5.11 | ppl   165.51
+| train-epoch   3 |   600/ 1327 batches | lr 20.00 | ms/batch 43.18 | loss  5.08 | ppl   160.90
+| train-epoch   3 |   800/ 1327 batches | lr 20.00 | ms/batch 43.19 | loss  5.00 | ppl   148.98
+| train-epoch   3 |  1000/ 1327 batches | lr 20.00 | ms/batch 43.17 | loss  5.02 | ppl   152.08
+| train-epoch   3 |  1200/ 1327 batches | lr 20.00 | ms/batch 43.17 | loss  4.92 | ppl   136.33
+-----------------------------------------------------------------------------------------
+| end of train epoch   3 | time: 58.99s | valid loss  4.91 | valid ppl   135.84
+-----------------------------------------------------------------------------------------
+| train-epoch   4 |   200/ 1327 batches | lr 20.00 | ms/batch 43.24 | loss  4.94 | ppl   140.02
+| train-epoch   4 |   400/ 1327 batches | lr 20.00 | ms/batch 43.01 | loss  4.93 | ppl   138.12
+| train-epoch   4 |   600/ 1327 batches | lr 20.00 | ms/batch 42.97 | loss  4.91 | ppl   135.01
+| train-epoch   4 |   800/ 1327 batches | lr 20.00 | ms/batch 43.07 | loss  4.83 | ppl   125.73
+| train-epoch   4 |  1000/ 1327 batches | lr 20.00 | ms/batch 42.98 | loss  4.87 | ppl   130.87
+| train-epoch   4 |  1200/ 1327 batches | lr 20.00 | ms/batch 42.98 | loss  4.76 | ppl   116.31
+-----------------------------------------------------------------------------------------
+| end of train epoch   4 | time: 58.76s | valid loss  4.79 | valid ppl   120.11
+-----------------------------------------------------------------------------------------
+| train-epoch   5 |   200/ 1327 batches | lr 20.00 | ms/batch 43.37 | loss  4.80 | ppl   121.27
+| train-epoch   5 |   400/ 1327 batches | lr 20.00 | ms/batch 43.11 | loss  4.79 | ppl   120.11
+| train-epoch   5 |   600/ 1327 batches | lr 20.00 | ms/batch 43.12 | loss  4.77 | ppl   117.55
+| train-epoch   5 |   800/ 1327 batches | lr 20.00 | ms/batch 43.08 | loss  4.71 | ppl   110.63
+| train-epoch   5 |  1000/ 1327 batches | lr 20.00 | ms/batch 43.11 | loss  4.75 | ppl   116.01
+| train-epoch   5 |  1200/ 1327 batches | lr 20.00 | ms/batch 43.11 | loss  4.64 | ppl   103.31
+-----------------------------------------------------------------------------------------
+| end of train epoch   5 | time: 58.91s | valid loss  4.70 | valid ppl   109.87
+-----------------------------------------------------------------------------------------
+| train-epoch   6 |   200/ 1327 batches | lr 20.00 | ms/batch 43.54 | loss  4.67 | ppl   106.92
+| train-epoch   6 |   400/ 1327 batches | lr 20.00 | ms/batch 43.26 | loss  4.67 | ppl   107.15
+| train-epoch   6 |   600/ 1327 batches | lr 20.00 | ms/batch 43.28 | loss  4.66 | ppl   105.40
+| train-epoch   6 |   800/ 1327 batches | lr 20.00 | ms/batch 43.24 | loss  4.59 | ppl    98.82
+| train-epoch   6 |  1000/ 1327 batches | lr 20.00 | ms/batch 43.26 | loss  4.65 | ppl   104.91
+| train-epoch   6 |  1200/ 1327 batches | lr 20.00 | ms/batch 43.29 | loss  4.53 | ppl    92.96
+-----------------------------------------------------------------------------------------
+| end of train epoch   6 | time: 59.12s | valid loss  4.64 | valid ppl   103.91
+-----------------------------------------------------------------------------------------
+| train-epoch   7 |   200/ 1327 batches | lr 20.00 | ms/batch 42.93 | loss  4.58 | ppl    97.74
+| train-epoch   7 |   400/ 1327 batches | lr 20.00 | ms/batch 42.68 | loss  4.58 | ppl    98.00
+| train-epoch   7 |   600/ 1327 batches | lr 20.00 | ms/batch 42.70 | loss  4.57 | ppl    96.22
+| train-epoch   7 |   800/ 1327 batches | lr 20.00 | ms/batch 42.71 | loss  4.51 | ppl    90.55
+| train-epoch   7 |  1000/ 1327 batches | lr 20.00 | ms/batch 42.68 | loss  4.57 | ppl    96.07
+| train-epoch   7 |  1200/ 1327 batches | lr 20.00 | ms/batch 42.68 | loss  4.45 | ppl    85.32
+-----------------------------------------------------------------------------------------
+| end of train epoch   7 | time: 58.34s | valid loss  4.60 | valid ppl    99.12
+-----------------------------------------------------------------------------------------
+| train-epoch   8 |   200/ 1327 batches | lr 20.00 | ms/batch 43.50 | loss  4.50 | ppl    89.87
+| train-epoch   8 |   400/ 1327 batches | lr 20.00 | ms/batch 43.25 | loss  4.50 | ppl    90.11
+| train-epoch   8 |   600/ 1327 batches | lr 20.00 | ms/batch 43.24 | loss  4.49 | ppl    88.88
+| train-epoch   8 |   800/ 1327 batches | lr 20.00 | ms/batch 43.26 | loss  4.43 | ppl    83.69
+| train-epoch   8 |  1000/ 1327 batches | lr 20.00 | ms/batch 43.23 | loss  4.50 | ppl    89.69
+| train-epoch   8 |  1200/ 1327 batches | lr 20.00 | ms/batch 43.25 | loss  4.37 | ppl    79.08
+-----------------------------------------------------------------------------------------
+| end of train epoch   8 | time: 59.09s | valid loss  4.56 | valid ppl    95.18
+-----------------------------------------------------------------------------------------
+| train-epoch   9 |   200/ 1327 batches | lr 20.00 | ms/batch 43.39 | loss  4.42 | ppl    83.45
+| train-epoch   9 |   400/ 1327 batches | lr 20.00 | ms/batch 43.20 | loss  4.43 | ppl    83.72
+| train-epoch   9 |   600/ 1327 batches | lr 20.00 | ms/batch 43.15 | loss  4.42 | ppl    82.69
+| train-epoch   9 |   800/ 1327 batches | lr 20.00 | ms/batch 43.17 | loss  4.35 | ppl    77.72
+| train-epoch   9 |  1000/ 1327 batches | lr 20.00 | ms/batch 43.17 | loss  4.43 | ppl    83.80
+| train-epoch   9 |  1200/ 1327 batches | lr 20.00 | ms/batch 43.15 | loss  4.30 | ppl    73.56
+-----------------------------------------------------------------------------------------
+| end of train epoch   9 | time: 58.97s | valid loss  4.53 | valid ppl    92.75
+-----------------------------------------------------------------------------------------
+| train-epoch  10 |   200/ 1327 batches | lr 20.00 | ms/batch 43.43 | loss  4.36 | ppl    78.45
+| train-epoch  10 |   400/ 1327 batches | lr 20.00 | ms/batch 43.21 | loss  4.36 | ppl    78.36
+| train-epoch  10 |   600/ 1327 batches | lr 20.00 | ms/batch 43.22 | loss  4.36 | ppl    77.90
+| train-epoch  10 |   800/ 1327 batches | lr 20.00 | ms/batch 43.18 | loss  4.29 | ppl    72.80
+| train-epoch  10 |  1000/ 1327 batches | lr 20.00 | ms/batch 43.20 | loss  4.37 | ppl    78.89
+| train-epoch  10 |  1200/ 1327 batches | lr 20.00 | ms/batch 43.22 | loss  4.24 | ppl    69.55
+-----------------------------------------------------------------------------------------
+| end of train epoch  10 | time: 59.03s | valid loss  4.50 | valid ppl    90.02
+-----------------------------------------------------------------------------------------
+| train-epoch  11 |   200/ 1327 batches | lr 20.00 | ms/batch 43.28 | loss  4.31 | ppl    74.18
+| train-epoch  11 |   400/ 1327 batches | lr 20.00 | ms/batch 43.01 | loss  4.30 | ppl    73.85
+| train-epoch  11 |   600/ 1327 batches | lr 20.00 | ms/batch 43.04 | loss  4.29 | ppl    73.06
+| train-epoch  11 |   800/ 1327 batches | lr 20.00 | ms/batch 43.03 | loss  4.23 | ppl    68.81
+| train-epoch  11 |  1000/ 1327 batches | lr 20.00 | ms/batch 43.03 | loss  4.31 | ppl    74.60
+| train-epoch  11 |  1200/ 1327 batches | lr 20.00 | ms/batch 43.04 | loss  4.18 | ppl    65.57
+-----------------------------------------------------------------------------------------
+| end of train epoch  11 | time: 58.80s | valid loss  4.49 | valid ppl    88.88
+-----------------------------------------------------------------------------------------
+| train-epoch  12 |   200/ 1327 batches | lr 20.00 | ms/batch 43.41 | loss  4.25 | ppl    69.85
+| train-epoch  12 |   400/ 1327 batches | lr 20.00 | ms/batch 43.16 | loss  4.25 | ppl    69.98
+| train-epoch  12 |   600/ 1327 batches | lr 20.00 | ms/batch 43.17 | loss  4.24 | ppl    69.21
+| train-epoch  12 |   800/ 1327 batches | lr 20.00 | ms/batch 43.18 | loss  4.18 | ppl    65.32
+| train-epoch  12 |  1000/ 1327 batches | lr 20.00 | ms/batch 43.15 | loss  4.26 | ppl    70.82
+| train-epoch  12 |  1200/ 1327 batches | lr 20.00 | ms/batch 43.18 | loss  4.13 | ppl    62.41
+-----------------------------------------------------------------------------------------
+| end of train epoch  12 | time: 58.99s | valid loss  4.47 | valid ppl    87.58
+-----------------------------------------------------------------------------------------
+| train-epoch  13 |   200/ 1327 batches | lr 20.00 | ms/batch 43.57 | loss  4.20 | ppl    66.64
+| train-epoch  13 |   400/ 1327 batches | lr 20.00 | ms/batch 43.39 | loss  4.19 | ppl    66.30
+| train-epoch  13 |   600/ 1327 batches | lr 20.00 | ms/batch 43.34 | loss  4.18 | ppl    65.68
+| train-epoch  13 |   800/ 1327 batches | lr 20.00 | ms/batch 43.34 | loss  4.13 | ppl    62.14
+| train-epoch  13 |  1000/ 1327 batches | lr 20.00 | ms/batch 43.29 | loss  4.21 | ppl    67.51
+| train-epoch  13 |  1200/ 1327 batches | lr 20.00 | ms/batch 43.24 | loss  4.08 | ppl    59.34
+-----------------------------------------------------------------------------------------
+| end of train epoch  13 | time: 59.20s | valid loss  4.46 | valid ppl    86.79
+-----------------------------------------------------------------------------------------
+| train-epoch  14 |   200/ 1327 batches | lr 20.00 | ms/batch 42.98 | loss  4.15 | ppl    63.34
+| train-epoch  14 |   400/ 1327 batches | lr 20.00 | ms/batch 42.92 | loss  4.15 | ppl    63.21
+| train-epoch  14 |   600/ 1327 batches | lr 20.00 | ms/batch 42.67 | loss  4.14 | ppl    62.73
+| train-epoch  14 |   800/ 1327 batches | lr 20.00 | ms/batch 42.94 | loss  4.08 | ppl    59.10
+| train-epoch  14 |  1000/ 1327 batches | lr 20.00 | ms/batch 42.63 | loss  4.17 | ppl    64.49
+| train-epoch  14 |  1200/ 1327 batches | lr 20.00 | ms/batch 42.62 | loss  4.04 | ppl    56.57
+-----------------------------------------------------------------------------------------
+| end of train epoch  14 | time: 58.40s | valid loss  4.45 | valid ppl    85.85
+-----------------------------------------------------------------------------------------
+| train-epoch  15 |   200/ 1327 batches | lr 20.00 | ms/batch 43.30 | loss  4.10 | ppl    60.35
+| train-epoch  15 |   400/ 1327 batches | lr 20.00 | ms/batch 43.20 | loss  4.10 | ppl    60.43
+| train-epoch  15 |   600/ 1327 batches | lr 20.00 | ms/batch 43.10 | loss  4.09 | ppl    59.75
+| train-epoch  15 |   800/ 1327 batches | lr 20.00 | ms/batch 43.24 | loss  4.04 | ppl    56.96
+| train-epoch  15 |  1000/ 1327 batches | lr 20.00 | ms/batch 42.85 | loss  4.13 | ppl    62.09
+| train-epoch  15 |  1200/ 1327 batches | lr 20.00 | ms/batch 42.88 | loss  3.99 | ppl    54.28
+-----------------------------------------------------------------------------------------
+| end of train epoch  15 | time: 58.89s | valid loss  4.44 | valid ppl    84.68
+-----------------------------------------------------------------------------------------
+| train-epoch  16 |   200/ 1327 batches | lr 20.00 | ms/batch 43.86 | loss  4.06 | ppl    58.01
+| train-epoch  16 |   400/ 1327 batches | lr 20.00 | ms/batch 43.43 | loss  4.06 | ppl    57.77
+| train-epoch  16 |   600/ 1327 batches | lr 20.00 | ms/batch 43.31 | loss  4.05 | ppl    57.38
+| train-epoch  16 |   800/ 1327 batches | lr 20.00 | ms/batch 43.29 | loss  4.00 | ppl    54.36
+| train-epoch  16 |  1000/ 1327 batches | lr 20.00 | ms/batch 43.32 | loss  4.08 | ppl    59.23
+| train-epoch  16 |  1200/ 1327 batches | lr 20.00 | ms/batch 43.30 | loss  3.95 | ppl    51.96
+-----------------------------------------------------------------------------------------
+| end of train epoch  16 | time: 59.25s | valid loss  4.44 | valid ppl    84.50
+-----------------------------------------------------------------------------------------
+| train-epoch  17 |   200/ 1327 batches | lr 20.00 | ms/batch 43.53 | loss  4.02 | ppl    55.48
+| train-epoch  17 |   400/ 1327 batches | lr 20.00 | ms/batch 43.29 | loss  4.02 | ppl    55.57
+| train-epoch  17 |   600/ 1327 batches | lr 20.00 | ms/batch 43.32 | loss  4.00 | ppl    54.76
+| train-epoch  17 |   800/ 1327 batches | lr 20.00 | ms/batch 43.32 | loss  3.95 | ppl    52.11
+| train-epoch  17 |  1000/ 1327 batches | lr 20.00 | ms/batch 43.29 | loss  4.05 | ppl    57.33
+| train-epoch  17 |  1200/ 1327 batches | lr 20.00 | ms/batch 43.30 | loss  3.91 | ppl    49.68
+-----------------------------------------------------------------------------------------
+| end of train epoch  17 | time: 59.16s | valid loss  4.44 | valid ppl    84.60
+-----------------------------------------------------------------------------------------
+| train-epoch  18 |   200/ 1327 batches | lr 5.00 | ms/batch 43.39 | loss  3.97 | ppl    53.09
+| train-epoch  18 |   400/ 1327 batches | lr 5.00 | ms/batch 43.14 | loss  3.92 | ppl    50.33
+| train-epoch  18 |   600/ 1327 batches | lr 5.00 | ms/batch 43.12 | loss  3.88 | ppl    48.53
+| train-epoch  18 |   800/ 1327 batches | lr 5.00 | ms/batch 43.15 | loss  3.79 | ppl    44.40
+| train-epoch  18 |  1000/ 1327 batches | lr 5.00 | ms/batch 43.13 | loss  3.86 | ppl    47.55
+| train-epoch  18 |  1200/ 1327 batches | lr 5.00 | ms/batch 43.15 | loss  3.69 | ppl    40.24
+-----------------------------------------------------------------------------------------
+| end of train epoch  18 | time: 58.94s | valid loss  4.41 | valid ppl    82.63
+-----------------------------------------------------------------------------------------
+| train-epoch  19 |   200/ 1327 batches | lr 5.00 | ms/batch 43.48 | loss  3.86 | ppl    47.48
+| train-epoch  19 |   400/ 1327 batches | lr 5.00 | ms/batch 43.28 | loss  3.83 | ppl    46.29
+| train-epoch  19 |   600/ 1327 batches | lr 5.00 | ms/batch 43.31 | loss  3.81 | ppl    45.25
+| train-epoch  19 |   800/ 1327 batches | lr 5.00 | ms/batch 43.53 | loss  3.74 | ppl    41.93
+| train-epoch  19 |  1000/ 1327 batches | lr 5.00 | ms/batch 43.53 | loss  3.81 | ppl    45.36
+| train-epoch  19 |  1200/ 1327 batches | lr 5.00 | ms/batch 43.53 | loss  3.65 | ppl    38.51
+-----------------------------------------------------------------------------------------
+| end of train epoch  19 | time: 59.31s | valid loss  4.41 | valid ppl    82.29
+-----------------------------------------------------------------------------------------
+| train-epoch  20 |   200/ 1327 batches | lr 5.00 | ms/batch 43.66 | loss  3.82 | ppl    45.40
+| train-epoch  20 |   400/ 1327 batches | lr 5.00 | ms/batch 43.45 | loss  3.79 | ppl    44.32
+| train-epoch  20 |   600/ 1327 batches | lr 5.00 | ms/batch 43.46 | loss  3.77 | ppl    43.47
+| train-epoch  20 |   800/ 1327 batches | lr 5.00 | ms/batch 43.41 | loss  3.70 | ppl    40.29
+| train-epoch  20 |  1000/ 1327 batches | lr 5.00 | ms/batch 43.43 | loss  3.78 | ppl    43.71
+| train-epoch  20 |  1200/ 1327 batches | lr 5.00 | ms/batch 43.43 | loss  3.62 | ppl    37.41
+-----------------------------------------------------------------------------------------
+| end of train epoch  20 | time: 59.34s | valid loss  4.41 | valid ppl    82.54
+-----------------------------------------------------------------------------------------
+| train-epoch  21 |   200/ 1327 batches | lr 1.25 | ms/batch 43.07 | loss  3.79 | ppl    44.34
+| train-epoch  21 |   400/ 1327 batches | lr 1.25 | ms/batch 42.83 | loss  3.77 | ppl    43.23
+| train-epoch  21 |   600/ 1327 batches | lr 1.25 | ms/batch 42.85 | loss  3.74 | ppl    42.02
+| train-epoch  21 |   800/ 1327 batches | lr 1.25 | ms/batch 42.81 | loss  3.66 | ppl    38.92
+| train-epoch  21 |  1000/ 1327 batches | lr 1.25 | ms/batch 42.85 | loss  3.73 | ppl    41.75
+| train-epoch  21 |  1200/ 1327 batches | lr 1.25 | ms/batch 42.81 | loss  3.56 | ppl    35.29
+-----------------------------------------------------------------------------------------
+| end of train epoch  21 | time: 58.53s | valid loss  4.40 | valid ppl    81.56
+-----------------------------------------------------------------------------------------
+| train-epoch  22 |   200/ 1327 batches | lr 1.25 | ms/batch 43.61 | loss  3.76 | ppl    43.08
+| train-epoch  22 |   400/ 1327 batches | lr 1.25 | ms/batch 43.34 | loss  3.74 | ppl    41.89
+| train-epoch  22 |   600/ 1327 batches | lr 1.25 | ms/batch 43.36 | loss  3.71 | ppl    40.98
+| train-epoch  22 |   800/ 1327 batches | lr 1.25 | ms/batch 43.36 | loss  3.64 | ppl    38.10
+| train-epoch  22 |  1000/ 1327 batches | lr 1.25 | ms/batch 43.38 | loss  3.71 | ppl    40.98
+| train-epoch  22 |  1200/ 1327 batches | lr 1.25 | ms/batch 43.40 | loss  3.55 | ppl    34.87
+-----------------------------------------------------------------------------------------
+| end of train epoch  22 | time: 59.24s | valid loss  4.40 | valid ppl    81.74
+-----------------------------------------------------------------------------------------
+| train-epoch  23 |   200/ 1327 batches | lr 0.31 | ms/batch 43.53 | loss  3.75 | ppl    42.72
+| train-epoch  23 |   400/ 1327 batches | lr 0.31 | ms/batch 43.30 | loss  3.73 | ppl    41.62
+| train-epoch  23 |   600/ 1327 batches | lr 0.31 | ms/batch 43.30 | loss  3.71 | ppl    40.99
+| train-epoch  23 |   800/ 1327 batches | lr 0.31 | ms/batch 43.34 | loss  3.64 | ppl    38.01
+| train-epoch  23 |  1000/ 1327 batches | lr 0.31 | ms/batch 43.35 | loss  3.71 | ppl    40.66
+| train-epoch  23 |  1200/ 1327 batches | lr 0.31 | ms/batch 43.57 | loss  3.53 | ppl    34.29
+-----------------------------------------------------------------------------------------
+| end of train epoch  23 | time: 59.26s | valid loss  4.40 | valid ppl    81.17
+-----------------------------------------------------------------------------------------
+| train-epoch  24 |   200/ 1327 batches | lr 0.31 | ms/batch 43.75 | loss  3.75 | ppl    42.38
+| train-epoch  24 |   400/ 1327 batches | lr 0.31 | ms/batch 43.64 | loss  3.72 | ppl    41.32
+| train-epoch  24 |   600/ 1327 batches | lr 0.31 | ms/batch 43.63 | loss  3.71 | ppl    40.67
+| train-epoch  24 |   800/ 1327 batches | lr 0.31 | ms/batch 43.71 | loss  3.63 | ppl    37.62
+| train-epoch  24 |  1000/ 1327 batches | lr 0.31 | ms/batch 43.69 | loss  3.70 | ppl    40.56
+| train-epoch  24 |  1200/ 1327 batches | lr 0.31 | ms/batch 43.62 | loss  3.53 | ppl    34.12
+-----------------------------------------------------------------------------------------
+| end of train epoch  24 | time: 59.60s | valid loss  4.40 | valid ppl    81.07
+-----------------------------------------------------------------------------------------
+| train-epoch  25 |   200/ 1327 batches | lr 0.31 | ms/batch 43.40 | loss  3.74 | ppl    42.18
+| train-epoch  25 |   400/ 1327 batches | lr 0.31 | ms/batch 43.17 | loss  3.72 | ppl    41.07
+| train-epoch  25 |   600/ 1327 batches | lr 0.31 | ms/batch 43.16 | loss  3.70 | ppl    40.38
+| train-epoch  25 |   800/ 1327 batches | lr 0.31 | ms/batch 43.18 | loss  3.63 | ppl    37.53
+| train-epoch  25 |  1000/ 1327 batches | lr 0.31 | ms/batch 43.21 | loss  3.69 | ppl    40.19
+| train-epoch  25 |  1200/ 1327 batches | lr 0.31 | ms/batch 43.17 | loss  3.53 | ppl    34.19
+-----------------------------------------------------------------------------------------
+| end of train epoch  25 | time: 58.99s | valid loss  4.40 | valid ppl    81.11
+-----------------------------------------------------------------------------------------
+| train-epoch  26 |   200/ 1327 batches | lr 0.08 | ms/batch 43.55 | loss  3.74 | ppl    42.12
+| train-epoch  26 |   400/ 1327 batches | lr 0.08 | ms/batch 43.27 | loss  3.71 | ppl    40.96
+| train-epoch  26 |   600/ 1327 batches | lr 0.08 | ms/batch 43.31 | loss  3.70 | ppl    40.40
+| train-epoch  26 |   800/ 1327 batches | lr 0.08 | ms/batch 43.28 | loss  3.62 | ppl    37.27
+| train-epoch  26 |  1000/ 1327 batches | lr 0.08 | ms/batch 43.31 | loss  3.69 | ppl    40.07
+| train-epoch  26 |  1200/ 1327 batches | lr 0.08 | ms/batch 43.29 | loss  3.52 | ppl    33.84
+-----------------------------------------------------------------------------------------
+| end of train epoch  26 | time: 59.15s | valid loss  4.39 | valid ppl    80.88
+-----------------------------------------------------------------------------------------
+| train-epoch  27 |   200/ 1327 batches | lr 0.08 | ms/batch 43.75 | loss  3.73 | ppl    41.78
+| train-epoch  27 |   400/ 1327 batches | lr 0.08 | ms/batch 43.46 | loss  3.71 | ppl    40.88
+| train-epoch  27 |   600/ 1327 batches | lr 0.08 | ms/batch 43.47 | loss  3.70 | ppl    40.32
+| train-epoch  27 |   800/ 1327 batches | lr 0.08 | ms/batch 43.44 | loss  3.61 | ppl    37.01
+| train-epoch  27 |  1000/ 1327 batches | lr 0.08 | ms/batch 43.48 | loss  3.69 | ppl    40.16
+| train-epoch  27 |  1200/ 1327 batches | lr 0.08 | ms/batch 43.49 | loss  3.52 | ppl    33.88
+-----------------------------------------------------------------------------------------
+| end of train epoch  27 | time: 59.38s | valid loss  4.39 | valid ppl    80.81
+-----------------------------------------------------------------------------------------
+| train-epoch  28 |   200/ 1327 batches | lr 0.08 | ms/batch 43.13 | loss  3.73 | ppl    41.81
+| train-epoch  28 |   400/ 1327 batches | lr 0.08 | ms/batch 42.87 | loss  3.71 | ppl    41.02
+| train-epoch  28 |   600/ 1327 batches | lr 0.08 | ms/batch 42.88 | loss  3.69 | ppl    40.08
+| train-epoch  28 |   800/ 1327 batches | lr 0.08 | ms/batch 42.88 | loss  3.62 | ppl    37.21
+| train-epoch  28 |  1000/ 1327 batches | lr 0.08 | ms/batch 42.84 | loss  3.69 | ppl    40.03
+| train-epoch  28 |  1200/ 1327 batches | lr 0.08 | ms/batch 42.86 | loss  3.53 | ppl    33.98
+-----------------------------------------------------------------------------------------
+| end of train epoch  28 | time: 58.59s | valid loss  4.39 | valid ppl    80.77
+-----------------------------------------------------------------------------------------
+| train-epoch  29 |   200/ 1327 batches | lr 0.08 | ms/batch 43.68 | loss  3.73 | ppl    41.81
+| train-epoch  29 |   400/ 1327 batches | lr 0.08 | ms/batch 43.40 | loss  3.71 | ppl    40.80
+| train-epoch  29 |   600/ 1327 batches | lr 0.08 | ms/batch 43.39 | loss  3.69 | ppl    40.22
+| train-epoch  29 |   800/ 1327 batches | lr 0.08 | ms/batch 43.41 | loss  3.62 | ppl    37.22
+| train-epoch  29 |  1000/ 1327 batches | lr 0.08 | ms/batch 43.40 | loss  3.69 | ppl    40.14
+| train-epoch  29 |  1200/ 1327 batches | lr 0.08 | ms/batch 43.40 | loss  3.52 | ppl    33.95
+-----------------------------------------------------------------------------------------
+| end of train epoch  29 | time: 59.30s | valid loss  4.39 | valid ppl    80.78
+-----------------------------------------------------------------------------------------
+| train-epoch  30 |   200/ 1327 batches | lr 0.02 | ms/batch 43.57 | loss  3.73 | ppl    41.61
+| train-epoch  30 |   400/ 1327 batches | lr 0.02 | ms/batch 43.34 | loss  3.71 | ppl    40.88
+| train-epoch  30 |   600/ 1327 batches | lr 0.02 | ms/batch 43.30 | loss  3.69 | ppl    40.09
+| train-epoch  30 |   800/ 1327 batches | lr 0.02 | ms/batch 43.33 | loss  3.61 | ppl    37.14
+| train-epoch  30 |  1000/ 1327 batches | lr 0.02 | ms/batch 43.35 | loss  3.69 | ppl    40.06
+| train-epoch  30 |  1200/ 1327 batches | lr 0.02 | ms/batch 43.36 | loss  3.52 | ppl    33.92
+-----------------------------------------------------------------------------------------
+| end of train epoch  30 | time: 59.20s | valid loss  4.39 | valid ppl    80.74
+-----------------------------------------------------------------------------------------
+| train-epoch  31 |   200/ 1327 batches | lr 0.02 | ms/batch 43.56 | loss  3.73 | ppl    41.72
+| train-epoch  31 |   400/ 1327 batches | lr 0.02 | ms/batch 43.36 | loss  3.71 | ppl    40.75
+| train-epoch  31 |   600/ 1327 batches | lr 0.02 | ms/batch 43.36 | loss  3.69 | ppl    39.99
+| train-epoch  31 |   800/ 1327 batches | lr 0.02 | ms/batch 43.34 | loss  3.62 | ppl    37.20
+| train-epoch  31 |  1000/ 1327 batches | lr 0.02 | ms/batch 43.37 | loss  3.69 | ppl    39.95
+| train-epoch  31 |  1200/ 1327 batches | lr 0.02 | ms/batch 43.33 | loss  3.53 | ppl    33.96
+-----------------------------------------------------------------------------------------
+| end of train epoch  31 | time: 59.22s | valid loss  4.39 | valid ppl    80.72
+-----------------------------------------------------------------------------------------
+| train-epoch  32 |   200/ 1327 batches | lr 0.02 | ms/batch 43.41 | loss  3.73 | ppl    41.82
+| train-epoch  32 |   400/ 1327 batches | lr 0.02 | ms/batch 43.16 | loss  3.71 | ppl    40.94
+| train-epoch  32 |   600/ 1327 batches | lr 0.02 | ms/batch 43.19 | loss  3.69 | ppl    40.14
+| train-epoch  32 |   800/ 1327 batches | lr 0.02 | ms/batch 43.13 | loss  3.61 | ppl    36.99
+| train-epoch  32 |  1000/ 1327 batches | lr 0.02 | ms/batch 43.18 | loss  3.69 | ppl    40.00
+| train-epoch  32 |  1200/ 1327 batches | lr 0.02 | ms/batch 43.19 | loss  3.53 | ppl    34.09
+-----------------------------------------------------------------------------------------
+| end of train epoch  32 | time: 58.98s | valid loss  4.39 | valid ppl    80.70
+-----------------------------------------------------------------------------------------
+| train-epoch  33 |   200/ 1327 batches | lr 0.02 | ms/batch 43.54 | loss  3.73 | ppl    41.74
+| train-epoch  33 |   400/ 1327 batches | lr 0.02 | ms/batch 43.28 | loss  3.71 | ppl    40.85
+| train-epoch  33 |   600/ 1327 batches | lr 0.02 | ms/batch 43.29 | loss  3.69 | ppl    40.10
+| train-epoch  33 |   800/ 1327 batches | lr 0.02 | ms/batch 43.30 | loss  3.61 | ppl    36.91
+| train-epoch  33 |  1000/ 1327 batches | lr 0.02 | ms/batch 43.27 | loss  3.69 | ppl    39.90
+| train-epoch  33 |  1200/ 1327 batches | lr 0.02 | ms/batch 43.29 | loss  3.52 | ppl    33.75
+-----------------------------------------------------------------------------------------
+| end of train epoch  33 | time: 59.14s | valid loss  4.39 | valid ppl    80.69
+-----------------------------------------------------------------------------------------
+| train-epoch  34 |   200/ 1327 batches | lr 0.02 | ms/batch 43.70 | loss  3.73 | ppl    41.89
+| train-epoch  34 |   400/ 1327 batches | lr 0.02 | ms/batch 43.48 | loss  3.71 | ppl    40.73
+| train-epoch  34 |   600/ 1327 batches | lr 0.02 | ms/batch 43.47 | loss  3.69 | ppl    40.02
+| train-epoch  34 |   800/ 1327 batches | lr 0.02 | ms/batch 43.46 | loss  3.61 | ppl    36.97
+| train-epoch  34 |  1000/ 1327 batches | lr 0.02 | ms/batch 43.45 | loss  3.69 | ppl    40.01
+| train-epoch  34 |  1200/ 1327 batches | lr 0.02 | ms/batch 43.45 | loss  3.52 | ppl    33.70
+-----------------------------------------------------------------------------------------
+| end of train epoch  34 | time: 59.37s | valid loss  4.39 | valid ppl    80.68
+-----------------------------------------------------------------------------------------
+| train-epoch  35 |   200/ 1327 batches | lr 0.02 | ms/batch 43.12 | loss  3.73 | ppl    41.73
+| train-epoch  35 |   400/ 1327 batches | lr 0.02 | ms/batch 42.85 | loss  3.71 | ppl    40.87
+| train-epoch  35 |   600/ 1327 batches | lr 0.02 | ms/batch 42.83 | loss  3.69 | ppl    40.20
+| train-epoch  35 |   800/ 1327 batches | lr 0.02 | ms/batch 42.86 | loss  3.61 | ppl    37.00
+| train-epoch  35 |  1000/ 1327 batches | lr 0.02 | ms/batch 42.85 | loss  3.69 | ppl    39.88
+| train-epoch  35 |  1200/ 1327 batches | lr 0.02 | ms/batch 42.87 | loss  3.52 | ppl    33.74
+-----------------------------------------------------------------------------------------
+| end of train epoch  35 | time: 58.57s | valid loss  4.39 | valid ppl    80.69
+-----------------------------------------------------------------------------------------
+| train-epoch  36 |   200/ 1327 batches | lr 0.00 | ms/batch 43.60 | loss  3.74 | ppl    41.92
+| train-epoch  36 |   400/ 1327 batches | lr 0.00 | ms/batch 43.39 | loss  3.71 | ppl    40.71
+| train-epoch  36 |   600/ 1327 batches | lr 0.00 | ms/batch 43.39 | loss  3.68 | ppl    39.83
+| train-epoch  36 |   800/ 1327 batches | lr 0.00 | ms/batch 43.37 | loss  3.60 | ppl    36.78
+| train-epoch  36 |  1000/ 1327 batches | lr 0.00 | ms/batch 43.40 | loss  3.68 | ppl    39.78
+| train-epoch  36 |  1200/ 1327 batches | lr 0.00 | ms/batch 43.38 | loss  3.52 | ppl    33.74
+-----------------------------------------------------------------------------------------
+| end of train epoch  36 | time: 59.27s | valid loss  4.39 | valid ppl    80.69
+-----------------------------------------------------------------------------------------
+| train-epoch  37 |   200/ 1327 batches | lr 0.00 | ms/batch 43.55 | loss  3.73 | ppl    41.69
+| train-epoch  37 |   400/ 1327 batches | lr 0.00 | ms/batch 43.30 | loss  3.70 | ppl    40.56
+| train-epoch  37 |   600/ 1327 batches | lr 0.00 | ms/batch 43.31 | loss  3.69 | ppl    39.89
+| train-epoch  37 |   800/ 1327 batches | lr 0.00 | ms/batch 43.30 | loss  3.61 | ppl    36.99
+| train-epoch  37 |  1000/ 1327 batches | lr 0.00 | ms/batch 43.33 | loss  3.68 | ppl    39.69
+| train-epoch  37 |  1200/ 1327 batches | lr 0.00 | ms/batch 43.28 | loss  3.52 | ppl    33.85
+-----------------------------------------------------------------------------------------
+| end of train epoch  37 | time: 59.17s | valid loss  4.39 | valid ppl    80.69
+-----------------------------------------------------------------------------------------
+| train-epoch  38 |   200/ 1327 batches | lr 0.00 | ms/batch 43.56 | loss  3.73 | ppl    41.53
+| train-epoch  38 |   400/ 1327 batches | lr 0.00 | ms/batch 43.33 | loss  3.71 | ppl    40.76
+| train-epoch  38 |   600/ 1327 batches | lr 0.00 | ms/batch 43.34 | loss  3.69 | ppl    40.10
+| train-epoch  38 |   800/ 1327 batches | lr 0.00 | ms/batch 43.32 | loss  3.61 | ppl    36.92
+| train-epoch  38 |  1000/ 1327 batches | lr 0.00 | ms/batch 43.33 | loss  3.68 | ppl    39.72
+| train-epoch  38 |  1200/ 1327 batches | lr 0.00 | ms/batch 43.35 | loss  3.52 | ppl    33.89
+-----------------------------------------------------------------------------------------
+| end of train epoch  38 | time: 59.16s | valid loss  4.39 | valid ppl    80.69
+-----------------------------------------------------------------------------------------
+| train-epoch  39 |   200/ 1327 batches | lr 0.00 | ms/batch 42.81 | loss  3.73 | ppl    41.87
+| train-epoch  39 |   400/ 1327 batches | lr 0.00 | ms/batch 43.10 | loss  3.71 | ppl    40.94
+| train-epoch  39 |   600/ 1327 batches | lr 0.00 | ms/batch 43.26 | loss  3.69 | ppl    39.94
+| train-epoch  39 |   800/ 1327 batches | lr 0.00 | ms/batch 43.26 | loss  3.62 | ppl    37.16
+| train-epoch  39 |  1000/ 1327 batches | lr 0.00 | ms/batch 43.23 | loss  3.68 | ppl    39.73
+| train-epoch  39 |  1200/ 1327 batches | lr 0.00 | ms/batch 43.23 | loss  3.52 | ppl    33.88
+-----------------------------------------------------------------------------------------
+| end of train epoch  39 | time: 58.92s | valid loss  4.39 | valid ppl    80.69
+-----------------------------------------------------------------------------------------
+| train-epoch  40 |   200/ 1327 batches | lr 0.00 | ms/batch 43.59 | loss  3.74 | ppl    41.89
+| train-epoch  40 |   400/ 1327 batches | lr 0.00 | ms/batch 43.30 | loss  3.71 | ppl    40.68
+| train-epoch  40 |   600/ 1327 batches | lr 0.00 | ms/batch 43.37 | loss  3.69 | ppl    40.10
+| train-epoch  40 |   800/ 1327 batches | lr 0.00 | ms/batch 43.39 | loss  3.61 | ppl    37.07
+| train-epoch  40 |  1000/ 1327 batches | lr 0.00 | ms/batch 43.38 | loss  3.69 | ppl    39.97
+| train-epoch  40 |  1200/ 1327 batches | lr 0.00 | ms/batch 43.36 | loss  3.52 | ppl    33.91
+-----------------------------------------------------------------------------------------
+| end of train epoch  40 | time: 59.23s | valid loss  4.39 | valid ppl    80.69
+-----------------------------------------------------------------------------------------
+required epochs  40 | actual epochs  40
+pretrain epochs  40 | prune epochs   0 | retrain epochs   0
+=========================================================================================
+| End of training | test loss  4.35 | test ppl    77.74
+=========================================================================================
+python main.py --cuda --emsize 1500 --nhid 1500 --dropout 0.65 --epochs 40 --tied --save model/baseline/model.pt --data ./data/ptb
+<class 'torch.Tensor'> torch.Size([10000, 1500])
+<class 'torch.Tensor'> torch.Size([6000, 1500])
+<class 'torch.Tensor'> torch.Size([6000, 1500])
+<class 'torch.Tensor'> torch.Size([6000])
+<class 'torch.Tensor'> torch.Size([6000])
+<class 'torch.Tensor'> torch.Size([6000, 1500])
+<class 'torch.Tensor'> torch.Size([6000, 1500])
+<class 'torch.Tensor'> torch.Size([6000])
+<class 'torch.Tensor'> torch.Size([6000])
+<class 'torch.Tensor'> torch.Size([10000])
+RNNModel(
+  (drop): Dropout(p=0.65)
+  (encoder): Embedding(10000, 1500)
+  (rnn): LSTM(1500, 1500, num_layers=2, dropout=0.65)
+  (decoder): Linear(in_features=1500, out_features=10000, bias=True)
+)
+Dropout(p=0.65)
+Embedding(10000, 1500)
+LSTM(1500, 1500, num_layers=2, dropout=0.65)
+Linear(in_features=1500, out_features=10000, bias=True)
+| train-epoch   1 |   200/ 1327 batches | lr 20.00 | ms/batch 42.90 | loss  7.19 | ppl  1328.05
+| train-epoch   1 |   400/ 1327 batches | lr 20.00 | ms/batch 42.58 | loss  6.25 | ppl   517.28
+| train-epoch   1 |   600/ 1327 batches | lr 20.00 | ms/batch 42.59 | loss  5.96 | ppl   387.34
+| train-epoch   1 |   800/ 1327 batches | lr 20.00 | ms/batch 42.58 | loss  5.73 | ppl   306.87
+| train-epoch   1 |  1000/ 1327 batches | lr 20.00 | ms/batch 42.61 | loss  5.63 | ppl   277.44
+| train-epoch   1 |  1200/ 1327 batches | lr 20.00 | ms/batch 42.61 | loss  5.49 | ppl   242.77
+-----------------------------------------------------------------------------------------
+| end of train epoch   1 | time: 58.22s | valid loss  5.36 | valid ppl   211.92
+-----------------------------------------------------------------------------------------
+| train-epoch   2 |   200/ 1327 batches | lr 20.00 | ms/batch 43.06 | loss  5.43 | ppl   227.55
+| train-epoch   2 |   400/ 1327 batches | lr 20.00 | ms/batch 42.86 | loss  5.36 | ppl   213.65
+| train-epoch   2 |   600/ 1327 batches | lr 20.00 | ms/batch 42.84 | loss  5.32 | ppl   204.31
+| train-epoch   2 |   800/ 1327 batches | lr 20.00 | ms/batch 42.87 | loss  5.22 | ppl   184.70
+| train-epoch   2 |  1000/ 1327 batches | lr 20.00 | ms/batch 42.86 | loss  5.21 | ppl   183.33
+| train-epoch   2 |  1200/ 1327 batches | lr 20.00 | ms/batch 42.86 | loss  5.11 | ppl   166.17
+-----------------------------------------------------------------------------------------
+| end of train epoch   2 | time: 58.55s | valid loss  5.04 | valid ppl   154.87
+-----------------------------------------------------------------------------------------
+| train-epoch   3 |   200/ 1327 batches | lr 20.00 | ms/batch 42.84 | loss  5.12 | ppl   167.58
+| train-epoch   3 |   400/ 1327 batches | lr 20.00 | ms/batch 42.58 | loss  5.10 | ppl   163.84
+| train-epoch   3 |   600/ 1327 batches | lr 20.00 | ms/batch 42.57 | loss  5.07 | ppl   159.25
+| train-epoch   3 |   800/ 1327 batches | lr 20.00 | ms/batch 42.58 | loss  4.99 | ppl   146.94
+| train-epoch   3 |  1000/ 1327 batches | lr 20.00 | ms/batch 42.57 | loss  5.01 | ppl   150.47
+| train-epoch   3 |  1200/ 1327 batches | lr 20.00 | ms/batch 42.56 | loss  4.90 | ppl   134.89
+-----------------------------------------------------------------------------------------
+| end of train epoch   3 | time: 58.20s | valid loss  4.87 | valid ppl   130.29
+-----------------------------------------------------------------------------------------
+| train-epoch   4 |   200/ 1327 batches | lr 20.00 | ms/batch 42.70 | loss  4.94 | ppl   139.21
+| train-epoch   4 |   400/ 1327 batches | lr 20.00 | ms/batch 42.43 | loss  4.92 | ppl   137.59
+| train-epoch   4 |   600/ 1327 batches | lr 20.00 | ms/batch 42.42 | loss  4.90 | ppl   134.21
+| train-epoch   4 |   800/ 1327 batches | lr 20.00 | ms/batch 42.44 | loss  4.83 | ppl   125.44
+| train-epoch   4 |  1000/ 1327 batches | lr 20.00 | ms/batch 42.44 | loss  4.87 | ppl   130.62
+| train-epoch   4 |  1200/ 1327 batches | lr 20.00 | ms/batch 42.43 | loss  4.76 | ppl   117.14
+-----------------------------------------------------------------------------------------
+| end of train epoch   4 | time: 58.00s | valid loss  4.76 | valid ppl   117.21
+-----------------------------------------------------------------------------------------
+| train-epoch   5 |   200/ 1327 batches | lr 20.00 | ms/batch 42.77 | loss  4.80 | ppl   121.31
+| train-epoch   5 |   400/ 1327 batches | lr 20.00 | ms/batch 42.55 | loss  4.79 | ppl   120.63
+| train-epoch   5 |   600/ 1327 batches | lr 20.00 | ms/batch 42.53 | loss  4.78 | ppl   118.62
+| train-epoch   5 |   800/ 1327 batches | lr 20.00 | ms/batch 42.53 | loss  4.71 | ppl   111.48
+| train-epoch   5 |  1000/ 1327 batches | lr 20.00 | ms/batch 42.54 | loss  4.76 | ppl   117.04
+| train-epoch   5 |  1200/ 1327 batches | lr 20.00 | ms/batch 42.55 | loss  4.65 | ppl   104.54
+-----------------------------------------------------------------------------------------
+| end of train epoch   5 | time: 58.14s | valid loss  4.69 | valid ppl   108.32
+-----------------------------------------------------------------------------------------
+| train-epoch   6 |   200/ 1327 batches | lr 20.00 | ms/batch 42.95 | loss  4.70 | ppl   109.61
+| train-epoch   6 |   400/ 1327 batches | lr 20.00 | ms/batch 42.70 | loss  4.69 | ppl   109.19
+| train-epoch   6 |   600/ 1327 batches | lr 20.00 | ms/batch 42.71 | loss  4.68 | ppl   107.54
+| train-epoch   6 |   800/ 1327 batches | lr 20.00 | ms/batch 42.71 | loss  4.62 | ppl   101.30
+| train-epoch   6 |  1000/ 1327 batches | lr 20.00 | ms/batch 42.71 | loss  4.68 | ppl   107.32
+| train-epoch   6 |  1200/ 1327 batches | lr 20.00 | ms/batch 42.71 | loss  4.56 | ppl    95.57
+-----------------------------------------------------------------------------------------
+| end of train epoch   6 | time: 58.36s | valid loss  4.63 | valid ppl   102.10
+-----------------------------------------------------------------------------------------
+| train-epoch   7 |   200/ 1327 batches | lr 20.00 | ms/batch 42.37 | loss  4.61 | ppl   100.96
+| train-epoch   7 |   400/ 1327 batches | lr 20.00 | ms/batch 42.12 | loss  4.61 | ppl   100.34
+| train-epoch   7 |   600/ 1327 batches | lr 20.00 | ms/batch 42.14 | loss  4.60 | ppl    99.67
+| train-epoch   7 |   800/ 1327 batches | lr 20.00 | ms/batch 42.13 | loss  4.54 | ppl    93.58
+| train-epoch   7 |  1000/ 1327 batches | lr 20.00 | ms/batch 42.14 | loss  4.61 | ppl   100.10
+| train-epoch   7 |  1200/ 1327 batches | lr 20.00 | ms/batch 42.15 | loss  4.49 | ppl    88.77
+-----------------------------------------------------------------------------------------
+| end of train epoch   7 | time: 57.61s | valid loss  4.58 | valid ppl    97.42
+-----------------------------------------------------------------------------------------
+| train-epoch   8 |   200/ 1327 batches | lr 20.00 | ms/batch 43.03 | loss  4.54 | ppl    93.98
+| train-epoch   8 |   400/ 1327 batches | lr 20.00 | ms/batch 42.88 | loss  4.54 | ppl    94.08
+| train-epoch   8 |   600/ 1327 batches | lr 20.00 | ms/batch 42.85 | loss  4.53 | ppl    92.97
+| train-epoch   8 |   800/ 1327 batches | lr 20.00 | ms/batch 42.84 | loss  4.47 | ppl    87.34
+| train-epoch   8 |  1000/ 1327 batches | lr 20.00 | ms/batch 42.83 | loss  4.54 | ppl    93.65
+| train-epoch   8 |  1200/ 1327 batches | lr 20.00 | ms/batch 42.85 | loss  4.42 | ppl    83.12
+-----------------------------------------------------------------------------------------
+| end of train epoch   8 | time: 58.55s | valid loss  4.55 | valid ppl    94.29
+-----------------------------------------------------------------------------------------
+| train-epoch   9 |   200/ 1327 batches | lr 20.00 | ms/batch 42.78 | loss  4.48 | ppl    88.37
+| train-epoch   9 |   400/ 1327 batches | lr 20.00 | ms/batch 42.61 | loss  4.48 | ppl    88.07
+| train-epoch   9 |   600/ 1327 batches | lr 20.00 | ms/batch 42.62 | loss  4.47 | ppl    87.21
+| train-epoch   9 |   800/ 1327 batches | lr 20.00 | ms/batch 42.61 | loss  4.41 | ppl    82.46
+| train-epoch   9 |  1000/ 1327 batches | lr 20.00 | ms/batch 42.62 | loss  4.48 | ppl    88.65
+| train-epoch   9 |  1200/ 1327 batches | lr 20.00 | ms/batch 42.62 | loss  4.36 | ppl    78.53
+-----------------------------------------------------------------------------------------
+| end of train epoch   9 | time: 58.23s | valid loss  4.51 | valid ppl    91.24
+-----------------------------------------------------------------------------------------
+| train-epoch  10 |   200/ 1327 batches | lr 20.00 | ms/batch 42.83 | loss  4.43 | ppl    84.01
+| train-epoch  10 |   400/ 1327 batches | lr 20.00 | ms/batch 42.64 | loss  4.43 | ppl    83.61
+| train-epoch  10 |   600/ 1327 batches | lr 20.00 | ms/batch 42.64 | loss  4.42 | ppl    82.82
+| train-epoch  10 |   800/ 1327 batches | lr 20.00 | ms/batch 42.62 | loss  4.36 | ppl    78.27
+| train-epoch  10 |  1000/ 1327 batches | lr 20.00 | ms/batch 42.64 | loss  4.44 | ppl    84.46
+| train-epoch  10 |  1200/ 1327 batches | lr 20.00 | ms/batch 42.64 | loss  4.31 | ppl    74.68
+-----------------------------------------------------------------------------------------
+| end of train epoch  10 | time: 58.26s | valid loss  4.49 | valid ppl    88.89
+-----------------------------------------------------------------------------------------
+| train-epoch  11 |   200/ 1327 batches | lr 20.00 | ms/batch 42.67 | loss  4.38 | ppl    79.69
+| train-epoch  11 |   400/ 1327 batches | lr 20.00 | ms/batch 42.48 | loss  4.38 | ppl    79.71
+| train-epoch  11 |   600/ 1327 batches | lr 20.00 | ms/batch 42.50 | loss  4.36 | ppl    78.42
+| train-epoch  11 |   800/ 1327 batches | lr 20.00 | ms/batch 42.48 | loss  4.32 | ppl    75.00
+| train-epoch  11 |  1000/ 1327 batches | lr 20.00 | ms/batch 42.50 | loss  4.39 | ppl    80.60
+| train-epoch  11 |  1200/ 1327 batches | lr 20.00 | ms/batch 42.49 | loss  4.26 | ppl    71.10
+-----------------------------------------------------------------------------------------
+| end of train epoch  11 | time: 58.07s | valid loss  4.47 | valid ppl    87.60
+-----------------------------------------------------------------------------------------
+| train-epoch  12 |   200/ 1327 batches | lr 20.00 | ms/batch 42.97 | loss  4.33 | ppl    76.07
+| train-epoch  12 |   400/ 1327 batches | lr 20.00 | ms/batch 42.77 | loss  4.33 | ppl    76.02
+| train-epoch  12 |   600/ 1327 batches | lr 20.00 | ms/batch 42.76 | loss  4.32 | ppl    75.34
+| train-epoch  12 |   800/ 1327 batches | lr 20.00 | ms/batch 42.77 | loss  4.27 | ppl    71.56
+| train-epoch  12 |  1000/ 1327 batches | lr 20.00 | ms/batch 42.80 | loss  4.35 | ppl    77.29
+| train-epoch  12 |  1200/ 1327 batches | lr 20.00 | ms/batch 42.80 | loss  4.22 | ppl    68.18
+-----------------------------------------------------------------------------------------
+| end of train epoch  12 | time: 58.46s | valid loss  4.45 | valid ppl    85.57
+-----------------------------------------------------------------------------------------
+| train-epoch  13 |   200/ 1327 batches | lr 20.00 | ms/batch 42.94 | loss  4.29 | ppl    73.10
+| train-epoch  13 |   400/ 1327 batches | lr 20.00 | ms/batch 42.72 | loss  4.29 | ppl    73.18
+| train-epoch  13 |   600/ 1327 batches | lr 20.00 | ms/batch 42.72 | loss  4.28 | ppl    71.94
+| train-epoch  13 |   800/ 1327 batches | lr 20.00 | ms/batch 42.73 | loss  4.23 | ppl    68.57
+| train-epoch  13 |  1000/ 1327 batches | lr 20.00 | ms/batch 42.74 | loss  4.31 | ppl    74.52
+| train-epoch  13 |  1200/ 1327 batches | lr 20.00 | ms/batch 42.73 | loss  4.18 | ppl    65.57
+-----------------------------------------------------------------------------------------
+| end of train epoch  13 | time: 58.40s | valid loss  4.44 | valid ppl    84.80
+-----------------------------------------------------------------------------------------
+| train-epoch  14 |   200/ 1327 batches | lr 20.00 | ms/batch 42.35 | loss  4.26 | ppl    70.50
+| train-epoch  14 |   400/ 1327 batches | lr 20.00 | ms/batch 42.17 | loss  4.25 | ppl    70.34
+| train-epoch  14 |   600/ 1327 batches | lr 20.00 | ms/batch 42.17 | loss  4.24 | ppl    69.50
+| train-epoch  14 |   800/ 1327 batches | lr 20.00 | ms/batch 42.17 | loss  4.19 | ppl    65.97
+| train-epoch  14 |  1000/ 1327 batches | lr 20.00 | ms/batch 42.16 | loss  4.28 | ppl    72.17
+| train-epoch  14 |  1200/ 1327 batches | lr 20.00 | ms/batch 42.16 | loss  4.15 | ppl    63.19
+-----------------------------------------------------------------------------------------
+| end of train epoch  14 | time: 57.64s | valid loss  4.43 | valid ppl    83.58
+-----------------------------------------------------------------------------------------
+| train-epoch  15 |   200/ 1327 batches | lr 20.00 | ms/batch 42.88 | loss  4.22 | ppl    67.93
+| train-epoch  15 |   400/ 1327 batches | lr 20.00 | ms/batch 42.90 | loss  4.22 | ppl    67.70
+| train-epoch  15 |   600/ 1327 batches | lr 20.00 | ms/batch 42.91 | loss  4.21 | ppl    67.08
+| train-epoch  15 |   800/ 1327 batches | lr 20.00 | ms/batch 42.91 | loss  4.15 | ppl    63.62
+| train-epoch  15 |  1000/ 1327 batches | lr 20.00 | ms/batch 42.88 | loss  4.25 | ppl    69.83
+| train-epoch  15 |  1200/ 1327 batches | lr 20.00 | ms/batch 42.90 | loss  4.11 | ppl    60.99
+-----------------------------------------------------------------------------------------
+| end of train epoch  15 | time: 58.58s | valid loss  4.42 | valid ppl    82.84
+-----------------------------------------------------------------------------------------
+| train-epoch  16 |   200/ 1327 batches | lr 20.00 | ms/batch 42.85 | loss  4.19 | ppl    65.74
+| train-epoch  16 |   400/ 1327 batches | lr 20.00 | ms/batch 42.59 | loss  4.19 | ppl    65.77
+| train-epoch  16 |   600/ 1327 batches | lr 20.00 | ms/batch 42.63 | loss  4.18 | ppl    65.09
+| train-epoch  16 |   800/ 1327 batches | lr 20.00 | ms/batch 42.61 | loss  4.12 | ppl    61.74
+| train-epoch  16 |  1000/ 1327 batches | lr 20.00 | ms/batch 42.61 | loss  4.21 | ppl    67.54
+| train-epoch  16 |  1200/ 1327 batches | lr 20.00 | ms/batch 42.64 | loss  4.08 | ppl    58.97
+-----------------------------------------------------------------------------------------
+| end of train epoch  16 | time: 58.25s | valid loss  4.40 | valid ppl    81.50
+-----------------------------------------------------------------------------------------
+| train-epoch  17 |   200/ 1327 batches | lr 20.00 | ms/batch 42.89 | loss  4.16 | ppl    63.77
+| train-epoch  17 |   400/ 1327 batches | lr 20.00 | ms/batch 42.57 | loss  4.15 | ppl    63.36
+| train-epoch  17 |   600/ 1327 batches | lr 20.00 | ms/batch 42.65 | loss  4.14 | ppl    62.53
+| train-epoch  17 |   800/ 1327 batches | lr 20.00 | ms/batch 42.64 | loss  4.10 | ppl    60.05
+| train-epoch  17 |  1000/ 1327 batches | lr 20.00 | ms/batch 42.63 | loss  4.18 | ppl    65.18
+| train-epoch  17 |  1200/ 1327 batches | lr 20.00 | ms/batch 42.66 | loss  4.05 | ppl    57.46
+-----------------------------------------------------------------------------------------
+| end of train epoch  17 | time: 58.27s | valid loss  4.39 | valid ppl    80.94
+-----------------------------------------------------------------------------------------
+| train-epoch  18 |   200/ 1327 batches | lr 20.00 | ms/batch 42.74 | loss  4.13 | ppl    62.02
+| train-epoch  18 |   400/ 1327 batches | lr 20.00 | ms/batch 42.42 | loss  4.12 | ppl    61.76
+| train-epoch  18 |   600/ 1327 batches | lr 20.00 | ms/batch 42.52 | loss  4.11 | ppl    60.84
+| train-epoch  18 |   800/ 1327 batches | lr 20.00 | ms/batch 42.49 | loss  4.06 | ppl    58.19
+| train-epoch  18 |  1000/ 1327 batches | lr 20.00 | ms/batch 42.50 | loss  4.16 | ppl    63.77
+| train-epoch  18 |  1200/ 1327 batches | lr 20.00 | ms/batch 42.50 | loss  4.02 | ppl    55.78
+-----------------------------------------------------------------------------------------
+| end of train epoch  18 | time: 58.08s | valid loss  4.39 | valid ppl    80.61
+-----------------------------------------------------------------------------------------
+| train-epoch  19 |   200/ 1327 batches | lr 20.00 | ms/batch 42.87 | loss  4.09 | ppl    59.97
+| train-epoch  19 |   400/ 1327 batches | lr 20.00 | ms/batch 42.52 | loss  4.09 | ppl    59.56
+| train-epoch  19 |   600/ 1327 batches | lr 20.00 | ms/batch 42.59 | loss  4.08 | ppl    59.19
+| train-epoch  19 |   800/ 1327 batches | lr 20.00 | ms/batch 42.61 | loss  4.04 | ppl    56.71
+| train-epoch  19 |  1000/ 1327 batches | lr 20.00 | ms/batch 42.60 | loss  4.13 | ppl    62.12
+| train-epoch  19 |  1200/ 1327 batches | lr 20.00 | ms/batch 42.62 | loss  3.99 | ppl    54.28
+-----------------------------------------------------------------------------------------
+| end of train epoch  19 | time: 58.22s | valid loss  4.38 | valid ppl    80.22
+-----------------------------------------------------------------------------------------
+| train-epoch  20 |   200/ 1327 batches | lr 20.00 | ms/batch 43.03 | loss  4.06 | ppl    58.09
+| train-epoch  20 |   400/ 1327 batches | lr 20.00 | ms/batch 42.68 | loss  4.06 | ppl    58.00
+| train-epoch  20 |   600/ 1327 batches | lr 20.00 | ms/batch 42.76 | loss  4.05 | ppl    57.40
+| train-epoch  20 |   800/ 1327 batches | lr 20.00 | ms/batch 42.77 | loss  4.01 | ppl    54.96
+| train-epoch  20 |  1000/ 1327 batches | lr 20.00 | ms/batch 42.77 | loss  4.10 | ppl    60.49
+| train-epoch  20 |  1200/ 1327 batches | lr 20.00 | ms/batch 42.77 | loss  3.96 | ppl    52.70
+-----------------------------------------------------------------------------------------
+| end of train epoch  20 | time: 58.43s | valid loss  4.38 | valid ppl    79.77
+-----------------------------------------------------------------------------------------
+| train-epoch  21 |   200/ 1327 batches | lr 20.00 | ms/batch 42.58 | loss  4.04 | ppl    56.71
+| train-epoch  21 |   400/ 1327 batches | lr 20.00 | ms/batch 42.30 | loss  4.03 | ppl    56.30
+| train-epoch  21 |   600/ 1327 batches | lr 20.00 | ms/batch 42.34 | loss  4.02 | ppl    55.97
+| train-epoch  21 |   800/ 1327 batches | lr 20.00 | ms/batch 42.38 | loss  3.98 | ppl    53.61
+| train-epoch  21 |  1000/ 1327 batches | lr 20.00 | ms/batch 42.36 | loss  4.07 | ppl    58.46
+| train-epoch  21 |  1200/ 1327 batches | lr 20.00 | ms/batch 42.38 | loss  3.94 | ppl    51.20
+-----------------------------------------------------------------------------------------
+| end of train epoch  21 | time: 57.90s | valid loss  4.38 | valid ppl    79.78
+-----------------------------------------------------------------------------------------
+| train-epoch  22 |   200/ 1327 batches | lr 5.00 | ms/batch 42.92 | loss  4.00 | ppl    54.69
+| train-epoch  22 |   400/ 1327 batches | lr 5.00 | ms/batch 42.70 | loss  3.95 | ppl    51.76
+| train-epoch  22 |   600/ 1327 batches | lr 5.00 | ms/batch 42.62 | loss  3.91 | ppl    49.88
+| train-epoch  22 |   800/ 1327 batches | lr 5.00 | ms/batch 42.69 | loss  3.84 | ppl    46.52
+| train-epoch  22 |  1000/ 1327 batches | lr 5.00 | ms/batch 42.70 | loss  3.91 | ppl    49.77
+| train-epoch  22 |  1200/ 1327 batches | lr 5.00 | ms/batch 42.70 | loss  3.74 | ppl    42.04
+-----------------------------------------------------------------------------------------
+| end of train epoch  22 | time: 58.34s | valid loss  4.35 | valid ppl    77.12
+-----------------------------------------------------------------------------------------
+| train-epoch  23 |   200/ 1327 batches | lr 5.00 | ms/batch 43.07 | loss  3.90 | ppl    49.17
+| train-epoch  23 |   400/ 1327 batches | lr 5.00 | ms/batch 42.83 | loss  3.87 | ppl    48.12
+| train-epoch  23 |   600/ 1327 batches | lr 5.00 | ms/batch 42.78 | loss  3.84 | ppl    46.62
+| train-epoch  23 |   800/ 1327 batches | lr 5.00 | ms/batch 42.84 | loss  3.78 | ppl    43.74
+| train-epoch  23 |  1000/ 1327 batches | lr 5.00 | ms/batch 42.83 | loss  3.86 | ppl    47.55
+| train-epoch  23 |  1200/ 1327 batches | lr 5.00 | ms/batch 42.88 | loss  3.70 | ppl    40.62
+-----------------------------------------------------------------------------------------
+| end of train epoch  23 | time: 58.53s | valid loss  4.34 | valid ppl    76.77
+-----------------------------------------------------------------------------------------
+| train-epoch  24 |   200/ 1327 batches | lr 5.00 | ms/batch 43.09 | loss  3.85 | ppl    47.15
+| train-epoch  24 |   400/ 1327 batches | lr 5.00 | ms/batch 42.88 | loss  3.83 | ppl    46.21
+| train-epoch  24 |   600/ 1327 batches | lr 5.00 | ms/batch 42.79 | loss  3.81 | ppl    44.96
+| train-epoch  24 |   800/ 1327 batches | lr 5.00 | ms/batch 42.86 | loss  3.75 | ppl    42.50
+| train-epoch  24 |  1000/ 1327 batches | lr 5.00 | ms/batch 42.87 | loss  3.83 | ppl    46.03
+| train-epoch  24 |  1200/ 1327 batches | lr 5.00 | ms/batch 42.87 | loss  3.68 | ppl    39.46
+-----------------------------------------------------------------------------------------
+| end of train epoch  24 | time: 58.57s | valid loss  4.34 | valid ppl    76.85
+-----------------------------------------------------------------------------------------
+| train-epoch  25 |   200/ 1327 batches | lr 1.25 | ms/batch 42.80 | loss  3.83 | ppl    46.18
+| train-epoch  25 |   400/ 1327 batches | lr 1.25 | ms/batch 42.54 | loss  3.81 | ppl    45.16
+| train-epoch  25 |   600/ 1327 batches | lr 1.25 | ms/batch 42.45 | loss  3.78 | ppl    43.74
+| train-epoch  25 |   800/ 1327 batches | lr 1.25 | ms/batch 42.52 | loss  3.71 | ppl    40.70
+| train-epoch  25 |  1000/ 1327 batches | lr 1.25 | ms/batch 42.53 | loss  3.78 | ppl    43.99
+| train-epoch  25 |  1200/ 1327 batches | lr 1.25 | ms/batch 42.54 | loss  3.62 | ppl    37.31
+-----------------------------------------------------------------------------------------
+| end of train epoch  25 | time: 58.12s | valid loss  4.33 | valid ppl    76.00
+-----------------------------------------------------------------------------------------
+| train-epoch  26 |   200/ 1327 batches | lr 1.25 | ms/batch 42.88 | loss  3.80 | ppl    44.81
+| train-epoch  26 |   400/ 1327 batches | lr 1.25 | ms/batch 42.60 | loss  3.78 | ppl    43.80
+| train-epoch  26 |   600/ 1327 batches | lr 1.25 | ms/batch 42.57 | loss  3.75 | ppl    42.52
+| train-epoch  26 |   800/ 1327 batches | lr 1.25 | ms/batch 42.61 | loss  3.69 | ppl    39.98
+| train-epoch  26 |  1000/ 1327 batches | lr 1.25 | ms/batch 42.61 | loss  3.78 | ppl    43.71
+| train-epoch  26 |  1200/ 1327 batches | lr 1.25 | ms/batch 42.63 | loss  3.61 | ppl    36.97
+-----------------------------------------------------------------------------------------
+| end of train epoch  26 | time: 58.24s | valid loss  4.33 | valid ppl    75.94
+-----------------------------------------------------------------------------------------
+| train-epoch  27 |   200/ 1327 batches | lr 1.25 | ms/batch 43.21 | loss  3.79 | ppl    44.19
+| train-epoch  27 |   400/ 1327 batches | lr 1.25 | ms/batch 42.97 | loss  3.77 | ppl    43.37
+| train-epoch  27 |   600/ 1327 batches | lr 1.25 | ms/batch 42.76 | loss  3.74 | ppl    42.02
+| train-epoch  27 |   800/ 1327 batches | lr 1.25 | ms/batch 42.72 | loss  3.68 | ppl    39.62
+| train-epoch  27 |  1000/ 1327 batches | lr 1.25 | ms/batch 42.75 | loss  3.76 | ppl    43.01
+| train-epoch  27 |  1200/ 1327 batches | lr 1.25 | ms/batch 42.77 | loss  3.60 | ppl    36.72
+-----------------------------------------------------------------------------------------
+| end of train epoch  27 | time: 58.52s | valid loss  4.33 | valid ppl    76.00
+-----------------------------------------------------------------------------------------
+| train-epoch  28 |   200/ 1327 batches | lr 0.31 | ms/batch 42.41 | loss  3.78 | ppl    43.99
+| train-epoch  28 |   400/ 1327 batches | lr 0.31 | ms/batch 42.19 | loss  3.76 | ppl    43.10
+| train-epoch  28 |   600/ 1327 batches | lr 0.31 | ms/batch 42.19 | loss  3.74 | ppl    42.11
+| train-epoch  28 |   800/ 1327 batches | lr 0.31 | ms/batch 42.11 | loss  3.67 | ppl    39.13
+| train-epoch  28 |  1000/ 1327 batches | lr 0.31 | ms/batch 42.17 | loss  3.75 | ppl    42.42
+| train-epoch  28 |  1200/ 1327 batches | lr 0.31 | ms/batch 42.18 | loss  3.59 | ppl    36.12
+-----------------------------------------------------------------------------------------
+| end of train epoch  28 | time: 57.66s | valid loss  4.33 | valid ppl    75.59
+-----------------------------------------------------------------------------------------
+| train-epoch  29 |   200/ 1327 batches | lr 0.31 | ms/batch 43.11 | loss  3.77 | ppl    43.52
+| train-epoch  29 |   400/ 1327 batches | lr 0.31 | ms/batch 42.89 | loss  3.76 | ppl    42.87
+| train-epoch  29 |   600/ 1327 batches | lr 0.31 | ms/batch 42.89 | loss  3.73 | ppl    41.66
+| train-epoch  29 |   800/ 1327 batches | lr 0.31 | ms/batch 42.82 | loss  3.66 | ppl    38.90
+| train-epoch  29 |  1000/ 1327 batches | lr 0.31 | ms/batch 42.92 | loss  3.75 | ppl    42.31
+| train-epoch  29 |  1200/ 1327 batches | lr 0.31 | ms/batch 42.90 | loss  3.59 | ppl    36.07
+-----------------------------------------------------------------------------------------
+| end of train epoch  29 | time: 58.61s | valid loss  4.33 | valid ppl    75.63
+-----------------------------------------------------------------------------------------
+| train-epoch  30 |   200/ 1327 batches | lr 0.08 | ms/batch 42.86 | loss  3.77 | ppl    43.41
+| train-epoch  30 |   400/ 1327 batches | lr 0.08 | ms/batch 42.64 | loss  3.75 | ppl    42.55
+| train-epoch  30 |   600/ 1327 batches | lr 0.08 | ms/batch 42.64 | loss  3.73 | ppl    41.53
+| train-epoch  30 |   800/ 1327 batches | lr 0.08 | ms/batch 42.58 | loss  3.66 | ppl    38.84
+| train-epoch  30 |  1000/ 1327 batches | lr 0.08 | ms/batch 42.67 | loss  3.74 | ppl    42.20
+| train-epoch  30 |  1200/ 1327 batches | lr 0.08 | ms/batch 42.66 | loss  3.58 | ppl    35.86
+-----------------------------------------------------------------------------------------
+| end of train epoch  30 | time: 58.28s | valid loss  4.32 | valid ppl    75.51
+-----------------------------------------------------------------------------------------
+| train-epoch  31 |   200/ 1327 batches | lr 0.08 | ms/batch 42.90 | loss  3.77 | ppl    43.34
+| train-epoch  31 |   400/ 1327 batches | lr 0.08 | ms/batch 42.67 | loss  3.76 | ppl    42.76
+| train-epoch  31 |   600/ 1327 batches | lr 0.08 | ms/batch 42.68 | loss  3.73 | ppl    41.51
+| train-epoch  31 |   800/ 1327 batches | lr 0.08 | ms/batch 42.61 | loss  3.66 | ppl    38.91
+| train-epoch  31 |  1000/ 1327 batches | lr 0.08 | ms/batch 42.69 | loss  3.74 | ppl    42.16
+| train-epoch  31 |  1200/ 1327 batches | lr 0.08 | ms/batch 42.66 | loss  3.58 | ppl    36.03
+-----------------------------------------------------------------------------------------
+| end of train epoch  31 | time: 58.31s | valid loss  4.32 | valid ppl    75.46
+-----------------------------------------------------------------------------------------
+| train-epoch  32 |   200/ 1327 batches | lr 0.08 | ms/batch 42.79 | loss  3.77 | ppl    43.24
+| train-epoch  32 |   400/ 1327 batches | lr 0.08 | ms/batch 42.54 | loss  3.75 | ppl    42.50
+| train-epoch  32 |   600/ 1327 batches | lr 0.08 | ms/batch 42.52 | loss  3.73 | ppl    41.53
+| train-epoch  32 |   800/ 1327 batches | lr 0.08 | ms/batch 42.53 | loss  3.66 | ppl    38.75
+| train-epoch  32 |  1000/ 1327 batches | lr 0.08 | ms/batch 42.51 | loss  3.74 | ppl    42.05
+| train-epoch  32 |  1200/ 1327 batches | lr 0.08 | ms/batch 42.54 | loss  3.58 | ppl    35.93
+-----------------------------------------------------------------------------------------
+| end of train epoch  32 | time: 58.14s | valid loss  4.32 | valid ppl    75.45
+-----------------------------------------------------------------------------------------
+| train-epoch  33 |   200/ 1327 batches | lr 0.08 | ms/batch 42.87 | loss  3.77 | ppl    43.19
+| train-epoch  33 |   400/ 1327 batches | lr 0.08 | ms/batch 42.70 | loss  3.75 | ppl    42.66
+| train-epoch  33 |   600/ 1327 batches | lr 0.08 | ms/batch 42.61 | loss  3.72 | ppl    41.37
+| train-epoch  33 |   800/ 1327 batches | lr 0.08 | ms/batch 42.61 | loss  3.66 | ppl    38.68
+| train-epoch  33 |  1000/ 1327 batches | lr 0.08 | ms/batch 42.56 | loss  3.74 | ppl    42.01
+| train-epoch  33 |  1200/ 1327 batches | lr 0.08 | ms/batch 42.61 | loss  3.58 | ppl    35.82
+-----------------------------------------------------------------------------------------
+| end of train epoch  33 | time: 58.25s | valid loss  4.32 | valid ppl    75.45
+-----------------------------------------------------------------------------------------
+| train-epoch  34 |   200/ 1327 batches | lr 0.08 | ms/batch 43.03 | loss  3.77 | ppl    43.23
+| train-epoch  34 |   400/ 1327 batches | lr 0.08 | ms/batch 42.78 | loss  3.74 | ppl    42.29
+| train-epoch  34 |   600/ 1327 batches | lr 0.08 | ms/batch 42.78 | loss  3.72 | ppl    41.10
+| train-epoch  34 |   800/ 1327 batches | lr 0.08 | ms/batch 42.78 | loss  3.65 | ppl    38.63
+| train-epoch  34 |  1000/ 1327 batches | lr 0.08 | ms/batch 42.72 | loss  3.74 | ppl    42.24
+| train-epoch  34 |  1200/ 1327 batches | lr 0.08 | ms/batch 42.78 | loss  3.58 | ppl    35.93
+-----------------------------------------------------------------------------------------
+| end of train epoch  34 | time: 58.45s | valid loss  4.32 | valid ppl    75.43
+-----------------------------------------------------------------------------------------
+| train-epoch  35 |   200/ 1327 batches | lr 0.08 | ms/batch 42.41 | loss  3.77 | ppl    43.27
+| train-epoch  35 |   400/ 1327 batches | lr 0.08 | ms/batch 42.17 | loss  3.75 | ppl    42.39
+| train-epoch  35 |   600/ 1327 batches | lr 0.08 | ms/batch 42.17 | loss  3.72 | ppl    41.41
+| train-epoch  35 |   800/ 1327 batches | lr 0.08 | ms/batch 42.17 | loss  3.65 | ppl    38.54
+| train-epoch  35 |  1000/ 1327 batches | lr 0.08 | ms/batch 42.10 | loss  3.74 | ppl    42.00
+| train-epoch  35 |  1200/ 1327 batches | lr 0.08 | ms/batch 42.18 | loss  3.58 | ppl    35.86
+-----------------------------------------------------------------------------------------
+| end of train epoch  35 | time: 57.67s | valid loss  4.32 | valid ppl    75.44
+-----------------------------------------------------------------------------------------
+| train-epoch  36 |   200/ 1327 batches | lr 0.02 | ms/batch 43.16 | loss  3.76 | ppl    43.08
+| train-epoch  36 |   400/ 1327 batches | lr 0.02 | ms/batch 42.93 | loss  3.75 | ppl    42.34
+| train-epoch  36 |   600/ 1327 batches | lr 0.02 | ms/batch 42.94 | loss  3.72 | ppl    41.29
+| train-epoch  36 |   800/ 1327 batches | lr 0.02 | ms/batch 42.93 | loss  3.65 | ppl    38.60
+| train-epoch  36 |  1000/ 1327 batches | lr 0.02 | ms/batch 42.91 | loss  3.74 | ppl    42.16
+| train-epoch  36 |  1200/ 1327 batches | lr 0.02 | ms/batch 42.95 | loss  3.58 | ppl    35.80
+-----------------------------------------------------------------------------------------
+| end of train epoch  36 | time: 58.69s | valid loss  4.32 | valid ppl    75.43
+-----------------------------------------------------------------------------------------
+| train-epoch  37 |   200/ 1327 batches | lr 0.02 | ms/batch 42.89 | loss  3.77 | ppl    43.26
+| train-epoch  37 |   400/ 1327 batches | lr 0.02 | ms/batch 42.64 | loss  3.75 | ppl    42.47
+| train-epoch  37 |   600/ 1327 batches | lr 0.02 | ms/batch 42.64 | loss  3.72 | ppl    41.34
+| train-epoch  37 |   800/ 1327 batches | lr 0.02 | ms/batch 42.65 | loss  3.65 | ppl    38.51
+| train-epoch  37 |  1000/ 1327 batches | lr 0.02 | ms/batch 42.67 | loss  3.74 | ppl    41.96
+| train-epoch  37 |  1200/ 1327 batches | lr 0.02 | ms/batch 42.72 | loss  3.58 | ppl    35.74
+-----------------------------------------------------------------------------------------
+| end of train epoch  37 | time: 58.36s | valid loss  4.32 | valid ppl    75.43
+-----------------------------------------------------------------------------------------
+| train-epoch  38 |   200/ 1327 batches | lr 0.02 | ms/batch 43.14 | loss  3.76 | ppl    43.12
+| train-epoch  38 |   400/ 1327 batches | lr 0.02 | ms/batch 42.91 | loss  3.74 | ppl    42.26
+| train-epoch  38 |   600/ 1327 batches | lr 0.02 | ms/batch 42.87 | loss  3.72 | ppl    41.41
+| train-epoch  38 |   800/ 1327 batches | lr 0.02 | ms/batch 42.93 | loss  3.66 | ppl    38.67
+| train-epoch  38 |  1000/ 1327 batches | lr 0.02 | ms/batch 42.91 | loss  3.73 | ppl    41.83
+| train-epoch  38 |  1200/ 1327 batches | lr 0.02 | ms/batch 42.83 | loss  3.58 | ppl    35.84
+-----------------------------------------------------------------------------------------
+| end of train epoch  38 | time: 58.64s | valid loss  4.32 | valid ppl    75.42
+-----------------------------------------------------------------------------------------
+| train-epoch  39 |   200/ 1327 batches | lr 0.02 | ms/batch 43.00 | loss  3.76 | ppl    43.16
+| train-epoch  39 |   400/ 1327 batches | lr 0.02 | ms/batch 42.82 | loss  3.74 | ppl    42.01
+| train-epoch  39 |   600/ 1327 batches | lr 0.02 | ms/batch 42.77 | loss  3.72 | ppl    41.38
+| train-epoch  39 |   800/ 1327 batches | lr 0.02 | ms/batch 42.76 | loss  3.65 | ppl    38.60
+| train-epoch  39 |  1000/ 1327 batches | lr 0.02 | ms/batch 42.81 | loss  3.74 | ppl    41.89
+| train-epoch  39 |  1200/ 1327 batches | lr 0.02 | ms/batch 42.71 | loss  3.58 | ppl    35.75
+-----------------------------------------------------------------------------------------
+| end of train epoch  39 | time: 58.43s | valid loss  4.32 | valid ppl    75.42
+-----------------------------------------------------------------------------------------
+| train-epoch  40 |   200/ 1327 batches | lr 0.00 | ms/batch 42.87 | loss  3.77 | ppl    43.18
+| train-epoch  40 |   400/ 1327 batches | lr 0.00 | ms/batch 42.63 | loss  3.74 | ppl    42.28
+| train-epoch  40 |   600/ 1327 batches | lr 0.00 | ms/batch 42.63 | loss  3.72 | ppl    41.32
+| train-epoch  40 |   800/ 1327 batches | lr 0.00 | ms/batch 42.63 | loss  3.65 | ppl    38.43
+| train-epoch  40 |  1000/ 1327 batches | lr 0.00 | ms/batch 42.81 | loss  3.74 | ppl    41.90
+| train-epoch  40 |  1200/ 1327 batches | lr 0.00 | ms/batch 42.75 | loss  3.58 | ppl    35.76
+-----------------------------------------------------------------------------------------
+| end of train epoch  40 | time: 58.36s | valid loss  4.32 | valid ppl    75.42
+-----------------------------------------------------------------------------------------
+required epochs  40 | actual epochs  40
+pretrain epochs  40 | prune epochs   0 | retrain epochs   0
+=========================================================================================
+| End of training | test loss  4.28 | test ppl    72.41
+=========================================================================================

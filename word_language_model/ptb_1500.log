@@ -1,0 +1,1051 @@
+<class 'torch.Tensor'> torch.Size([10000, 1500])
+<class 'torch.Tensor'> torch.Size([6000, 1500])
+<class 'torch.Tensor'> torch.Size([6000, 1500])
+<class 'torch.Tensor'> torch.Size([6000])
+<class 'torch.Tensor'> torch.Size([6000])
+<class 'torch.Tensor'> torch.Size([6000, 1500])
+<class 'torch.Tensor'> torch.Size([6000, 1500])
+<class 'torch.Tensor'> torch.Size([6000])
+<class 'torch.Tensor'> torch.Size([6000])
+<class 'torch.Tensor'> torch.Size([10000])
+RNNModel(
+  (drop): Dropout(p=0.65)
+  (encoder): Embedding(10000, 1500)
+  (rnn): LSTM(1500, 1500, num_layers=2, dropout=0.65)
+  (decoder): Linear(in_features=1500, out_features=10000, bias=True)
+)
+Dropout(p=0.65)
+Embedding(10000, 1500)
+LSTM(1500, 1500, num_layers=2, dropout=0.65)
+Linear(in_features=1500, out_features=10000, bias=True)
+begin prun train
+| prune-epoch   1 |   200/ 1327 batches | lr 20.00 | ms/batch 45.33 | loss  3.82 | ppl    45.81
+| prune-epoch   1 |   400/ 1327 batches | lr 20.00 | ms/batch 42.47 | loss  3.83 | ppl    46.23
+| prune-epoch   1 |   600/ 1327 batches | lr 20.00 | ms/batch 42.49 | loss  3.82 | ppl    45.82
+| prune-epoch   1 |   800/ 1327 batches | lr 20.00 | ms/batch 42.51 | loss  3.78 | ppl    44.00
+| prune-epoch   1 |  1000/ 1327 batches | lr 20.00 | ms/batch 42.89 | loss  3.88 | ppl    48.67
+| prune-epoch   1 |  1200/ 1327 batches | lr 20.00 | ms/batch 42.88 | loss  3.74 | ppl    42.06
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.4  actual sp:  0.3993333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.4  actual sp:  0.3993333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.4  actual sp:  0.3993333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.4  actual sp:  0.3993333333333333
+-----------------------------------------------------------------------------------------
+| end of prune epoch   1 | time: 58.81s | valid loss  4.37 | valid ppl    79.06
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch   2 |   200/ 1327 batches | lr 20.00 | ms/batch 45.19 | loss  3.80 | ppl    44.74
+| prune-epoch   2 |   400/ 1327 batches | lr 20.00 | ms/batch 42.53 | loss  3.80 | ppl    44.78
+| prune-epoch   2 |   600/ 1327 batches | lr 20.00 | ms/batch 42.51 | loss  3.80 | ppl    44.53
+| prune-epoch   2 |   800/ 1327 batches | lr 20.00 | ms/batch 42.50 | loss  3.75 | ppl    42.50
+| prune-epoch   2 |  1000/ 1327 batches | lr 20.00 | ms/batch 42.53 | loss  3.84 | ppl    46.53
+| prune-epoch   2 |  1200/ 1327 batches | lr 20.00 | ms/batch 42.52 | loss  3.70 | ppl    40.51
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.4  actual sp:  0.3993333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.4  actual sp:  0.3993333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.4  actual sp:  0.3993333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.4  actual sp:  0.3993333333333333
+-----------------------------------------------------------------------------------------
+| end of prune epoch   2 | time: 58.61s | valid loss  4.37 | valid ppl    79.30
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch   3 |   200/ 1327 batches | lr 20.00 | ms/batch 45.41 | loss  3.79 | ppl    44.24
+| prune-epoch   3 |   400/ 1327 batches | lr 20.00 | ms/batch 43.16 | loss  3.79 | ppl    44.04
+| prune-epoch   3 |   600/ 1327 batches | lr 20.00 | ms/batch 42.97 | loss  3.77 | ppl    43.25
+| prune-epoch   3 |   800/ 1327 batches | lr 20.00 | ms/batch 42.82 | loss  3.72 | ppl    41.33
+| prune-epoch   3 |  1000/ 1327 batches | lr 20.00 | ms/batch 42.90 | loss  3.82 | ppl    45.42
+| prune-epoch   3 |  1200/ 1327 batches | lr 20.00 | ms/batch 42.93 | loss  3.67 | ppl    39.18
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.5  actual sp:  0.4993333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.5  actual sp:  0.4993333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.5  actual sp:  0.4993333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.5  actual sp:  0.4993333333333333
+-----------------------------------------------------------------------------------------
+| end of prune epoch   3 | time: 59.15s | valid loss  4.38 | valid ppl    79.64
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch   4 |   200/ 1327 batches | lr 20.00 | ms/batch 44.94 | loss  3.74 | ppl    42.29
+| prune-epoch   4 |   400/ 1327 batches | lr 20.00 | ms/batch 42.37 | loss  3.75 | ppl    42.31
+| prune-epoch   4 |   600/ 1327 batches | lr 20.00 | ms/batch 42.33 | loss  3.73 | ppl    41.51
+| prune-epoch   4 |   800/ 1327 batches | lr 20.00 | ms/batch 42.36 | loss  3.69 | ppl    39.92
+| prune-epoch   4 |  1000/ 1327 batches | lr 20.00 | ms/batch 42.39 | loss  3.78 | ppl    43.67
+| prune-epoch   4 |  1200/ 1327 batches | lr 20.00 | ms/batch 42.39 | loss  3.64 | ppl    38.06
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.5  actual sp:  0.4993333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.5  actual sp:  0.4993333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.5  actual sp:  0.4993333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.5  actual sp:  0.4993333333333333
+-----------------------------------------------------------------------------------------
+| end of prune epoch   4 | time: 58.46s | valid loss  4.38 | valid ppl    79.88
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch   5 |   200/ 1327 batches | lr 20.00 | ms/batch 45.27 | loss  3.75 | ppl    42.31
+| prune-epoch   5 |   400/ 1327 batches | lr 20.00 | ms/batch 42.51 | loss  3.74 | ppl    41.90
+| prune-epoch   5 |   600/ 1327 batches | lr 20.00 | ms/batch 42.51 | loss  3.72 | ppl    41.15
+| prune-epoch   5 |   800/ 1327 batches | lr 20.00 | ms/batch 42.66 | loss  3.67 | ppl    39.28
+| prune-epoch   5 |  1000/ 1327 batches | lr 20.00 | ms/batch 42.91 | loss  3.76 | ppl    43.15
+| prune-epoch   5 |  1200/ 1327 batches | lr 20.00 | ms/batch 42.93 | loss  3.62 | ppl    37.52
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.6  actual sp:  0.5993333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.6  actual sp:  0.5993333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.6  actual sp:  0.5993333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.6  actual sp:  0.5993333333333333
+-----------------------------------------------------------------------------------------
+| end of prune epoch   5 | time: 58.86s | valid loss  4.39 | valid ppl    80.33
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch   6 |   200/ 1327 batches | lr 20.00 | ms/batch 45.97 | loss  3.69 | ppl    40.22
+| prune-epoch   6 |   400/ 1327 batches | lr 20.00 | ms/batch 42.95 | loss  3.69 | ppl    40.03
+| prune-epoch   6 |   600/ 1327 batches | lr 20.00 | ms/batch 43.00 | loss  3.68 | ppl    39.76
+| prune-epoch   6 |   800/ 1327 batches | lr 20.00 | ms/batch 43.02 | loss  3.63 | ppl    37.80
+| prune-epoch   6 |  1000/ 1327 batches | lr 20.00 | ms/batch 43.00 | loss  3.73 | ppl    41.72
+| prune-epoch   6 |  1200/ 1327 batches | lr 20.00 | ms/batch 42.97 | loss  3.59 | ppl    36.14
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.6  actual sp:  0.5993333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.6  actual sp:  0.5993333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.6  actual sp:  0.5993333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.6  actual sp:  0.5993333333333333
+-----------------------------------------------------------------------------------------
+| end of prune epoch   6 | time: 59.30s | valid loss  4.40 | valid ppl    81.06
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch   7 |   200/ 1327 batches | lr 20.00 | ms/batch 44.73 | loss  3.73 | ppl    41.83
+| prune-epoch   7 |   400/ 1327 batches | lr 20.00 | ms/batch 42.13 | loss  3.71 | ppl    40.89
+| prune-epoch   7 |   600/ 1327 batches | lr 20.00 | ms/batch 42.16 | loss  3.71 | ppl    40.74
+| prune-epoch   7 |   800/ 1327 batches | lr 20.00 | ms/batch 42.51 | loss  3.65 | ppl    38.50
+| prune-epoch   7 |  1000/ 1327 batches | lr 20.00 | ms/batch 42.50 | loss  3.74 | ppl    42.18
+| prune-epoch   7 |  1200/ 1327 batches | lr 20.00 | ms/batch 42.51 | loss  3.60 | ppl    36.64
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.7  actual sp:  0.6993333333333334
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.7  actual sp:  0.6993333333333334
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.7  actual sp:  0.6993332222222222
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.7  actual sp:  0.6993333333333334
+-----------------------------------------------------------------------------------------
+| end of prune epoch   7 | time: 58.36s | valid loss  4.39 | valid ppl    80.93
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch   8 |   200/ 1327 batches | lr 20.00 | ms/batch 45.06 | loss  3.68 | ppl    39.72
+| prune-epoch   8 |   400/ 1327 batches | lr 20.00 | ms/batch 42.61 | loss  3.67 | ppl    39.35
+| prune-epoch   8 |   600/ 1327 batches | lr 20.00 | ms/batch 42.65 | loss  3.66 | ppl    38.92
+| prune-epoch   8 |   800/ 1327 batches | lr 20.00 | ms/batch 42.62 | loss  3.62 | ppl    37.24
+| prune-epoch   8 |  1000/ 1327 batches | lr 20.00 | ms/batch 42.67 | loss  3.70 | ppl    40.64
+| prune-epoch   8 |  1200/ 1327 batches | lr 20.00 | ms/batch 42.64 | loss  3.56 | ppl    35.29
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.7  actual sp:  0.6993333333333334
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.7  actual sp:  0.6993333333333334
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.7  actual sp:  0.6993333333333334
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.7  actual sp:  0.6993333333333334
+-----------------------------------------------------------------------------------------
+| end of prune epoch   8 | time: 58.71s | valid loss  4.40 | valid ppl    81.43
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch   9 |   200/ 1327 batches | lr 20.00 | ms/batch 45.38 | loss  3.79 | ppl    44.35
+| prune-epoch   9 |   400/ 1327 batches | lr 20.00 | ms/batch 42.98 | loss  3.76 | ppl    43.02
+| prune-epoch   9 |   600/ 1327 batches | lr 20.00 | ms/batch 43.02 | loss  3.74 | ppl    42.15
+| prune-epoch   9 |   800/ 1327 batches | lr 20.00 | ms/batch 42.98 | loss  3.69 | ppl    40.02
+| prune-epoch   9 |  1000/ 1327 batches | lr 20.00 | ms/batch 42.90 | loss  3.78 | ppl    43.65
+| prune-epoch   9 |  1200/ 1327 batches | lr 20.00 | ms/batch 42.92 | loss  3.64 | ppl    38.03
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.7999999999999999  actual sp:  0.7993333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.7999999999999999  actual sp:  0.7993333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.7999999999999999  actual sp:  0.7993333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.7999999999999999  actual sp:  0.7993333333333333
+-----------------------------------------------------------------------------------------
+| end of prune epoch   9 | time: 59.12s | valid loss  4.41 | valid ppl    82.37
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch  10 |   200/ 1327 batches | lr 20.00 | ms/batch 45.67 | loss  3.72 | ppl    41.15
+| prune-epoch  10 |   400/ 1327 batches | lr 20.00 | ms/batch 43.13 | loss  3.71 | ppl    40.73
+| prune-epoch  10 |   600/ 1327 batches | lr 20.00 | ms/batch 43.22 | loss  3.70 | ppl    40.39
+| prune-epoch  10 |   800/ 1327 batches | lr 20.00 | ms/batch 43.34 | loss  3.65 | ppl    38.56
+| prune-epoch  10 |  1000/ 1327 batches | lr 20.00 | ms/batch 43.34 | loss  3.74 | ppl    42.06
+| prune-epoch  10 |  1200/ 1327 batches | lr 20.00 | ms/batch 43.33 | loss  3.60 | ppl    36.65
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.7999999999999999  actual sp:  0.7993333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.7999999999999999  actual sp:  0.7993333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.7999999999999999  actual sp:  0.7993333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.7999999999999999  actual sp:  0.7993333333333333
+-----------------------------------------------------------------------------------------
+| end of prune epoch  10 | time: 59.51s | valid loss  4.41 | valid ppl    81.99
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch  11 |   200/ 1327 batches | lr 20.00 | ms/batch 44.56 | loss  3.68 | ppl    39.68
+| prune-epoch  11 |   400/ 1327 batches | lr 20.00 | ms/batch 42.62 | loss  3.68 | ppl    39.53
+| prune-epoch  11 |   600/ 1327 batches | lr 20.00 | ms/batch 43.05 | loss  3.66 | ppl    38.92
+| prune-epoch  11 |   800/ 1327 batches | lr 20.00 | ms/batch 43.04 | loss  3.62 | ppl    37.50
+| prune-epoch  11 |  1000/ 1327 batches | lr 20.00 | ms/batch 42.76 | loss  3.71 | ppl    40.88
+| prune-epoch  11 |  1200/ 1327 batches | lr 20.00 | ms/batch 42.73 | loss  3.57 | ppl    35.39
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.7999999999999999  actual sp:  0.7993333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.7999999999999999  actual sp:  0.7993333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.7999999999999999  actual sp:  0.7993333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.7999999999999999  actual sp:  0.7993333333333333
+-----------------------------------------------------------------------------------------
+| end of prune epoch  11 | time: 58.87s | valid loss  4.42 | valid ppl    82.90
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch  12 |   200/ 1327 batches | lr 20.00 | ms/batch 45.14 | loss  3.77 | ppl    43.24
+| prune-epoch  12 |   400/ 1327 batches | lr 20.00 | ms/batch 42.53 | loss  3.74 | ppl    42.22
+| prune-epoch  12 |   600/ 1327 batches | lr 20.00 | ms/batch 42.48 | loss  3.73 | ppl    41.73
+| prune-epoch  12 |   800/ 1327 batches | lr 20.00 | ms/batch 42.51 | loss  3.69 | ppl    39.88
+| prune-epoch  12 |  1000/ 1327 batches | lr 20.00 | ms/batch 42.61 | loss  3.77 | ppl    43.39
+| prune-epoch  12 |  1200/ 1327 batches | lr 20.00 | ms/batch 42.62 | loss  3.63 | ppl    37.76
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.85  actual sp:  0.8493333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.85  actual sp:  0.8493333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.85  actual sp:  0.8493333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.85  actual sp:  0.8493333333333333
+-----------------------------------------------------------------------------------------
+| end of prune epoch  12 | time: 58.63s | valid loss  4.41 | valid ppl    82.47
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch  13 |   200/ 1327 batches | lr 20.00 | ms/batch 44.63 | loss  3.71 | ppl    40.86
+| prune-epoch  13 |   400/ 1327 batches | lr 20.00 | ms/batch 42.67 | loss  3.70 | ppl    40.61
+| prune-epoch  13 |   600/ 1327 batches | lr 20.00 | ms/batch 43.32 | loss  3.69 | ppl    40.20
+| prune-epoch  13 |   800/ 1327 batches | lr 20.00 | ms/batch 43.33 | loss  3.65 | ppl    38.48
+| prune-epoch  13 |  1000/ 1327 batches | lr 20.00 | ms/batch 42.99 | loss  3.74 | ppl    41.96
+| prune-epoch  13 |  1200/ 1327 batches | lr 20.00 | ms/batch 43.01 | loss  3.60 | ppl    36.56
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.85  actual sp:  0.8493333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.85  actual sp:  0.8493333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.85  actual sp:  0.8493333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.85  actual sp:  0.8493333333333333
+-----------------------------------------------------------------------------------------
+| end of prune epoch  13 | time: 59.09s | valid loss  4.42 | valid ppl    83.09
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch  14 |   200/ 1327 batches | lr 20.00 | ms/batch 44.37 | loss  3.89 | ppl    48.84
+| prune-epoch  14 |   400/ 1327 batches | lr 20.00 | ms/batch 42.06 | loss  3.85 | ppl    47.21
+| prune-epoch  14 |   600/ 1327 batches | lr 20.00 | ms/batch 42.05 | loss  3.84 | ppl    46.53
+| prune-epoch  14 |   800/ 1327 batches | lr 20.00 | ms/batch 42.05 | loss  3.79 | ppl    44.09
+| prune-epoch  14 |  1000/ 1327 batches | lr 20.00 | ms/batch 42.06 | loss  3.87 | ppl    47.96
+| prune-epoch  14 |  1200/ 1327 batches | lr 20.00 | ms/batch 42.05 | loss  3.73 | ppl    41.88
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+-----------------------------------------------------------------------------------------
+| end of prune epoch  14 | time: 57.89s | valid loss  4.42 | valid ppl    83.35
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch   1 |   200/ 1327 batches | lr 20.00 | ms/batch 44.61 | loss  3.82 | ppl    45.40
+| prune-epoch   1 |   400/ 1327 batches | lr 20.00 | ms/batch 42.68 | loss  3.80 | ppl    44.77
+| prune-epoch   1 |   600/ 1327 batches | lr 20.00 | ms/batch 42.68 | loss  3.79 | ppl    44.39
+| prune-epoch   1 |   800/ 1327 batches | lr 20.00 | ms/batch 42.71 | loss  3.74 | ppl    42.21
+| prune-epoch   1 |  1000/ 1327 batches | lr 20.00 | ms/batch 42.89 | loss  3.84 | ppl    46.40
+| prune-epoch   1 |  1200/ 1327 batches | lr 20.00 | ms/batch 43.33 | loss  3.70 | ppl    40.42
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+-----------------------------------------------------------------------------------------
+| end of retrain epoch   1 | time: 58.93s | valid loss  4.43 | valid ppl    83.76
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch   2 |   200/ 1327 batches | lr 20.00 | ms/batch 44.94 | loss  3.78 | ppl    43.78
+| prune-epoch   2 |   400/ 1327 batches | lr 20.00 | ms/batch 43.18 | loss  3.78 | ppl    43.66
+| prune-epoch   2 |   600/ 1327 batches | lr 20.00 | ms/batch 42.96 | loss  3.76 | ppl    43.00
+| prune-epoch   2 |   800/ 1327 batches | lr 20.00 | ms/batch 43.17 | loss  3.72 | ppl    41.31
+| prune-epoch   2 |  1000/ 1327 batches | lr 20.00 | ms/batch 43.18 | loss  3.81 | ppl    45.12
+| prune-epoch   2 |  1200/ 1327 batches | lr 20.00 | ms/batch 43.15 | loss  3.67 | ppl    39.41
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+-----------------------------------------------------------------------------------------
+| end of retrain epoch   2 | time: 59.23s | valid loss  4.43 | valid ppl    83.68
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch   3 |   200/ 1327 batches | lr 20.00 | ms/batch 44.82 | loss  3.76 | ppl    42.86
+| prune-epoch   3 |   400/ 1327 batches | lr 20.00 | ms/batch 43.12 | loss  3.75 | ppl    42.49
+| prune-epoch   3 |   600/ 1327 batches | lr 20.00 | ms/batch 43.16 | loss  3.75 | ppl    42.34
+| prune-epoch   3 |   800/ 1327 batches | lr 20.00 | ms/batch 43.15 | loss  3.70 | ppl    40.47
+| prune-epoch   3 |  1000/ 1327 batches | lr 20.00 | ms/batch 43.12 | loss  3.79 | ppl    44.07
+| prune-epoch   3 |  1200/ 1327 batches | lr 20.00 | ms/batch 43.15 | loss  3.66 | ppl    38.85
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+-----------------------------------------------------------------------------------------
+| end of retrain epoch   3 | time: 59.21s | valid loss  4.44 | valid ppl    84.38
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch   4 |   200/ 1327 batches | lr 20.00 | ms/batch 44.15 | loss  3.74 | ppl    42.14
+| prune-epoch   4 |   400/ 1327 batches | lr 20.00 | ms/batch 42.30 | loss  3.73 | ppl    41.84
+| prune-epoch   4 |   600/ 1327 batches | lr 20.00 | ms/batch 42.32 | loss  3.72 | ppl    41.32
+| prune-epoch   4 |   800/ 1327 batches | lr 20.00 | ms/batch 42.30 | loss  3.68 | ppl    39.82
+| prune-epoch   4 |  1000/ 1327 batches | lr 20.00 | ms/batch 42.29 | loss  3.77 | ppl    43.43
+| prune-epoch   4 |  1200/ 1327 batches | lr 20.00 | ms/batch 42.31 | loss  3.64 | ppl    37.91
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+-----------------------------------------------------------------------------------------
+| end of retrain epoch   4 | time: 58.13s | valid loss  4.43 | valid ppl    84.21
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch   5 |   200/ 1327 batches | lr 20.00 | ms/batch 44.41 | loss  3.72 | ppl    41.11
+| prune-epoch   5 |   400/ 1327 batches | lr 20.00 | ms/batch 42.47 | loss  3.71 | ppl    41.01
+| prune-epoch   5 |   600/ 1327 batches | lr 20.00 | ms/batch 42.48 | loss  3.70 | ppl    40.46
+| prune-epoch   5 |   800/ 1327 batches | lr 20.00 | ms/batch 42.47 | loss  3.66 | ppl    39.01
+| prune-epoch   5 |  1000/ 1327 batches | lr 20.00 | ms/batch 42.47 | loss  3.76 | ppl    42.92
+| prune-epoch   5 |  1200/ 1327 batches | lr 20.00 | ms/batch 42.98 | loss  3.63 | ppl    37.66
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+-----------------------------------------------------------------------------------------
+| end of retrain epoch   5 | time: 58.56s | valid loss  4.44 | valid ppl    84.44
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch   6 |   200/ 1327 batches | lr 5.00 | ms/batch 44.51 | loss  3.70 | ppl    40.36
+| prune-epoch   6 |   400/ 1327 batches | lr 5.00 | ms/batch 43.06 | loss  3.66 | ppl    38.96
+| prune-epoch   6 |   600/ 1327 batches | lr 5.00 | ms/batch 42.98 | loss  3.63 | ppl    37.83
+| prune-epoch   6 |   800/ 1327 batches | lr 5.00 | ms/batch 42.97 | loss  3.57 | ppl    35.63
+| prune-epoch   6 |  1000/ 1327 batches | lr 5.00 | ms/batch 42.97 | loss  3.66 | ppl    38.70
+| prune-epoch   6 |  1200/ 1327 batches | lr 5.00 | ms/batch 42.95 | loss  3.50 | ppl    33.04
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+-----------------------------------------------------------------------------------------
+| end of retrain epoch   6 | time: 58.97s | valid loss  4.43 | valid ppl    83.76
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch   7 |   200/ 1327 batches | lr 5.00 | ms/batch 44.23 | loss  3.63 | ppl    37.82
+| prune-epoch   7 |   400/ 1327 batches | lr 5.00 | ms/batch 42.38 | loss  3.61 | ppl    37.13
+| prune-epoch   7 |   600/ 1327 batches | lr 5.00 | ms/batch 42.48 | loss  3.60 | ppl    36.54
+| prune-epoch   7 |   800/ 1327 batches | lr 5.00 | ms/batch 42.46 | loss  3.54 | ppl    34.51
+| prune-epoch   7 |  1000/ 1327 batches | lr 5.00 | ms/batch 42.45 | loss  3.62 | ppl    37.47
+| prune-epoch   7 |  1200/ 1327 batches | lr 5.00 | ms/batch 42.47 | loss  3.48 | ppl    32.40
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+-----------------------------------------------------------------------------------------
+| end of retrain epoch   7 | time: 58.31s | valid loss  4.44 | valid ppl    84.38
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch   8 |   200/ 1327 batches | lr 5.00 | ms/batch 44.40 | loss  3.72 | ppl    41.17
+| prune-epoch   8 |   400/ 1327 batches | lr 5.00 | ms/batch 42.54 | loss  3.70 | ppl    40.35
+| prune-epoch   8 |   600/ 1327 batches | lr 5.00 | ms/batch 42.55 | loss  3.68 | ppl    39.73
+| prune-epoch   8 |   800/ 1327 batches | lr 5.00 | ms/batch 42.54 | loss  3.63 | ppl    37.84
+| prune-epoch   8 |  1000/ 1327 batches | lr 5.00 | ms/batch 42.54 | loss  3.71 | ppl    40.97
+| prune-epoch   8 |  1200/ 1327 batches | lr 5.00 | ms/batch 42.51 | loss  3.57 | ppl    35.53
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+-----------------------------------------------------------------------------------------
+| end of retrain epoch   8 | time: 58.44s | valid loss  4.41 | valid ppl    82.61
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch   9 |   200/ 1327 batches | lr 5.00 | ms/batch 44.43 | loss  3.69 | ppl    40.21
+| prune-epoch   9 |   400/ 1327 batches | lr 5.00 | ms/batch 42.52 | loss  3.69 | ppl    39.89
+| prune-epoch   9 |   600/ 1327 batches | lr 5.00 | ms/batch 42.61 | loss  3.66 | ppl    39.05
+| prune-epoch   9 |   800/ 1327 batches | lr 5.00 | ms/batch 42.52 | loss  3.61 | ppl    37.10
+| prune-epoch   9 |  1000/ 1327 batches | lr 5.00 | ms/batch 42.52 | loss  3.70 | ppl    40.51
+| prune-epoch   9 |  1200/ 1327 batches | lr 5.00 | ms/batch 42.50 | loss  3.56 | ppl    35.12
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+-----------------------------------------------------------------------------------------
+| end of retrain epoch   9 | time: 58.44s | valid loss  4.41 | valid ppl    82.67
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch  10 |   200/ 1327 batches | lr 1.25 | ms/batch 44.36 | loss  3.70 | ppl    40.37
+| prune-epoch  10 |   400/ 1327 batches | lr 1.25 | ms/batch 42.48 | loss  3.69 | ppl    39.97
+| prune-epoch  10 |   600/ 1327 batches | lr 1.25 | ms/batch 42.49 | loss  3.66 | ppl    38.94
+| prune-epoch  10 |   800/ 1327 batches | lr 1.25 | ms/batch 42.94 | loss  3.60 | ppl    36.65
+| prune-epoch  10 |  1000/ 1327 batches | lr 1.25 | ms/batch 43.16 | loss  3.68 | ppl    39.49
+| prune-epoch  10 |  1200/ 1327 batches | lr 1.25 | ms/batch 43.19 | loss  3.54 | ppl    34.39
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+-----------------------------------------------------------------------------------------
+| end of retrain epoch  10 | time: 58.85s | valid loss  4.40 | valid ppl    81.59
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch  11 |   200/ 1327 batches | lr 1.25 | ms/batch 44.57 | loss  3.71 | ppl    40.93
+| prune-epoch  11 |   400/ 1327 batches | lr 1.25 | ms/batch 42.69 | loss  3.70 | ppl    40.38
+| prune-epoch  11 |   600/ 1327 batches | lr 1.25 | ms/batch 42.67 | loss  3.68 | ppl    39.71
+| prune-epoch  11 |   800/ 1327 batches | lr 1.25 | ms/batch 42.71 | loss  3.62 | ppl    37.34
+| prune-epoch  11 |  1000/ 1327 batches | lr 1.25 | ms/batch 42.70 | loss  3.70 | ppl    40.49
+| prune-epoch  11 |  1200/ 1327 batches | lr 1.25 | ms/batch 42.68 | loss  3.56 | ppl    35.20
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+-----------------------------------------------------------------------------------------
+| end of retrain epoch  11 | time: 58.65s | valid loss  4.40 | valid ppl    81.21
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch  12 |   200/ 1327 batches | lr 1.25 | ms/batch 44.44 | loss  3.70 | ppl    40.52
+| prune-epoch  12 |   400/ 1327 batches | lr 1.25 | ms/batch 42.49 | loss  3.69 | ppl    40.12
+| prune-epoch  12 |   600/ 1327 batches | lr 1.25 | ms/batch 42.47 | loss  3.67 | ppl    39.23
+| prune-epoch  12 |   800/ 1327 batches | lr 1.25 | ms/batch 42.47 | loss  3.61 | ppl    37.09
+| prune-epoch  12 |  1000/ 1327 batches | lr 1.25 | ms/batch 42.52 | loss  3.71 | ppl    40.72
+| prune-epoch  12 |  1200/ 1327 batches | lr 1.25 | ms/batch 42.83 | loss  3.56 | ppl    35.15
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+-----------------------------------------------------------------------------------------
+| end of retrain epoch  12 | time: 58.51s | valid loss  4.40 | valid ppl    81.07
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch  13 |   200/ 1327 batches | lr 1.25 | ms/batch 44.59 | loss  3.70 | ppl    40.38
+| prune-epoch  13 |   400/ 1327 batches | lr 1.25 | ms/batch 42.63 | loss  3.69 | ppl    39.90
+| prune-epoch  13 |   600/ 1327 batches | lr 1.25 | ms/batch 42.62 | loss  3.67 | ppl    39.07
+| prune-epoch  13 |   800/ 1327 batches | lr 1.25 | ms/batch 42.62 | loss  3.61 | ppl    37.12
+| prune-epoch  13 |  1000/ 1327 batches | lr 1.25 | ms/batch 42.63 | loss  3.70 | ppl    40.47
+| prune-epoch  13 |  1200/ 1327 batches | lr 1.25 | ms/batch 42.62 | loss  3.55 | ppl    34.94
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+-----------------------------------------------------------------------------------------
+| end of retrain epoch  13 | time: 58.58s | valid loss  4.40 | valid ppl    81.32
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch  14 |   200/ 1327 batches | lr 1.25 | ms/batch 43.91 | loss  3.70 | ppl    40.27
+| prune-epoch  14 |   400/ 1327 batches | lr 1.25 | ms/batch 42.11 | loss  3.69 | ppl    40.06
+| prune-epoch  14 |   600/ 1327 batches | lr 1.25 | ms/batch 42.07 | loss  3.67 | ppl    39.39
+| prune-epoch  14 |   800/ 1327 batches | lr 1.25 | ms/batch 42.07 | loss  3.61 | ppl    37.14
+| prune-epoch  14 |  1000/ 1327 batches | lr 1.25 | ms/batch 42.05 | loss  3.70 | ppl    40.62
+| prune-epoch  14 |  1200/ 1327 batches | lr 1.25 | ms/batch 42.07 | loss  3.56 | ppl    35.08
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+-----------------------------------------------------------------------------------------
+| end of retrain epoch  14 | time: 57.82s | valid loss  4.40 | valid ppl    81.12
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch  15 |   200/ 1327 batches | lr 1.25 | ms/batch 44.50 | loss  3.69 | ppl    40.08
+| prune-epoch  15 |   400/ 1327 batches | lr 1.25 | ms/batch 42.56 | loss  3.69 | ppl    39.97
+| prune-epoch  15 |   600/ 1327 batches | lr 1.25 | ms/batch 42.57 | loss  3.67 | ppl    39.08
+| prune-epoch  15 |   800/ 1327 batches | lr 1.25 | ms/batch 42.56 | loss  3.61 | ppl    36.94
+| prune-epoch  15 |  1000/ 1327 batches | lr 1.25 | ms/batch 42.55 | loss  3.70 | ppl    40.41
+| prune-epoch  15 |  1200/ 1327 batches | lr 1.25 | ms/batch 42.57 | loss  3.55 | ppl    34.97
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+-----------------------------------------------------------------------------------------
+| end of retrain epoch  15 | time: 58.49s | valid loss  4.40 | valid ppl    81.19
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch  16 |   200/ 1327 batches | lr 0.31 | ms/batch 44.51 | loss  3.70 | ppl    40.50
+| prune-epoch  16 |   400/ 1327 batches | lr 0.31 | ms/batch 42.67 | loss  3.70 | ppl    40.26
+| prune-epoch  16 |   600/ 1327 batches | lr 0.31 | ms/batch 42.68 | loss  3.68 | ppl    39.64
+| prune-epoch  16 |   800/ 1327 batches | lr 0.31 | ms/batch 42.67 | loss  3.62 | ppl    37.24
+| prune-epoch  16 |  1000/ 1327 batches | lr 0.31 | ms/batch 42.67 | loss  3.70 | ppl    40.51
+| prune-epoch  16 |  1200/ 1327 batches | lr 0.31 | ms/batch 42.67 | loss  3.55 | ppl    34.91
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+-----------------------------------------------------------------------------------------
+| end of retrain epoch  16 | time: 58.61s | valid loss  4.39 | valid ppl    80.54
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch  17 |   200/ 1327 batches | lr 0.31 | ms/batch 44.48 | loss  3.70 | ppl    40.40
+| prune-epoch  17 |   400/ 1327 batches | lr 0.31 | ms/batch 42.60 | loss  3.69 | ppl    40.01
+| prune-epoch  17 |   600/ 1327 batches | lr 0.31 | ms/batch 43.21 | loss  3.68 | ppl    39.46
+| prune-epoch  17 |   800/ 1327 batches | lr 0.31 | ms/batch 43.21 | loss  3.62 | ppl    37.17
+| prune-epoch  17 |  1000/ 1327 batches | lr 0.31 | ms/batch 43.20 | loss  3.70 | ppl    40.46
+| prune-epoch  17 |  1200/ 1327 batches | lr 0.31 | ms/batch 43.20 | loss  3.56 | ppl    35.11
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+-----------------------------------------------------------------------------------------
+| end of retrain epoch  17 | time: 59.05s | valid loss  4.39 | valid ppl    80.48
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch  18 |   200/ 1327 batches | lr 0.31 | ms/batch 44.32 | loss  3.70 | ppl    40.34
+| prune-epoch  18 |   400/ 1327 batches | lr 0.31 | ms/batch 42.35 | loss  3.69 | ppl    39.87
+| prune-epoch  18 |   600/ 1327 batches | lr 0.31 | ms/batch 42.37 | loss  3.67 | ppl    39.37
+| prune-epoch  18 |   800/ 1327 batches | lr 0.31 | ms/batch 42.34 | loss  3.61 | ppl    36.91
+| prune-epoch  18 |  1000/ 1327 batches | lr 0.31 | ms/batch 42.37 | loss  3.70 | ppl    40.27
+| prune-epoch  18 |  1200/ 1327 batches | lr 0.31 | ms/batch 42.36 | loss  3.56 | ppl    35.05
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+-----------------------------------------------------------------------------------------
+| end of retrain epoch  18 | time: 58.22s | valid loss  4.39 | valid ppl    80.43
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch  19 |   200/ 1327 batches | lr 0.31 | ms/batch 44.47 | loss  3.70 | ppl    40.27
+| prune-epoch  19 |   400/ 1327 batches | lr 0.31 | ms/batch 42.51 | loss  3.69 | ppl    39.91
+| prune-epoch  19 |   600/ 1327 batches | lr 0.31 | ms/batch 42.50 | loss  3.66 | ppl    39.04
+| prune-epoch  19 |   800/ 1327 batches | lr 0.31 | ms/batch 42.49 | loss  3.61 | ppl    37.01
+| prune-epoch  19 |  1000/ 1327 batches | lr 0.31 | ms/batch 42.50 | loss  3.69 | ppl    40.19
+| prune-epoch  19 |  1200/ 1327 batches | lr 0.31 | ms/batch 42.51 | loss  3.55 | ppl    34.84
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+-----------------------------------------------------------------------------------------
+| end of retrain epoch  19 | time: 58.41s | valid loss  4.39 | valid ppl    80.46
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch  20 |   200/ 1327 batches | lr 0.31 | ms/batch 44.51 | loss  3.69 | ppl    40.22
+| prune-epoch  20 |   400/ 1327 batches | lr 0.31 | ms/batch 42.65 | loss  3.68 | ppl    39.57
+| prune-epoch  20 |   600/ 1327 batches | lr 0.31 | ms/batch 42.65 | loss  3.66 | ppl    38.89
+| prune-epoch  20 |   800/ 1327 batches | lr 0.31 | ms/batch 42.65 | loss  3.61 | ppl    36.90
+| prune-epoch  20 |  1000/ 1327 batches | lr 0.31 | ms/batch 42.65 | loss  3.70 | ppl    40.39
+| prune-epoch  20 |  1200/ 1327 batches | lr 0.31 | ms/batch 42.64 | loss  3.56 | ppl    35.10
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+-----------------------------------------------------------------------------------------
+| end of retrain epoch  20 | time: 58.59s | valid loss  4.39 | valid ppl    80.45
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch  21 |   200/ 1327 batches | lr 0.31 | ms/batch 43.98 | loss  3.69 | ppl    40.08
+| prune-epoch  21 |   400/ 1327 batches | lr 0.31 | ms/batch 42.07 | loss  3.68 | ppl    39.77
+| prune-epoch  21 |   600/ 1327 batches | lr 0.31 | ms/batch 42.06 | loss  3.67 | ppl    39.09
+| prune-epoch  21 |   800/ 1327 batches | lr 0.31 | ms/batch 42.07 | loss  3.61 | ppl    36.93
+| prune-epoch  21 |  1000/ 1327 batches | lr 0.31 | ms/batch 42.08 | loss  3.70 | ppl    40.28
+| prune-epoch  21 |  1200/ 1327 batches | lr 0.31 | ms/batch 42.59 | loss  3.55 | ppl    34.92
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+-----------------------------------------------------------------------------------------
+| end of retrain epoch  21 | time: 58.03s | valid loss  4.39 | valid ppl    80.44
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch  22 |   200/ 1327 batches | lr 0.31 | ms/batch 44.53 | loss  3.69 | ppl    40.09
+| prune-epoch  22 |   400/ 1327 batches | lr 0.31 | ms/batch 42.55 | loss  3.68 | ppl    39.54
+| prune-epoch  22 |   600/ 1327 batches | lr 0.31 | ms/batch 42.55 | loss  3.66 | ppl    39.06
+| prune-epoch  22 |   800/ 1327 batches | lr 0.31 | ms/batch 42.58 | loss  3.60 | ppl    36.74
+| prune-epoch  22 |  1000/ 1327 batches | lr 0.31 | ms/batch 42.57 | loss  3.70 | ppl    40.33
+| prune-epoch  22 |  1200/ 1327 batches | lr 0.31 | ms/batch 42.56 | loss  3.55 | ppl    34.94
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+-----------------------------------------------------------------------------------------
+| end of retrain epoch  22 | time: 58.50s | valid loss  4.39 | valid ppl    80.49
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch  23 |   200/ 1327 batches | lr 0.08 | ms/batch 44.42 | loss  3.70 | ppl    40.31
+| prune-epoch  23 |   400/ 1327 batches | lr 0.08 | ms/batch 42.55 | loss  3.69 | ppl    39.92
+| prune-epoch  23 |   600/ 1327 batches | lr 0.08 | ms/batch 42.71 | loss  3.67 | ppl    39.31
+| prune-epoch  23 |   800/ 1327 batches | lr 0.08 | ms/batch 43.24 | loss  3.61 | ppl    36.92
+| prune-epoch  23 |  1000/ 1327 batches | lr 0.08 | ms/batch 43.25 | loss  3.70 | ppl    40.29
+| prune-epoch  23 |  1200/ 1327 batches | lr 0.08 | ms/batch 43.23 | loss  3.55 | ppl    34.73
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+-----------------------------------------------------------------------------------------
+| end of retrain epoch  23 | time: 59.00s | valid loss  4.39 | valid ppl    80.29
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch  24 |   200/ 1327 batches | lr 0.08 | ms/batch 44.51 | loss  3.69 | ppl    40.18
+| prune-epoch  24 |   400/ 1327 batches | lr 0.08 | ms/batch 42.52 | loss  3.68 | ppl    39.63
+| prune-epoch  24 |   600/ 1327 batches | lr 0.08 | ms/batch 42.52 | loss  3.67 | ppl    39.31
+| prune-epoch  24 |   800/ 1327 batches | lr 0.08 | ms/batch 42.53 | loss  3.61 | ppl    37.08
+| prune-epoch  24 |  1000/ 1327 batches | lr 0.08 | ms/batch 42.51 | loss  3.69 | ppl    40.24
+| prune-epoch  24 |  1200/ 1327 batches | lr 0.08 | ms/batch 42.53 | loss  3.55 | ppl    34.93
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+-----------------------------------------------------------------------------------------
+| end of retrain epoch  24 | time: 58.45s | valid loss  4.39 | valid ppl    80.24
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch  25 |   200/ 1327 batches | lr 0.08 | ms/batch 44.29 | loss  3.69 | ppl    40.22
+| prune-epoch  25 |   400/ 1327 batches | lr 0.08 | ms/batch 42.34 | loss  3.68 | ppl    39.49
+| prune-epoch  25 |   600/ 1327 batches | lr 0.08 | ms/batch 42.34 | loss  3.67 | ppl    39.23
+| prune-epoch  25 |   800/ 1327 batches | lr 0.08 | ms/batch 42.36 | loss  3.60 | ppl    36.71
+| prune-epoch  25 |  1000/ 1327 batches | lr 0.08 | ms/batch 42.36 | loss  3.69 | ppl    40.15
+| prune-epoch  25 |  1200/ 1327 batches | lr 0.08 | ms/batch 42.37 | loss  3.55 | ppl    34.79
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+-----------------------------------------------------------------------------------------
+| end of retrain epoch  25 | time: 58.22s | valid loss  4.39 | valid ppl    80.24
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch  26 |   200/ 1327 batches | lr 0.08 | ms/batch 44.79 | loss  3.69 | ppl    40.12
+| prune-epoch  26 |   400/ 1327 batches | lr 0.08 | ms/batch 42.81 | loss  3.68 | ppl    39.68
+| prune-epoch  26 |   600/ 1327 batches | lr 0.08 | ms/batch 42.81 | loss  3.67 | ppl    39.20
+| prune-epoch  26 |   800/ 1327 batches | lr 0.08 | ms/batch 42.81 | loss  3.60 | ppl    36.66
+| prune-epoch  26 |  1000/ 1327 batches | lr 0.08 | ms/batch 42.81 | loss  3.69 | ppl    40.19
+| prune-epoch  26 |  1200/ 1327 batches | lr 0.08 | ms/batch 42.81 | loss  3.55 | ppl    34.82
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+-----------------------------------------------------------------------------------------
+| end of retrain epoch  26 | time: 58.83s | valid loss  4.39 | valid ppl    80.24
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch  27 |   200/ 1327 batches | lr 0.08 | ms/batch 44.59 | loss  3.69 | ppl    40.15
+| prune-epoch  27 |   400/ 1327 batches | lr 0.08 | ms/batch 42.64 | loss  3.67 | ppl    39.31
+| prune-epoch  27 |   600/ 1327 batches | lr 0.08 | ms/batch 42.66 | loss  3.67 | ppl    39.12
+| prune-epoch  27 |   800/ 1327 batches | lr 0.08 | ms/batch 42.64 | loss  3.61 | ppl    36.91
+| prune-epoch  27 |  1000/ 1327 batches | lr 0.08 | ms/batch 42.65 | loss  3.69 | ppl    40.11
+| prune-epoch  27 |  1200/ 1327 batches | lr 0.08 | ms/batch 42.64 | loss  3.55 | ppl    34.96
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+-----------------------------------------------------------------------------------------
+| end of retrain epoch  27 | time: 58.60s | valid loss  4.38 | valid ppl    80.19
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch  28 |   200/ 1327 batches | lr 0.08 | ms/batch 44.04 | loss  3.70 | ppl    40.33
+| prune-epoch  28 |   400/ 1327 batches | lr 0.08 | ms/batch 42.06 | loss  3.67 | ppl    39.36
+| prune-epoch  28 |   600/ 1327 batches | lr 0.08 | ms/batch 42.06 | loss  3.67 | ppl    39.10
+| prune-epoch  28 |   800/ 1327 batches | lr 0.08 | ms/batch 42.06 | loss  3.61 | ppl    36.89
+| prune-epoch  28 |  1000/ 1327 batches | lr 0.08 | ms/batch 42.06 | loss  3.70 | ppl    40.45
+| prune-epoch  28 |  1200/ 1327 batches | lr 0.08 | ms/batch 42.62 | loss  3.55 | ppl    34.82
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+-----------------------------------------------------------------------------------------
+| end of retrain epoch  28 | time: 58.05s | valid loss  4.38 | valid ppl    80.18
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch  29 |   200/ 1327 batches | lr 0.08 | ms/batch 44.52 | loss  3.70 | ppl    40.40
+| prune-epoch  29 |   400/ 1327 batches | lr 0.08 | ms/batch 42.57 | loss  3.68 | ppl    39.75
+| prune-epoch  29 |   600/ 1327 batches | lr 0.08 | ms/batch 42.58 | loss  3.67 | ppl    39.26
+| prune-epoch  29 |   800/ 1327 batches | lr 0.08 | ms/batch 42.58 | loss  3.61 | ppl    36.84
+| prune-epoch  29 |  1000/ 1327 batches | lr 0.08 | ms/batch 42.57 | loss  3.69 | ppl    40.20
+| prune-epoch  29 |  1200/ 1327 batches | lr 0.08 | ms/batch 42.57 | loss  3.55 | ppl    34.81
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+-----------------------------------------------------------------------------------------
+| end of retrain epoch  29 | time: 58.51s | valid loss  4.38 | valid ppl    80.18
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch  30 |   200/ 1327 batches | lr 0.08 | ms/batch 44.51 | loss  3.69 | ppl    40.24
+| prune-epoch  30 |   400/ 1327 batches | lr 0.08 | ms/batch 42.54 | loss  3.68 | ppl    39.49
+| prune-epoch  30 |   600/ 1327 batches | lr 0.08 | ms/batch 42.54 | loss  3.67 | ppl    39.30
+| prune-epoch  30 |   800/ 1327 batches | lr 0.08 | ms/batch 42.55 | loss  3.60 | ppl    36.77
+| prune-epoch  30 |  1000/ 1327 batches | lr 0.08 | ms/batch 42.55 | loss  3.69 | ppl    40.10
+| prune-epoch  30 |  1200/ 1327 batches | lr 0.08 | ms/batch 42.53 | loss  3.55 | ppl    34.99
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+-----------------------------------------------------------------------------------------
+| end of retrain epoch  30 | time: 58.46s | valid loss  4.38 | valid ppl    80.21
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch  31 |   200/ 1327 batches | lr 0.02 | ms/batch 44.36 | loss  3.69 | ppl    40.16
+| prune-epoch  31 |   400/ 1327 batches | lr 0.02 | ms/batch 42.52 | loss  3.68 | ppl    39.47
+| prune-epoch  31 |   600/ 1327 batches | lr 0.02 | ms/batch 42.53 | loss  3.67 | ppl    39.21
+| prune-epoch  31 |   800/ 1327 batches | lr 0.02 | ms/batch 42.53 | loss  3.61 | ppl    36.92
+| prune-epoch  31 |  1000/ 1327 batches | lr 0.02 | ms/batch 42.53 | loss  3.70 | ppl    40.33
+| prune-epoch  31 |  1200/ 1327 batches | lr 0.02 | ms/batch 42.61 | loss  3.55 | ppl    34.85
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+-----------------------------------------------------------------------------------------
+| end of retrain epoch  31 | time: 58.52s | valid loss  4.38 | valid ppl    80.20
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch  32 |   200/ 1327 batches | lr 0.02 | ms/batch 44.93 | loss  3.69 | ppl    40.11
+| prune-epoch  32 |   400/ 1327 batches | lr 0.02 | ms/batch 42.37 | loss  3.68 | ppl    39.52
+| prune-epoch  32 |   600/ 1327 batches | lr 0.02 | ms/batch 42.36 | loss  3.66 | ppl    39.00
+| prune-epoch  32 |   800/ 1327 batches | lr 0.02 | ms/batch 42.36 | loss  3.61 | ppl    36.94
+| prune-epoch  32 |  1000/ 1327 batches | lr 0.02 | ms/batch 42.36 | loss  3.69 | ppl    39.96
+| prune-epoch  32 |  1200/ 1327 batches | lr 0.02 | ms/batch 42.36 | loss  3.55 | ppl    34.78
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+-----------------------------------------------------------------------------------------
+| end of retrain epoch  32 | time: 58.35s | valid loss  4.38 | valid ppl    80.19
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch  33 |   200/ 1327 batches | lr 0.02 | ms/batch 44.46 | loss  3.70 | ppl    40.27
+| prune-epoch  33 |   400/ 1327 batches | lr 0.02 | ms/batch 42.50 | loss  3.68 | ppl    39.70
+| prune-epoch  33 |   600/ 1327 batches | lr 0.02 | ms/batch 42.50 | loss  3.66 | ppl    38.90
+| prune-epoch  33 |   800/ 1327 batches | lr 0.02 | ms/batch 42.81 | loss  3.61 | ppl    36.86
+| prune-epoch  33 |  1000/ 1327 batches | lr 0.02 | ms/batch 43.02 | loss  3.69 | ppl    40.07
+| prune-epoch  33 |  1200/ 1327 batches | lr 0.02 | ms/batch 42.87 | loss  3.55 | ppl    34.71
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+-----------------------------------------------------------------------------------------
+| end of retrain epoch  33 | time: 58.71s | valid loss  4.38 | valid ppl    80.18
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch  34 |   200/ 1327 batches | lr 0.02 | ms/batch 44.69 | loss  3.69 | ppl    40.01
+| prune-epoch  34 |   400/ 1327 batches | lr 0.02 | ms/batch 42.64 | loss  3.67 | ppl    39.37
+| prune-epoch  34 |   600/ 1327 batches | lr 0.02 | ms/batch 42.67 | loss  3.67 | ppl    39.08
+| prune-epoch  34 |   800/ 1327 batches | lr 0.02 | ms/batch 42.66 | loss  3.61 | ppl    36.78
+| prune-epoch  34 |  1000/ 1327 batches | lr 0.02 | ms/batch 43.05 | loss  3.70 | ppl    40.41
+| prune-epoch  34 |  1200/ 1327 batches | lr 0.02 | ms/batch 43.33 | loss  3.55 | ppl    34.99
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+-----------------------------------------------------------------------------------------
+| end of retrain epoch  34 | time: 58.95s | valid loss  4.38 | valid ppl    80.17
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch  35 |   200/ 1327 batches | lr 0.02 | ms/batch 44.37 | loss  3.69 | ppl    40.22
+| prune-epoch  35 |   400/ 1327 batches | lr 0.02 | ms/batch 42.44 | loss  3.68 | ppl    39.58
+| prune-epoch  35 |   600/ 1327 batches | lr 0.02 | ms/batch 42.62 | loss  3.67 | ppl    39.16
+| prune-epoch  35 |   800/ 1327 batches | lr 0.02 | ms/batch 42.75 | loss  3.61 | ppl    36.98
+| prune-epoch  35 |  1000/ 1327 batches | lr 0.02 | ms/batch 42.73 | loss  3.70 | ppl    40.26
+| prune-epoch  35 |  1200/ 1327 batches | lr 0.02 | ms/batch 42.75 | loss  3.55 | ppl    34.92
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+-----------------------------------------------------------------------------------------
+| end of retrain epoch  35 | time: 58.59s | valid loss  4.38 | valid ppl    80.17
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch  36 |   200/ 1327 batches | lr 0.02 | ms/batch 44.54 | loss  3.69 | ppl    40.04
+| prune-epoch  36 |   400/ 1327 batches | lr 0.02 | ms/batch 42.86 | loss  3.68 | ppl    39.50
+| prune-epoch  36 |   600/ 1327 batches | lr 0.02 | ms/batch 43.12 | loss  3.67 | ppl    39.12
+| prune-epoch  36 |   800/ 1327 batches | lr 0.02 | ms/batch 42.93 | loss  3.61 | ppl    36.80
+| prune-epoch  36 |  1000/ 1327 batches | lr 0.02 | ms/batch 42.90 | loss  3.69 | ppl    40.09
+| prune-epoch  36 |  1200/ 1327 batches | lr 0.02 | ms/batch 42.92 | loss  3.55 | ppl    34.88
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+-----------------------------------------------------------------------------------------
+| end of retrain epoch  36 | time: 58.93s | valid loss  4.38 | valid ppl    80.18
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch  37 |   200/ 1327 batches | lr 0.00 | ms/batch 44.40 | loss  3.69 | ppl    40.16
+| prune-epoch  37 |   400/ 1327 batches | lr 0.00 | ms/batch 42.54 | loss  3.68 | ppl    39.64
+| prune-epoch  37 |   600/ 1327 batches | lr 0.00 | ms/batch 42.55 | loss  3.67 | ppl    39.07
+| prune-epoch  37 |   800/ 1327 batches | lr 0.00 | ms/batch 42.54 | loss  3.61 | ppl    36.80
+| prune-epoch  37 |  1000/ 1327 batches | lr 0.00 | ms/batch 42.54 | loss  3.70 | ppl    40.25
+| prune-epoch  37 |  1200/ 1327 batches | lr 0.00 | ms/batch 42.53 | loss  3.55 | ppl    34.82
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+-----------------------------------------------------------------------------------------
+| end of retrain epoch  37 | time: 58.44s | valid loss  4.38 | valid ppl    80.17
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch  38 |   200/ 1327 batches | lr 0.00 | ms/batch 44.35 | loss  3.69 | ppl    40.12
+| prune-epoch  38 |   400/ 1327 batches | lr 0.00 | ms/batch 42.54 | loss  3.68 | ppl    39.54
+| prune-epoch  38 |   600/ 1327 batches | lr 0.00 | ms/batch 42.53 | loss  3.67 | ppl    39.12
+| prune-epoch  38 |   800/ 1327 batches | lr 0.00 | ms/batch 42.63 | loss  3.60 | ppl    36.77
+| prune-epoch  38 |  1000/ 1327 batches | lr 0.00 | ms/batch 43.21 | loss  3.70 | ppl    40.40
+| prune-epoch  38 |  1200/ 1327 batches | lr 0.00 | ms/batch 43.22 | loss  3.55 | ppl    34.94
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+-----------------------------------------------------------------------------------------
+| end of retrain epoch  38 | time: 58.81s | valid loss  4.38 | valid ppl    80.17
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch  39 |   200/ 1327 batches | lr 0.00 | ms/batch 44.31 | loss  3.69 | ppl    40.12
+| prune-epoch  39 |   400/ 1327 batches | lr 0.00 | ms/batch 42.37 | loss  3.68 | ppl    39.62
+| prune-epoch  39 |   600/ 1327 batches | lr 0.00 | ms/batch 42.39 | loss  3.67 | ppl    39.13
+| prune-epoch  39 |   800/ 1327 batches | lr 0.00 | ms/batch 42.35 | loss  3.60 | ppl    36.76
+| prune-epoch  39 |  1000/ 1327 batches | lr 0.00 | ms/batch 42.35 | loss  3.70 | ppl    40.41
+| prune-epoch  39 |  1200/ 1327 batches | lr 0.00 | ms/batch 42.35 | loss  3.55 | ppl    34.96
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+-----------------------------------------------------------------------------------------
+| end of retrain epoch  39 | time: 58.23s | valid loss  4.38 | valid ppl    80.17
+-----------------------------------------------------------------------------------------
+begin prun train
+| prune-epoch  40 |   200/ 1327 batches | lr 0.00 | ms/batch 44.42 | loss  3.69 | ppl    40.04
+| prune-epoch  40 |   400/ 1327 batches | lr 0.00 | ms/batch 42.49 | loss  3.68 | ppl    39.53
+| prune-epoch  40 |   600/ 1327 batches | lr 0.00 | ms/batch 42.47 | loss  3.66 | ppl    39.02
+| prune-epoch  40 |   800/ 1327 batches | lr 0.00 | ms/batch 42.49 | loss  3.61 | ppl    36.80
+| prune-epoch  40 |  1000/ 1327 batches | lr 0.00 | ms/batch 42.49 | loss  3.69 | ppl    40.14
+| prune-epoch  40 |  1200/ 1327 batches | lr 0.00 | ms/batch 42.49 | loss  3.55 | ppl    34.72
+end prun train
+weight_ih_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l0        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_ih_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+weight_hh_l1        shape torch.Size([6000, 1500])
+       expected sp:  0.9  actual sp:  0.8993333333333333
+-----------------------------------------------------------------------------------------
+| end of retrain epoch  40 | time: 58.39s | valid loss  4.38 | valid ppl    80.17
+-----------------------------------------------------------------------------------------
+required epochs  40 | actual epochs  54
+pretrain epochs   0 | prune epochs  14 | retrain epochs  40
+=========================================================================================
+| End of training | test loss  4.34 | test ppl    76.45
+=========================================================================================
