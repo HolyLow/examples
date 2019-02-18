@@ -108,7 +108,8 @@ class Config:
             with open(args.config_file,"r") as stream:            
                 raw_dict = yaml.load(stream)
 
-                self._prune_ratios = raw_dict[args.arch]['prune_ratios'] # read prune ratio from yaml
+                # self._prune_ratios = raw_dict[args.arch]['prune_ratios'] # read prune ratio from yaml
+                self.prune_ratios = raw_dict[args.arch]['prune_ratios'] # read prune ratio from yaml
                 self.rho = args.rho                
                 self.sparsity_type = args.sparsity_type
         except yaml.YAMLError as exc:
@@ -159,11 +160,11 @@ class Config:
 
     def init(self,args,model):
          self._read_file(args,model)
-         self._extract_layer_names()
-         for good_name,ratio in self._prune_ratios.items():             
-             self._encode(good_name)
-         for good_name,ratio in self._prune_ratios.items():
-             self.prune_ratios[self.name_encoder[good_name]] = ratio
+        #  self._extract_layer_names()
+        #  for good_name,ratio in self._prune_ratios.items():             
+        #      self._encode(good_name)
+        #  for good_name,ratio in self._prune_ratios.items():
+        #      self.prune_ratios[self.name_encoder[good_name]] = ratio
 
 class ADMM:
      def __init__(self,model,file_name):
@@ -385,17 +386,18 @@ def weight_pruning(args,weight,prune_ratio):
           weight[under_threshold] = 0     
           return torch.from_numpy(above_threshold).cuda(),torch.from_numpy(weight).cuda()
      elif (args.sparsity_type == "balanced_row"):
-          shape = weight.shape()
+          shape = weight.shape
           dim = 1
           weight = torch.from_numpy(weight).reshape(shape[0], -1)
           rank = int(prune_ratio * weight.shape[dim])
           weight_abs = weight.abs().clone().cpu()
           threshold, position = weight_abs.kthvalue(rank, dim, True)
           threshold = threshold.expand(weight.shape)
-          mask = weight_abs.lt(threshold).cuda()   # values smaller than threshold will be tagged
+          mask = weight_abs.lt(threshold)     # values smaller than threshold will be tagged
           weight.masked_fill_(mask, 0.0)      # mask tagged data to zero
           weight.reshape(shape)
-          return mask.astype(np.float32).reshape(shape).cuda(), weight.cuda()
+          mask = weight_abs.ge(threshold)
+          return mask.type(torch.FloatTensor).reshape(shape).cuda(), weight.cuda()
      else:
           raise SyntaxError("Unknown sparsity type")
                                          
@@ -442,7 +444,7 @@ def test_sparsity(args,config,model):
         print ('only consider conv layers, compression rate is {}'.format((total_zeros+total_nonzeros)/total_nonzeros))
         return
     
-     if args.sparsity_type == "irregular":
+     if args.sparsity_type == "irregular" or args.sparsity_type == "balanced_row":
          for name,W in model.named_parameters():
               if 'bias' in name:
                    continue

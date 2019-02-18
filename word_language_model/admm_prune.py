@@ -13,6 +13,7 @@ import model
 import admm
 
 model_names = ['wt2','ptb']
+sparsity_types = ['irregular', 'column', 'filter', 'balanced_row']
 
 parser = argparse.ArgumentParser(description='PyTorch Wikitext-2 RNN/LSTM Language Model')
 parser.add_argument('--data', type=str, default='./data/wikitext-2',
@@ -63,7 +64,7 @@ parser.add_argument('--verbose', action='store_true', default = False, help = 'w
 parser.add_argument('--admm', action='store_true', default=False,  help = "for admm training")
 parser.add_argument('--admm_epoch', type = int, default = 1, help = "how often we do admm update")
 parser.add_argument('--rho', type = float, default = 0.001, help = "define rho for ADMM")
-parser.add_argument('--sparsity_type', type=str, default='', help = "define sparsity_type: [irregular,column,filter]")
+parser.add_argument('--sparsity_type', type=str, default='', choices=sparsity_types, help = "define sparsity_type: [irregular,column,filter,balanced_row]")
 # parser.add_argument('--optimizer', type = str, default = 'SGD', help = 'define optimizer')
 # parser.add_argument('--lr_scheduler', type = str, default = 'default', help = 'define lr scheduler')
 
@@ -77,13 +78,7 @@ if torch.cuda.is_available():
 
 device = torch.device("cuda" if args.cuda else "cpu")
 
-ADMM = None
-config = None
-if args.admm or args.masked_retrain:                
-    config = admm.Config(args, model)
-if args.admm:
-    ADMM = admm.ADMM(model, config)
-    admm.admm_initialization(args, ADMM, model)  # intialize Z, U variable   
+
 
 ###############################################################################
 # Load data
@@ -125,6 +120,20 @@ ntokens = len(corpus.dictionary)
 model = model.RNNModel(args.model, ntokens, args.emsize, args.nhid, args.nlayers, args.dropout, args.tied).to(device)
 
 criterion = nn.CrossEntropyLoss()
+
+ADMM = None
+config = None
+if args.admm or args.masked_retrain:                
+    config = admm.Config(args, model)
+    print(config.prune_ratios)
+    for name,_ in model.named_parameters():
+        if name in config.prune_ratios:
+            print('{} will be pruned'.format(name))
+        else:
+            print('{} willnot be pruned'.format(name))
+if args.admm:
+    ADMM = admm.ADMM(model, config)
+    admm.admm_initialization(args, ADMM, model)  # intialize Z, U variable   
 
 ###############################################################################
 # Training code
@@ -171,13 +180,14 @@ def evaluate(data_source):
     return total_loss / (len(data_source) - 1)
 
 
-def train(stage = "train"):
+def train(lr, epoch = 0):
     # Turn on training mode which enables dropout.
     model.train()
     total_loss = 0.
     start_time = time.time()
     ntokens = len(corpus.dictionary)
     hidden = model.init_hidden(args.batch_size)
+    
     for batch, i in enumerate(range(0, train_data.size(0) - 1, args.bptt)):
         data, targets = get_batch(train_data, i)
         # Starting each batch, we detach the hidden state from how it was previously produced.
@@ -199,7 +209,7 @@ def train(stage = "train"):
         if stage == 'masked_retrain':
             for name,W in model.named_parameters():
                 if name in config.masks:
-                    W.grad *= config.masks[name]
+                    W.grad.data *= config.masks[name]
         for p in model.parameters():
             p.data.add_(-lr, p.grad.data)
 
@@ -214,6 +224,7 @@ def train(stage = "train"):
                 elapsed * 1000 / args.log_interval, cur_loss, math.exp(cur_loss)))
             total_loss = 0
             start_time = time.time()
+    
 
 
 def export_onnx(path, batch_size, seq_len):
@@ -225,20 +236,19 @@ def export_onnx(path, batch_size, seq_len):
     torch.onnx.export(model, (dummy_input, hidden), path)
 
 
-# Loop over epochs.
-lr = args.lr
-best_val_loss = None
 
-# At any point you can hit Ctrl + C to break out of training early.
-try:
+
+def train_procedure(lr):
+    best_val_loss = None
+    
     for epoch in range(1, args.epochs+1):
         epoch_start_time = time.time()
-        train()
+        train(lr, epoch)
         val_loss = evaluate(val_data)
         print('-' * 89)
         print('| end of epoch {:3d} | time: {:5.2f}s | valid loss {:5.2f} | '
                 'valid ppl {:8.2f}'.format(epoch, (time.time() - epoch_start_time),
-                                           val_loss, math.exp(val_loss)))
+                                        val_loss, math.exp(val_loss)))
         print('-' * 89)
         # Save the model if the validation loss is the best we've seen so far.
         if not best_val_loss or val_loss < best_val_loss:
@@ -247,7 +257,49 @@ try:
             best_val_loss = val_loss
         else:
             # Anneal the learning rate if no improvement has been seen in the validation dataset.
-            lr /= 4.0
+            if stage == 'admm':
+                lr /= 2.0
+            else:
+                lr /= 4.0
+
+# Loop over epochs.
+lr = args.lr
+# best_val_loss = None
+stage = 'train'
+
+# At any point you can hit Ctrl + C to break out of training early.
+
+try:
+    if args.admm:
+        stage = 'admm'
+        args.masked_retrain = True
+        lr = args.lr / 10
+        train_procedure(lr)
+        # for epoch in range(1, args.epochs+1):
+        #     epoch_start_time = time.time()
+        #     train(stage)
+        #     val_loss = evaluate(val_data)
+        #     print('-' * 89)
+        #     print('| end of epoch {:3d} | time: {:5.2f}s | valid loss {:5.2f} | '
+        #             'valid ppl {:8.2f}'.format(epoch, (time.time() - epoch_start_time),
+        #                                     val_loss, math.exp(val_loss)))
+        #     print('-' * 89)
+        #     # Save the model if the validation loss is the best we've seen so far.
+        #     if not best_val_loss or val_loss < best_val_loss:
+        #         with open(args.save, 'wb') as f:
+        #             torch.save(model, f)
+        #         best_val_loss = val_loss
+        #     else:
+        #         # Anneal the learning rate if no improvement has been seen in the validation dataset.
+        #         lr /= 4.0
+    if args.masked_retrain:
+        stage = 'masked_retrain'
+        lr = args.lr 
+        admm.masking(args, config, model)
+        admm.test_sparsity(args, config, model)
+        train_procedure(lr)
+        admm.test_sparsity(args, config, model)
+
 except KeyboardInterrupt:
     print('-' * 89)
     print('Exiting from training early')

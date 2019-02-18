@@ -1,0 +1,10 @@
+ptb:
+    prune_ratios:
+        rnn.weight_ih_l0:
+            0.9
+        rnn.weight_hh_l0:
+            0.9 
+        rnn.weight_ih_l1:
+            0.9
+        rnn.weight_hh_l1:
+            0.9   
