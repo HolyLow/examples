@@ -240,7 +240,10 @@ def export_onnx(path, batch_size, seq_len):
 
 def train_procedure(lr):
     best_val_loss = None
-    max_chance = 3
+    if stage == 'admm':
+        max_chance = 2
+    elif stage == 'masked_retrain':
+        max_chance = 1
     chance = max_chance
     
     for epoch in range(1, args.epochs+1):
@@ -259,15 +262,15 @@ def train_procedure(lr):
             best_val_loss = val_loss
         else:
             # Anneal the learning rate if no improvement has been seen in the validation dataset.
-            if stage == 'admm':
-                if chance > 0:
-                    chance -= 1
-                    best_val_loss = val_loss
-                else:
-                    lr /= 2.0
-                    chance = max_chance
+            if chance > 0:
+                chance -= 1
+                best_val_loss = val_loss
             else:
-                lr /= 4.0
+                chance = max_chance
+                if stage == 'admm':
+                    lr /= 2.0
+                else:
+                    lr /= 4.0
 
 # Loop over epochs.
 lr = args.lr
