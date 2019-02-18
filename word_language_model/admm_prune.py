@@ -240,6 +240,8 @@ def export_onnx(path, batch_size, seq_len):
 
 def train_procedure(lr):
     best_val_loss = None
+    max_chance = 3
+    chance = max_chance
     
     for epoch in range(1, args.epochs+1):
         epoch_start_time = time.time()
@@ -258,7 +260,12 @@ def train_procedure(lr):
         else:
             # Anneal the learning rate if no improvement has been seen in the validation dataset.
             if stage == 'admm':
-                lr /= 2.0
+                if chance > 0:
+                    chance -= 1
+                    best_val_loss = val_loss
+                else:
+                    lr /= 2.0
+                    chance = max_chance
             else:
                 lr /= 4.0
 
@@ -273,25 +280,8 @@ try:
     if args.admm:
         stage = 'admm'
         args.masked_retrain = True
-        lr = args.lr / 10
+        lr = args.lr / 4
         train_procedure(lr)
-        # for epoch in range(1, args.epochs+1):
-        #     epoch_start_time = time.time()
-        #     train(stage)
-        #     val_loss = evaluate(val_data)
-        #     print('-' * 89)
-        #     print('| end of epoch {:3d} | time: {:5.2f}s | valid loss {:5.2f} | '
-        #             'valid ppl {:8.2f}'.format(epoch, (time.time() - epoch_start_time),
-        #                                     val_loss, math.exp(val_loss)))
-        #     print('-' * 89)
-        #     # Save the model if the validation loss is the best we've seen so far.
-        #     if not best_val_loss or val_loss < best_val_loss:
-        #         with open(args.save, 'wb') as f:
-        #             torch.save(model, f)
-        #         best_val_loss = val_loss
-        #     else:
-        #         # Anneal the learning rate if no improvement has been seen in the validation dataset.
-        #         lr /= 4.0
     if args.masked_retrain:
         stage = 'masked_retrain'
         lr = args.lr 
