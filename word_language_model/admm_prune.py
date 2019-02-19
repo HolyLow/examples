@@ -50,6 +50,8 @@ parser.add_argument('--save', type=str, default='model.pt',
                     help='path to save the final model')
 parser.add_argument('--onnx-export', type=str, default='',
                     help='path to export the final model in onnx format')
+parser.add_argument('--pretrained', type=str, default=None,
+                    help='finetune from the pretrained model')
 
 parser.add_argument('-a', '--arch', metavar='ARCH', default='',
                     choices=model_names,
@@ -118,6 +120,8 @@ test_data = batchify(corpus.test, eval_batch_size)
 
 ntokens = len(corpus.dictionary)
 model = model.RNNModel(args.model, ntokens, args.emsize, args.nhid, args.nlayers, args.dropout, args.tied).to(device)
+if args.pretrained:
+    model = torch.load(args.pretrained, map_location=device)
 
 criterion = nn.CrossEntropyLoss()
 
