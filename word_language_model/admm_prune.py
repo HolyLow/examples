@@ -247,7 +247,7 @@ def train_procedure(lr):
     if stage == 'admm':
         max_chance = 2
     elif stage == 'masked_retrain':
-        max_chance = 1
+        max_chance = 2
     chance = max_chance
     
     for epoch in range(1, args.epochs+1):

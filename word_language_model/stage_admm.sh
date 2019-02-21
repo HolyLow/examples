@@ -20,15 +20,15 @@ while [ $sp -le $end_sp ]; do
   if [ $sp -lt 70 ]; then
     epoch=10
     dropout=0.60
-    lr=20
+    lr=8
   elif [ $sp -lt 80 ]; then
     epoch=20
     dropout=0.55
-    lr=10
+    lr=4
   else
     epoch=40
     dropout=0.50
-    lr=10
+    lr=4
   fi
   save="sp${sp}_epoch${epoch}_dropout${dropout}_lstm_tied1500.pt"
   ExportConfig $sp ${config_yaml} 
